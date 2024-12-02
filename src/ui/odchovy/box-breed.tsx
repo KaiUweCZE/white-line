@@ -1,4 +1,4 @@
-import { ChevronRight, PawPrint } from "lucide-react";
+import { ChevronRight /*, PawPrint*/ } from "lucide-react";
 import { BreedType } from "./data/breed-data";
 import Image from "next/image";
 import Link from "next/link";

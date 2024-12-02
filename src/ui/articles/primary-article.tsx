@@ -1,7 +1,6 @@
 "use client";
 import { useContext } from "react";
 import Gallery from "../gallery/gallery";
-import { Article } from "./types";
 import { ArticleContext } from "@/context/article-context";
 
 const PrimaryArticle = () => {

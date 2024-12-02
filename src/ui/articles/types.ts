@@ -1,4 +1,3 @@
-import { LucideIcon } from "lucide-react";
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 

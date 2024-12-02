@@ -2,6 +2,7 @@
 import { breedDetails } from "@/ui/odchovy/data/breed-details";
 import { ChevronLeft, Heart, Camera, Calendar, Shield } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 const BreedDetail = () => {
@@ -36,13 +37,13 @@ const BreedDetail = () => {
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* Navigace zpět */}
-      <a
+      <Link
         href="/odchovy"
         className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 group"
       >
         <ChevronLeft className="w-5 h-5 mr-1 transition-transform group-hover:-translate-x-1" />
         <span>Zpět na odchovy</span>
-      </a>
+      </Link>
 
       {/* Hlavička vrhu */}
       <div className="mb-12">

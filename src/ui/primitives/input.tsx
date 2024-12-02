@@ -43,7 +43,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       className,
       intent,
       sizes,
-      width,
+      // width,
       leftIcon,
       rightIcon,
       label,
