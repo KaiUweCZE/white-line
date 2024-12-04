@@ -1,5 +1,5 @@
 import { slides } from "./data/menu-data";
-import PrimaryMenu from "./primary-menu";
+import NavbarMenu from "./navbar-menu";
 import Slideshow from "./slide-show";
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
           <span className="text-2xl font-bold">Whiteline</span>
           <span className="text-sky-400 text-2xl font-bold">Czech</span>
         </div>
-        <PrimaryMenu />
+        <NavbarMenu />
       </div>
     </header>
   );

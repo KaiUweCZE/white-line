@@ -84,7 +84,7 @@ const ArticleSearch = () => {
     }
   };
   return (
-    <div className="inline-flex gap-2 relative w-fit">
+    <div className="inline-flex gap-2 relative w-fit article-search">
       {options.map((option) => (
         <Button
           key={option.name}

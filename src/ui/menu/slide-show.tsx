@@ -32,7 +32,9 @@ const Slideshow = ({ slides }: SlideshowProps) => {
             alt={slide.alt}
             style={{ objectFit: "cover" }}
             layout="fill"
+            priority={index === 0}
             quality={80}
+            loading={index === 0 ? "eager" : "lazy"}
           />
         </div>
       ))}

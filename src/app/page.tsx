@@ -6,7 +6,7 @@ import PrimaryArticle from "@/ui/articles/primary-article";
 export default function Home() {
   return (
     <ArticleProvider>
-      <div className="wrapper mx-auto primary-bg max-width pt-8 px-8">
+      <div className="wrapper primary-bg pt-8 px-8">
         <PrimaryArticle />
         <ArticleSection />
         <ContactFooter />

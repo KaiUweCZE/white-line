@@ -1,5 +1,6 @@
-import { CalendarDays, Globe, Medal } from "lucide-react";
+import { CalendarDays, Globe, Medal, PawPrint } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 type DogHeroType = {
   name?: string;
@@ -12,6 +13,7 @@ type DogHeroType = {
   health?: string[];
   exams?: string[];
   titles?: string[];
+  pedigree?: string;
 };
 
 interface DogHeroProps {
@@ -25,7 +27,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
         {dog.portrait && (
           <Image
             src={dog.portrait}
-            alt={`${name} photo`}
+            alt={`${dog.name} photo`}
             height={400}
             width={300}
             className="rounded-lg secondary-shadow"
@@ -52,6 +54,17 @@ const DogHero = ({ dog }: DogHeroProps) => {
               </div>
               <p className="text-sm text-gray-500">{dog?.registration}</p>
               <p className="text-gray-600">{dog?.description}</p>
+              {dog.pedigree && (
+                <div className="flex gap-2">
+                  <PawPrint className="h-5 w-5" />
+                  <Link
+                    href={dog.pedigree}
+                    className="text-gray-700 hover:font-bold"
+                  >
+                    rodokmen
+                  </Link>
+                </div>
+              )}
             </div>
 
             <div className="space-y-4">

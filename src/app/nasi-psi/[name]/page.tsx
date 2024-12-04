@@ -26,6 +26,7 @@ const DogDetail = () => {
     titles: data?.titles,
     exams: data?.exams,
     health: data?.health,
+    pedigree: data?.pedigree,
   };
 
   return (

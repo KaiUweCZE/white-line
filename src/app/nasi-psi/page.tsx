@@ -10,16 +10,19 @@ const PsiPage = () => {
   );
 
   return (
-    <div className="max-width mx-auto mt-6">
-      <h2 className="text-2xl font-bold">Naši Psi</h2>
-      <section className="grid ">
-        <h3>Živy</h3>
-        <DogsGallery dogs={alive} />
-      </section>
-      <section className="grid ">
-        <h3>Ve vzpomínkách</h3>
-        <DogsGallery dogs={inMemory} />
-      </section>
+    <div className="grid max-width mx-auto my-6 gap-8">
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Naši Psi</h2>
+        <section className="grid ">
+          <DogsGallery dogs={alive} />
+        </section>
+      </div>
+      <div>
+        <section className="grid ">
+          <h2 className="text-2xl font-bold mb-4">Ve vzpomínkách</h2>
+          <DogsGallery dogs={inMemory} />
+        </section>
+      </div>
     </div>
   );
 };

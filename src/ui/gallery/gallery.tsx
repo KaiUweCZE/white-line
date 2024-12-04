@@ -1,18 +1,26 @@
-"use client";
-import Image, { StaticImageData } from "next/image";
-import { useState, useCallback, useEffect } from "react";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import GalleryContent from "./gallery-content";
+import { useScrollLock } from "./hooks/use-scrolllock";
+import { useKeyboardShortcuts } from "./hooks/use-keybaord-shortcuts";
+import { StaticImageData } from "next/image";
 
 interface GalleryProps {
   images: StaticImageData[];
   alts: string[];
   width?: number;
   height?: number;
+  fullscreen: boolean;
 }
-
-const Gallery = ({ images, alts, width = 600, height = 400 }: GalleryProps) => {
+const Gallery = ({
+  images,
+  alts,
+  width = 600,
+  height = 400,
+  fullscreen,
+}: GalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const nextSlide = useCallback(() => {
     if (isTransitioning) return;
@@ -26,72 +34,55 @@ const Gallery = ({ images, alts, width = 600, height = 400 }: GalleryProps) => {
     setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   }, [images.length, isTransitioning]);
 
-  // Resetujeme transitioning stav po dokončení animace
+  useScrollLock(isFullscreen);
+  useKeyboardShortcuts({
+    isFullscreen,
+    onExit: () => setIsFullscreen(false),
+    onNext: nextSlide,
+    onPrev: prevSlide,
+  });
+
+  // Reset transitioning stavu
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsTransitioning(false);
-    }, 300); // Musí odpovídat duration v CSS transition
+    }, 300);
     return () => clearTimeout(timer);
   }, [activeIndex]);
 
+  const handleDotClick = useCallback((index: number) => {
+    setIsTransitioning(true);
+    setActiveIndex(index);
+  }, []);
+
+  const toggleFullscreen = useCallback(() => {
+    setIsFullscreen((prev) => !prev);
+  }, []);
+
+  const galleryContent = (
+    <GalleryContent
+      images={images}
+      alts={alts}
+      activeIndex={activeIndex}
+      isTransitioning={isTransitioning}
+      fullscreen={fullscreen}
+      isFullscreen={isFullscreen}
+      width={width}
+      height={height}
+      onNext={nextSlide}
+      onPrev={prevSlide}
+      onDotClick={handleDotClick}
+      onFullscreenToggle={toggleFullscreen}
+    />
+  );
+
   return (
-    <div className="grid relative" style={{ width, height }}>
-      {/* Carousel wrapper */}
-      <div className="overflow-hidden w-full h-full gallery primary-shadow">
-        {/* container for images*/}
-        <div
-          className="flex transition-transform duration-300 ease-in-out h-full"
-          style={{
-            transform: `translateX(-${activeIndex * 100}%)`,
-          }}
-        >
-          {images.map((img, index) => (
-            <div key={index} className="flex-shrink-0 w-full h-full relative">
-              <Image
-                src={img}
-                alt={alts[index]}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <ArrowLeft
-        className="absolute arrow-icon h-6 w-6 left-1 cursor-pointer place-self-center "
-        color="white"
-        strokeWidth={4}
-        onClick={prevSlide}
-        aria-disabled={isTransitioning}
-      />
-      <ArrowRight
-        className="absolute arrow-icon h-6 w-6 right-1 cursor-pointer place-self-center "
-        color="white"
-        strokeWidth={4}
-        onClick={nextSlide}
-        aria-disabled={isTransitioning}
-      />
-
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              if (!isTransitioning) {
-                setIsTransitioning(true);
-                setActiveIndex(index);
-              }
-            }}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              activeIndex === index ? "bg-white" : "bg-white/50"
-            }`}
-            aria-label={`Přejít na obrázek ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      {!isFullscreen && galleryContent}
+      {isFullscreen && (
+        <div className="fixed inset-0 z-50">{galleryContent}</div>
+      )}
+    </>
   );
 };
 

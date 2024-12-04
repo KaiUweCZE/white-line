@@ -1,18 +1,15 @@
-"use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-const navPaths = [
-  { name: "Úvod", href: "/" },
-  { name: "Odchovy", href: "/odchovy" },
-  { name: "Naši Psi", href: "/nasi-psi" },
-];
-
-const PrimaryMenu = () => {
-  const pathname = usePathname();
+const DesktopMenu = ({
+  navPaths,
+  pathname,
+}: {
+  navPaths: { name: string; href: string }[];
+  pathname: string;
+}) => {
   return (
-    <ul className="flex items-center justify-end gap-3 pr-4">
+    <ul className="flex items-center justify-end gap-3">
       {navPaths.map((path) => (
         <li
           key={path.name}
@@ -27,4 +24,4 @@ const PrimaryMenu = () => {
   );
 };
 
-export default PrimaryMenu;
+export default DesktopMenu;

@@ -23,7 +23,7 @@ const PrimaryArticleView = (article: Article) => {
 
   return (
     <article
-      className={`primary-article relative shadow rounded p-4 hover:outline hover:outline-1 hover:outline-blue-300 transition-all duration-300
+      className={`article-view relative shadow rounded p-4 hover:outline hover:outline-1 hover:outline-blue-300 transition-all duration-300
      ${isActive ? outlinedClass() : "bg-white"}`}
     >
       <h3 className="font-semibold">{article.headline}</h3>

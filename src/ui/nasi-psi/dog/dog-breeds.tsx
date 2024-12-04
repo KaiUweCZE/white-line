@@ -18,6 +18,9 @@ const DogBreeds = ({ breeds }: DogBreedsProps) => {
               className="group rounded-lg overflow-hidden secondary-shadow relative"
             >
               <Image src={breed.image} alt={`${breed.name} photo`} />
+              <span className="gallery-link text-white bg-slate-800/70 w-full pl-4">
+                Prohlédnout Galerii
+              </span>
               <div className="flex absolute items-center justify-between bg-slate-800/70 w-full bottom-0">
                 <h3 className=" text-white pl-4 font-medium">{breed.name}</h3>
               </div>
