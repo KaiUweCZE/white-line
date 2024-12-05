@@ -1,48 +1,31 @@
 import React from "react";
-import { Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 interface Contact {
   name: string;
   email: string;
   phone?: string;
-  messenger: boolean;
 }
 
-const ContactItem: React.FC<Contact> = ({ name, email, phone, messenger }) => (
+const ContactItem: React.FC<Contact> = ({ name, email, phone }) => (
   <div className="group flex flex-col space-y-2">
     {/* Name and messenger badge */}
     <div className="relative flex items-center justify-between">
       <h3 className="font-medium text-gray-900">{name}</h3>
-      {messenger && (
-        <div className="flex h-6 items-center overflow-hidden">
-          <div className="flex translate-x-6 items-center space-x-2 transition-transform duration-300 group-hover:translate-x-0">
-            <span className="text-xs text-blue-600">Messenger</span>
-            <MessageCircle className="h-4 w-4 text-blue-500" />
-          </div>
-        </div>
-      )}
     </div>
 
     {/* Contact links with hover effects */}
     <div className="space-y-3">
-      <a href={`mailto:${email}`} className="block overflow-hidden">
-        <div>
-          <div className="flex items-center py-1 text-sm text-gray-600">
-            <Mail className="mr-2 h-4 w-4" />
-            {email}
-          </div>
-        </div>
-      </a>
+      <div className="flex items-center py-1 text-sm text-gray-600">
+        <Mail className="mr-2 h-4 w-4 shrink-0" />
+        {email}
+      </div>
 
       {phone && (
-        <a href={`tel:${phone}`} className="block overflow-hidden">
-          <div>
-            <div className="flex items-center py-1 text-sm text-gray-600">
-              <Phone className="mr-2 h-4 w-4" />
-              {phone}
-            </div>
-          </div>
-        </a>
+        <div className="flex items-center py-1 text-sm text-gray-600">
+          <Phone className="mr-2 h-4 w-4" />
+          {phone}
+        </div>
       )}
     </div>
   </div>
@@ -54,17 +37,14 @@ const ContactFooter: React.FC = () => {
       name: "Matěj Mikuláš Píše",
       email: "matej.mikulas.pise@gmail.com",
       phone: "+420 603 219 394",
-      messenger: false,
     },
     {
       name: "Barbora Píšová",
       email: "bara_pisova@seznam.cz",
-      messenger: false,
     },
     {
       name: "Pavlína Gremlicová",
       email: "whitelineczech@seznam.cz",
-      messenger: false,
     },
   ];
 

@@ -14,7 +14,7 @@ const DesktopMenu = ({
         <li
           key={path.name}
           className={clsx("text-xl font-bold", {
-            "text-sky-300": pathname === path.href,
+            "text-sky-400": pathname === path.href,
           })}
         >
           <Link href={path.href}>{path.name}</Link>

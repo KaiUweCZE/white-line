@@ -21,6 +21,11 @@ const PrimaryArticleView = (article: Article) => {
     }
   };
 
+  const handleSetArticle = () => {
+    console.log("Set article", article);
+    setCurrentArticle(article);
+  };
+
   return (
     <article
       className={`article-view relative shadow rounded p-4 hover:outline hover:outline-1 hover:outline-blue-300 transition-all duration-300
@@ -34,7 +39,7 @@ const PrimaryArticleView = (article: Article) => {
         <Button
           size="sm"
           animation="undeline"
-          onClick={() => setCurrentArticle(article)}
+          onClick={handleSetArticle}
         >
           Více
         </Button>

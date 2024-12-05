@@ -76,7 +76,7 @@ Všichni jsou v pořádku a štěňátka jsou už zamluvena`,
     year: 2023,
     images: [cerven20a, cerven20b, cerven20c, cerven20d],
     labels: ["fenka", "ž", "č", "r"],
-    galleryOptions: { width: 400, height: 600, expander: false },
+    galleryOptions: { width: 300, height: 525, expander: false },
     tags: { name: "štěňata", type: "puppies" },
   },
 ];

@@ -32,19 +32,26 @@ const GalleryContent = ({
 }: GalleryContentProps) => {
   return (
     <div
-      className={`grid relative w-full ${
-        isFullscreen ? "w-screen h-screen" : ""
+      className={`grid relative ${
+        isFullscreen ? "w-screen h-screen" : "max-w-full"
       }`}
-      style={!isFullscreen ? { width, height } : undefined}
+      style={!isFullscreen ? {
+        width: width ? `${width}px` : '100%',
+        maxWidth: '100%',
+      } : undefined}
     >
       {/* Carousel wrapper */}
-      <div
-        className={`relative overflow-hidden w-full h-full gallery primary-shadow ${
+    <div
+        className={`relative overflow-hidden w-full gallery primary-shadow ${
           isFullscreen ? "rounded-none" : "rounded-lg"
         }`}
+        style={!isFullscreen ? {
+          paddingBottom: `${((height || 400) / (width || 600)) * 100}%`,
+          position: 'relative'
+        } : undefined}
       >
         <div
-          className="flex transition-transform duration-300 ease-in-out h-full"
+          className="absolute inset-0 flex transition-transform duration-300 ease-in-out"
           style={{
             transform: `translateX(-${activeIndex * 100}%)`,
           }}
@@ -55,6 +62,7 @@ const GalleryContent = ({
                 src={img}
                 alt={alts[index]}
                 fill
+
                 className={`${
                   isFullscreen ? "object-contain bg-black/90" : "object-cover"
                 }`}

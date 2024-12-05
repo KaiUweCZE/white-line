@@ -23,7 +23,9 @@ const NavbarMenu = () => {
       ) : (
         <DesktopMenu pathname={pathname} navPaths={navPaths} />
       )}
-      {isSmall && isMenuActive && <MobileMenu />}
+      {isSmall && isMenuActive && (
+        <MobileMenu pathname={pathname} navPaths={navPaths} />
+      )}
     </div>
   );
 };

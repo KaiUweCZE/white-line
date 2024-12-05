@@ -32,7 +32,7 @@ export const breedData = [
   {
     id: "swn",
     name: "Vrh N",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Bastien Altája",
     shortFatherName: "Bastien",
     mother: "Chessie Whiteline Czech",
@@ -44,7 +44,7 @@ export const breedData = [
   {
     id: "swm",
     name: "Vrh M",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Simply One Igor",
     shortFatherName: "Simply",
     mother: "Frederika Bílá Merci",
@@ -56,7 +56,7 @@ export const breedData = [
   {
     id: "swl",
     name: "Vrh L",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Chester la Blankpapilio",
     shortFatherName: "Chester",
     mother: "Chessie Whiteline Czech",
@@ -68,7 +68,7 @@ export const breedData = [
   {
     id: "swk",
     name: "Vrh K",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Fénix Bílá Merci",
     shortFatherName: "Fénix",
     mother: "Flying Free vom Weissen Unterberg",
@@ -80,7 +80,7 @@ export const breedData = [
   {
     id: "swj",
     name: "Vrh J",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Neros du Glacier des Loups",
     shortFatherName: "Neros",
     mother: "Chessie Whiteline Czech",
@@ -92,7 +92,7 @@ export const breedData = [
   {
     id: "swi",
     name: "Vrh I",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Chester la Blankpapilio",
     shortFatherName: "Chester",
     mother: "Frederika Bílá Merci",
@@ -104,7 +104,7 @@ export const breedData = [
   {
     id: "swch",
     name: "Vrh Ch",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Bland Blaez vom Weissen Unterberg",
     shortFatherName: "Bland Blaez",
     mother: "Frederika Bílá Merci",
@@ -116,7 +116,7 @@ export const breedData = [
   {
     id: "swh",
     name: "Vrh H",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Aico vom Bruckner-Land",
     shortFatherName: "Aico",
     mother: "Alexia of Trebons Berger Blanc",
@@ -128,7 +128,7 @@ export const breedData = [
   {
     id: "swg",
     name: "Vrh G",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Chester la Blankpapilio",
     shortFatherName: "Chester",
     mother: "Frederika Bílá Merci",
@@ -140,7 +140,7 @@ export const breedData = [
   {
     id: "swf",
     name: "Vrh F",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Herkules King vom Nicolaiberg",
     shortFatherName: "Herkules",
     mother: "Allia - Nicole of Haely´s Future",
@@ -152,7 +152,7 @@ export const breedData = [
   {
     id: "swe",
     name: "Vrh E",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Fill White Majestics",
     shortFatherName: "Fill",
     mother: "Genny Lee Donnevara",
@@ -164,7 +164,7 @@ export const breedData = [
   {
     id: "swc",
     name: "Vrh C",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Melody Boy Miraja",
     shortFatherName: "Melody",
     mother: "Genny Lee Donnevara",
@@ -176,7 +176,7 @@ export const breedData = [
   {
     id: "swb",
     name: "Vrh B",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "Asterix Star z Ranče Montara",
     shortFatherName: "Asterix",
     mother: "Genny Lee Donnevara",
@@ -188,7 +188,7 @@ export const breedData = [
   {
     id: "swa",
     name: "Vrh A",
-    type: "švýcarský ovčák",
+    type: "Bílý švýcarský ovčák",
     father: "African-Jambo from old Vienna",
     shortFatherName: "African-Jambo",
     mother: "Genny Lee Donnevara",
@@ -196,5 +196,17 @@ export const breedData = [
     females: ["Amy", "Arnica", "Amádea"],
     males: ["Artaban", "Ahepjuk"],
     img: vrhA,
-  },
+  },{
+  id: "cra",
+  name: "Vrh A",
+  type: "Corgi",
+  father: "African-Jambo from old Vienna",
+  shortFatherName: "African-Jambo",
+  mother: "Genny Lee Donnevara",
+  shortMotherName: "Genny",
+  females: ["Amy", "Arnica", "Amádea"],
+  males: ["Artaban", "Ahepjuk"],
+  img: vrhA,
+},
 ];
+
