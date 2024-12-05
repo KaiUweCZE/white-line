@@ -15,17 +15,23 @@ import cerven20a from "@/assets/images/news/20cerven/a.webp";
 import cerven20b from "@/assets/images/news/20cerven/b.webp";
 import cerven20c from "@/assets/images/news/20cerven/c.webp";
 import cerven20d from "@/assets/images/news/20cerven/d.webp";
+
+import tilda2811a from "../images/tilda-28-11-2024(1).jpeg"
+
 import { Article } from "../types";
 
 const galleryDefault = { width: 600, height: 350, expander: false };
 
 export const newsData: Article[] = [
   {
-    headline: "Novinka z Hovínka",
-    text: "Systém, který se aktivoval při loňském letu společnosti Smartwings na řecký ostrov Skyros, je poslední záchranou, kdy od střetu se zemí dělí stroj sekundy. K ohrožení bezpečnosti došlo, říká zkušená pilotka Anna Polánecká k případu, kdy piloti přistávali v režimu vizuálního přiblížení, vlétli do mraku a od nárazu je dělilo 100 metrů.",
+    headline: "Corgi Vrh A",
+    text: `Před Vánoci očekáváme narození našeho prvního vrhu plemene Welsh corgi cardigan🧡
+Za letáček děkujeme EWE Design - Grafika pro chovatele - Graphics for breeders`,
     time: "10.říjen 2024",
     year: 2024,
-    images: [img1, img2, img3, img4],
+    images: [tilda2811a],
+    labels: ["Frída a štěňata", "modrý kluk", "zelený kluk", "červený kluk"],
+    galleryOptions: { width: 600, height: 450, expander: false },
     tags: { name: "štěňata", type: "puppies" },
   },
   {
@@ -52,7 +58,7 @@ export const newsData: Article[] = [
       img13cervenf,
       img13cerveng,
     ],
-    labels: ["cot?", "cot?", "cot?", "cot?", "cot?", "cot?", "cot?"],
+    labels: ["Frída s dětmi", "červený pejsek", "fenka", "fenka", "leták", "frída s dětmi", "frída s dětmi"],
     galleryOptions: galleryDefault,
     tags: { name: "závody", type: "races" },
   },
@@ -63,6 +69,7 @@ export const newsData: Article[] = [
     time: "7.červenec 2024",
     year: 2024,
     images: [],
+    labels: [],
     galleryOptions: galleryDefault,
     tags: { name: "výstava", type: "exhibition" },
   },
@@ -75,7 +82,7 @@ Všichni jsou v pořádku a štěňátka jsou už zamluvena`,
     time: "22.června 2023",
     year: 2023,
     images: [cerven20a, cerven20b, cerven20c, cerven20d],
-    labels: ["fenka", "ž", "č", "r"],
+    labels: ["fenka", "žlut pejsek", "červený pejsek", "modrý pejsek"],
     galleryOptions: { width: 300, height: 525, expander: false },
     tags: { name: "štěňata", type: "puppies" },
   },

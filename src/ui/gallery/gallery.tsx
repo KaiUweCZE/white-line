@@ -22,6 +22,10 @@ const Gallery = ({
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [images]);
+
   const nextSlide = useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);

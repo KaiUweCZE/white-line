@@ -1,5 +1,6 @@
-import { ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Info, Maximize2, X } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 
 interface GalleryContentProps {
   images: StaticImageData[];
@@ -30,6 +31,7 @@ const GalleryContent = ({
   onDotClick,
   onFullscreenToggle,
 }: GalleryContentProps) => {
+  const [activeInfo, setActiveInfo] = useState(false);
   return (
     <div
       className={`grid relative ${
@@ -74,7 +76,7 @@ const GalleryContent = ({
       </div>
 
       {/* Ovládací prvky */}
-      <ArrowLeft
+     {images.length > 1 && <> <ArrowLeft
         className="absolute arrow-icon h-6 w-6 left-4 cursor-pointer place-self-center hover:scale-110 transition-transform"
         color="white"
         strokeWidth={4}
@@ -87,8 +89,8 @@ const GalleryContent = ({
         strokeWidth={4}
         onClick={onNext}
         aria-disabled={isTransitioning}
-      />
-
+      /></>
+}
       {/* Fullscreen toggle */}
       {fullscreen && (
         <>
@@ -119,6 +121,11 @@ const GalleryContent = ({
           />
         ))}
       </div>
+      <div className="absolute top-4 left-4 text-white">
+        <Info className="w-5 h-5" onMouseEnter={() => setActiveInfo(true)} onMouseLeave={() => setActiveInfo(false)} />
+      {activeInfo && <span>{alts[activeIndex]}</span>}
+      </div>
+     
     </div>
   );
 };
