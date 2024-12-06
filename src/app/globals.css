@@ -10,6 +10,7 @@
   --standard-transition: 0.4s;
   --md-radius: 0.5rem;
   --primary-bg: #fffafa;
+  --not-foun-bg: #fff6e9 ;
 }
 
 * {
@@ -30,6 +31,12 @@ body {
   background: var(--background);
 }
 
+body:has(.container-error) {
+  background-color: var(--not-foun-bg);
+  .navbar{
+  display: none;}
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -45,6 +52,17 @@ body {
     opacity: 0;
   }
 }
+
+.container-error{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center;
+  max-width: var(--max-width);
+  width: 100%;
+  margin-inline: auto;
+}
+
+
 
 main {
   max-width: var(--max-width);

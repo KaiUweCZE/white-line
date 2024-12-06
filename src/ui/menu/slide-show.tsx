@@ -30,7 +30,11 @@ const Slideshow = ({ slides, mobileSlides }: SlideshowProps) => {
   }, [currentSlide, slides.length]);
 
   return (
-    <div className="slideshow">
+    <section 
+    className="slideshow"
+    aria-label="hero slideshow"
+    role="region"
+    >
       {actualSlides.map((slide, index) => (
         <div
           key={index}
@@ -39,15 +43,18 @@ const Slideshow = ({ slides, mobileSlides }: SlideshowProps) => {
           <Image
             src={slide.src}
             alt={slide.alt}
-            style={{ objectFit: "cover" }}
-            layout="fill"
+            fill
+            sizes="100vw"
             priority={index === 0}
-            quality={80}
+
             loading={index === 0 ? "eager" : "lazy"}
+            quality={90}
+            placeholder="blur"
+            className="object-cover"
           />
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

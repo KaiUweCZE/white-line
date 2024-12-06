@@ -17,7 +17,7 @@ const NavbarMenu = () => {
   const isSmall = useWindowSize();
   const [isMenuActive, setIsMenuActive] = useState(false);
   return (
-    <div className="flex items-center justify-end pr-4 relative">
+    <nav className="flex items-center justify-end pr-4 relative" aria-label="main menu">
       {isSmall ? (
         <HamburgerIcon setIsMenuActive={setIsMenuActive} />
       ) : (
@@ -26,7 +26,7 @@ const NavbarMenu = () => {
       {isSmall && isMenuActive && (
         <MobileMenu pathname={pathname} navPaths={navPaths} />
       )}
-    </div>
+    </nav>
   );
 };
 

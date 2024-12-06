@@ -9,8 +9,14 @@ const MobileMenu = ({
   pathname: string;
 }) => {
   return (
-    <div className="mobile-menu w-36 bg-stone-800/90 primary-shadow">
-      <ul className="expanded py-3">
+    <div 
+    className="mobile-menu w-36 bg-stone-800/90 primary-shadow"
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="navigation menu"
+    >
+      <ul className="expanded py-3" role="menu">
         {navPaths?.map((path) => (
           <li
             key={path.name}
