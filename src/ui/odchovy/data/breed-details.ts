@@ -1,363 +1,415 @@
 // vrh ch
-import blaezImg1 from "../images/vrhch/blaez.webp";
-import blaezImg2 from "../images/vrhch/blaez2.webp";
-import rikaImg1 from "../images/vrhch/rika1.webp";
-import rikaImg2 from "../images/vrhch/rika2.webp";
-import img1 from "../images/vrhch/chup.webp";
-import chupImg1 from "../images/vrhch/chup.webp";
-import chupImg2 from "../images/vrhch/chup2.webp";
-import chupImg3 from "../images/vrhch/chup3.webp";
-import chessieImg1 from "../images/vrhch/chessie.webp";
-import chessieImg2 from "../images/vrhch/chessie2.webp";
-import cheironImg1 from "../images/vrhch/cheiron1.webp";
-import cheironImg2 from "../images/vrhch/cheiron2.webp";
+import blaezImg1 from '../images/vrhch/blaez.webp';
+import blaezImg2 from '../images/vrhch/blaez2.webp';
+import rikaImg1 from '../images/vrhch/rika1.webp';
+import rikaImg2 from '../images/vrhch/rika2.webp';
+import img1 from '../images/vrhch/chup.webp';
+import chupImg1 from '../images/vrhch/chup.webp';
+import chupImg2 from '../images/vrhch/chup2.webp';
+import chupImg3 from '../images/vrhch/chup3.webp';
+import chessieImg1 from '../images/vrhch/chessie.webp';
+import chessieImg2 from '../images/vrhch/chessie2.webp';
+import cheironImg1 from '../images/vrhch/cheiron1.webp';
+import cheironImg2 from '../images/vrhch/cheiron2.webp';
+/*import { StaticImageData } from 'next/image';
+
+interface ParentInfo {
+  name: string;
+  images: StaticImageData[];
+  physical?: string[];
+  health?: string[];
+  titles?: string[];
+}
+
+interface BreedDetail {
+  id: string;
+  name: string;
+  birth: string;
+  father: ParentInfo;
+  mother: ParentInfo;
+  females?: {
+    name: string;
+    images: StaticImageData[];
+    labels: string[];
+  }[];
+  males?: {
+    name: string;
+    images: StaticImageData[];
+    labels: string[];
+  }[];
+}*/
 
 export const breedDetails = [
   {
-    id: "swa",
-    name: "Vrh Ch",
+    id: 'swa',
+    name: 'Vrh Ch',
     father: {
-      name: "Bland Blaez vom Weissen Unterberg",
+      name: 'Bland Blaez vom Weissen Unterberg',
       images: [blaezImg1, blaezImg2],
-      info: "65 cm, plnochrupý, HD A, ED 0, MDR1 +/+, DM N/N junioršampion Slovinska",
+      physical: ['65 cm', 'plnochrupý'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['junioršampion Slovinska'],
     },
     mother: {
-      name: "Frederika Bílá Merci",
+      name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      info: "61 cm, plonochrupá, HD A, ED 0, MDR1 +/+, DM N/N NHAT, HWT, IHT1, IHT2, IHT3 CACT CAC",
+      physical: ['61 cm', 'plonochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
     females: [
       {
-        name: "Chara Jasmine",
+        name: 'Chara Jasmine',
         images: [img1],
-        labels: ["Chara Jasmine"],
+        labels: ['Chara Jasmine'],
       },
       {
-        name: "Chessie",
+        name: 'Chessie',
         images: [chessieImg1, chessieImg2],
-        labels: ["Chessie"],
+        labels: ['Chessie'],
       },
       {
-        name: "Chilli",
+        name: 'Chilli',
         images: [img1],
-        labels: ["Chilli"],
+        labels: ['Chilli'],
       },
     ],
     males: [
       {
-        name: "Chariowalda",
+        name: 'Chariowalda',
         images: [img1],
-        labels: ["Chariowalda"],
+        labels: ['Chariowalda'],
       },
       {
-        name: "Cheddar",
+        name: 'Cheddar',
         images: [img1],
-        labels: ["Cheddar"],
+        labels: ['Cheddar'],
       },
       {
-        name: "Che Guevara",
+        name: 'Che Guevara',
         images: [img1],
-        labels: ["Che Guevara"],
+        labels: ['Che Guevara'],
       },
       {
-        name: "Cheiron",
+        name: 'Cheiron',
         images: [cheironImg1, cheironImg2],
-        labels: ["Cheiron"],
+        labels: ['Cheiron'],
       },
       {
-        name: "Chupacabra",
+        name: 'Chupacabra',
         images: [chupImg1, chupImg2, chupImg3],
-        labels: ["Chupacabra"],
+        labels: ['Chupacabra'],
       },
     ],
   },
   {
-    id: "swb",
-    name: "Vrh Ch",
+    id: 'swb',
+    name: 'Vrh Ch',
     father: {
-      name: "Bland Blaez vom Weissen Unterberg",
+      name: 'Bland Blaez vom Weissen Unterberg',
       images: [blaezImg1, blaezImg2],
-      info: "65 cm, plnochrupý, HD A, ED 0, MDR1 +/+, DM N/N junioršampion Slovinska",
+      physical: ['65 cm', 'plnochrupý'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['junioršampion Slovinska'],
     },
     mother: {
-      name: "Frederika Bílá Merci",
+      name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      info: "61 cm, plonochrupá, HD A, ED 0, MDR1 +/+, DM N/N NHAT, HWT, IHT1, IHT2, IHT3 CACT CAC",
+      physical: ['61 cm', 'plonochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
     females: [
       {
-        name: "Chara Jasmine",
+        name: 'Chara Jasmine',
         images: [img1],
-        labels: ["Chara Jasmine"],
+        labels: ['Chara Jasmine'],
       },
       {
-        name: "Chessie",
+        name: 'Chessie',
         images: [chessieImg1, chessieImg2],
-        labels: ["Chessie"],
+        labels: ['Chessie'],
       },
       {
-        name: "Chilli",
+        name: 'Chilli',
         images: [img1],
-        labels: ["Chilli"],
+        labels: ['Chilli'],
       },
     ],
     males: [
       {
-        name: "Chariowalda",
+        name: 'Chariowalda',
         images: [img1],
-        labels: ["Chariowalda"],
+        labels: ['Chariowalda'],
       },
       {
-        name: "Cheddar",
+        name: 'Cheddar',
         images: [img1],
-        labels: ["Cheddar"],
+        labels: ['Cheddar'],
       },
       {
-        name: "Che Guevara",
+        name: 'Che Guevara',
         images: [img1],
-        labels: ["Che Guevara"],
+        labels: ['Che Guevara'],
       },
       {
-        name: "Cheiron",
+        name: 'Cheiron',
         images: [cheironImg1, cheironImg2],
-        labels: ["Cheiron"],
+        labels: ['Cheiron'],
       },
       {
-        name: "Chupacabra",
+        name: 'Chupacabra',
         images: [chupImg1, chupImg2, chupImg3],
-        labels: ["Chupacabra"],
+        labels: ['Chupacabra'],
       },
     ],
   },
   {
-    id: "swc",
-    name: "Vrh Ch",
+    id: 'swc',
+    name: 'Vrh Ch',
     father: {
-      name: "Bland Blaez vom Weissen Unterberg",
+      name: 'Bland Blaez vom Weissen Unterberg',
       images: [blaezImg1, blaezImg2],
-      info: "65 cm, plnochrupý, HD A, ED 0, MDR1 +/+, DM N/N junioršampion Slovinska",
+      physical: ['65 cm', 'plnochrupý'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['junioršampion Slovinska'],
     },
     mother: {
-      name: "Frederika Bílá Merci",
+      name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      info: "61 cm, plonochrupá, HD A, ED 0, MDR1 +/+, DM N/N NHAT, HWT, IHT1, IHT2, IHT3 CACT CAC",
+      physical: ['61 cm', 'plnochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
     females: [
       {
-        name: "Chara Jasmine",
+        name: 'Chara Jasmine',
         images: [img1],
-        labels: ["Chara Jasmine"],
+        labels: ['Chara Jasmine'],
       },
       {
-        name: "Chessie",
+        name: 'Chessie',
         images: [chessieImg1, chessieImg2],
-        labels: ["Chessie"],
+        labels: ['Chessie'],
       },
       {
-        name: "Chilli",
+        name: 'Chilli',
         images: [img1],
-        labels: ["Chilli"],
+        labels: ['Chilli'],
       },
     ],
     males: [
       {
-        name: "Chariowalda",
+        name: 'Chariowalda',
         images: [img1],
-        labels: ["Chariowalda"],
+        labels: ['Chariowalda'],
       },
       {
-        name: "Cheddar",
+        name: 'Cheddar',
         images: [img1],
-        labels: ["Cheddar"],
+        labels: ['Cheddar'],
       },
       {
-        name: "Che Guevara",
+        name: 'Che Guevara',
         images: [img1],
-        labels: ["Che Guevara"],
+        labels: ['Che Guevara'],
       },
       {
-        name: "Cheiron",
+        name: 'Cheiron',
         images: [cheironImg1, cheironImg2],
-        labels: ["Cheiron"],
+        labels: ['Cheiron'],
       },
       {
-        name: "Chupacabra",
+        name: 'Chupacabra',
         images: [chupImg1, chupImg2, chupImg3],
-        labels: ["Chupacabra"],
+        labels: ['Chupacabra'],
       },
     ],
   },
   {
-    id: "swd",
-    name: "Vrh Ch",
+    id: 'swd',
+    name: 'Vrh Ch',
     father: {
-      name: "Bland Blaez vom Weissen Unterberg",
+      name: 'Bland Blaez vom Weissen Unterberg',
       images: [blaezImg1, blaezImg2],
-      info: "65 cm, plnochrupý, HD A, ED 0, MDR1 +/+, DM N/N junioršampion Slovinska",
+      physical: ['65 cm', 'plnochrupý'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['junioršampion Slovinska'],
     },
     mother: {
-      name: "Frederika Bílá Merci",
+      name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      info: "61 cm, plonochrupá, HD A, ED 0, MDR1 +/+, DM N/N NHAT, HWT, IHT1, IHT2, IHT3 CACT CAC",
+      physical: ['61 cm', 'plonochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
     females: [
       {
-        name: "Chara Jasmine",
+        name: 'Chara Jasmine',
         images: [img1],
-        labels: ["Chara Jasmine"],
+        labels: ['Chara Jasmine'],
       },
       {
-        name: "Chessie",
+        name: 'Chessie',
         images: [chessieImg1, chessieImg2],
-        labels: ["Chessie"],
+        labels: ['Chessie'],
       },
       {
-        name: "Chilli",
+        name: 'Chilli',
         images: [img1],
-        labels: ["Chilli"],
+        labels: ['Chilli'],
       },
     ],
     males: [
       {
-        name: "Chariowalda",
+        name: 'Chariowalda',
         images: [img1],
-        labels: ["Chariowalda"],
+        labels: ['Chariowalda'],
       },
       {
-        name: "Cheddar",
+        name: 'Cheddar',
         images: [img1],
-        labels: ["Cheddar"],
+        labels: ['Cheddar'],
       },
       {
-        name: "Che Guevara",
+        name: 'Che Guevara',
         images: [img1],
-        labels: ["Che Guevara"],
+        labels: ['Che Guevara'],
       },
       {
-        name: "Cheiron",
+        name: 'Cheiron',
         images: [cheironImg1, cheironImg2],
-        labels: ["Cheiron"],
+        labels: ['Cheiron'],
       },
       {
-        name: "Chupacabra",
+        name: 'Chupacabra',
         images: [chupImg1, chupImg2, chupImg3],
-        labels: ["Chupacabra"],
+        labels: ['Chupacabra'],
       },
     ],
   },
   {
-    id: "swe",
-    name: "Vrh Ch",
+    id: 'swe',
+    name: 'Vrh Ch',
     father: {
-      name: "Bland Blaez vom Weissen Unterberg",
+      name: 'Bland Blaez vom Weissen Unterberg',
       images: [blaezImg1, blaezImg2],
-      info: "65 cm, plnochrupý, HD A, ED 0, MDR1 +/+, DM N/N junioršampion Slovinska",
+      physical: ['65 cm', 'plnochrupý'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['junioršampion Slovinska'],
     },
     mother: {
-      name: "Frederika Bílá Merci",
+      name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      info: "61 cm, plonochrupá, HD A, ED 0, MDR1 +/+, DM N/N NHAT, HWT, IHT1, IHT2, IHT3 CACT CAC",
+      physical: ['61 cm', 'plonochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
     females: [
       {
-        name: "Chara Jasmine",
+        name: 'Chara Jasmine',
         images: [img1],
-        labels: ["Chara Jasmine"],
+        labels: ['Chara Jasmine'],
       },
       {
-        name: "Chessie",
+        name: 'Chessie',
         images: [chessieImg1, chessieImg2],
-        labels: ["Chessie"],
+        labels: ['Chessie'],
       },
       {
-        name: "Chilli",
+        name: 'Chilli',
         images: [img1],
-        labels: ["Chilli"],
+        labels: ['Chilli'],
       },
     ],
     males: [
       {
-        name: "Chariowalda",
+        name: 'Chariowalda',
         images: [img1],
-        labels: ["Chariowalda"],
+        labels: ['Chariowalda'],
       },
       {
-        name: "Cheddar",
+        name: 'Cheddar',
         images: [img1],
-        labels: ["Cheddar"],
+        labels: ['Cheddar'],
       },
       {
-        name: "Che Guevara",
+        name: 'Che Guevara',
         images: [img1],
-        labels: ["Che Guevara"],
+        labels: ['Che Guevara'],
       },
       {
-        name: "Cheiron",
+        name: 'Cheiron',
         images: [cheironImg1, cheironImg2],
-        labels: ["Cheiron"],
+        labels: ['Cheiron'],
       },
       {
-        name: "Chupacabra",
+        name: 'Chupacabra',
         images: [chupImg1, chupImg2, chupImg3],
-        labels: ["Chupacabra"],
+        labels: ['Chupacabra'],
       },
     ],
   },
   {
-    id: "swch",
-    name: "Vrh Ch",
+    id: 'swch',
+    name: 'Vrh Ch',
+    birth: '4.6.2019',
     father: {
-      name: "Bland Blaez vom Weissen Unterberg",
+      name: 'Bland Blaez vom Weissen Unterberg',
       images: [blaezImg1, blaezImg2],
-      info: "65 cm, plnochrupý, HD A, ED 0, MDR1 +/+, DM N/N junioršampion Slovinska",
+      physical: ['65 cm', 'plnochrupý'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['junioršampion Slovinska'],
     },
     mother: {
-      name: "Frederika Bílá Merci",
+      name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      info: "61 cm, plonochrupá, HD A, ED 0, MDR1 +/+, DM N/N NHAT, HWT, IHT1, IHT2, IHT3 CACT CAC",
+      physical: ['61 cm', 'plonochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
     females: [
       {
-        name: "Chara Jasmine",
+        name: 'Chara Jasmine',
         images: [img1],
-        labels: ["Chara Jasmine"],
+        labels: ['Chara Jasmine'],
       },
       {
-        name: "Chessie",
+        name: 'Chessie',
         images: [chessieImg1, chessieImg2],
-        labels: ["Chessie"],
+        labels: ['Chessie'],
       },
       {
-        name: "Chilli",
+        name: 'Chilli',
         images: [img1],
-        labels: ["Chilli"],
+        labels: ['Chilli'],
       },
     ],
     males: [
       {
-        name: "Chariowalda",
+        name: 'Chariowalda',
         images: [img1],
-        labels: ["Chariowalda"],
+        labels: ['Chariowalda'],
       },
       {
-        name: "Cheddar",
+        name: 'Cheddar',
         images: [img1],
-        labels: ["Cheddar"],
+        labels: ['Cheddar'],
       },
       {
-        name: "Che Guevara",
+        name: 'Che Guevara',
         images: [img1],
-        labels: ["Che Guevara"],
+        labels: ['Che Guevara'],
       },
       {
-        name: "Cheiron",
+        name: 'Cheiron',
         images: [cheironImg1, cheironImg2],
-        labels: ["Cheiron"],
+        labels: ['Cheiron'],
       },
       {
-        name: "Chupacabra",
+        name: 'Chupacabra',
         images: [chupImg1, chupImg2, chupImg3],
-        labels: ["Chupacabra"],
+        labels: ['Chupacabra'],
       },
     ],
   },
