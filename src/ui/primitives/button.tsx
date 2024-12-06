@@ -4,7 +4,7 @@ import { Loader2 } from "lucide-react";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 const buttonVariants = cva(
-  `inline-flex relative items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50`,
+  `inline-flex relative rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50`,
   {
     variants: {
       intent: {
@@ -20,6 +20,11 @@ const buttonVariants = cva(
           "outline-yellow-300 hover:bg-yellow-300/20 data-[active=true]:bg-yellow-300/30 duration-300",
         none: "",
       },
+      alignment: {
+        left: "justify-start",
+        center: "justify-center items-center",
+        right: "justify-end",
+      },
       active: {
         true: "outline outline-1",
       },
@@ -30,7 +35,7 @@ const buttonVariants = cva(
       },
       variant: {
         clean: "",
-        outlined: "border-2",
+        outlined: "border-2 border-stone-700",
       },
       animation: {
         undeline: "underline-button",
@@ -43,6 +48,7 @@ const buttonVariants = cva(
       intent: "primary",
       animation: "none",
       colored: "none",
+      alignment: "center",
     },
   }
 );

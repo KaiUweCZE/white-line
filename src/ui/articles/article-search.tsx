@@ -99,7 +99,7 @@ const ArticleSearch = () => {
           {option.name === "Roky" ? (year ? year : "Roky") : option.name}
         </Button>
       ))}
-      {pickYear && <YearsDropdown setYear={setYear} />}
+      {pickYear && <YearsDropdown setYear={setYear} setPickYear={setPickYear} />}
     </div>
   );
 };

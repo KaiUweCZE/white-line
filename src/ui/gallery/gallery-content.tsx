@@ -34,7 +34,7 @@ const GalleryContent = ({
   const [activeInfo, setActiveInfo] = useState(false);
   return (
     <div
-      className={`grid relative ${
+      className={`grid relative mx-auto ${
         isFullscreen ? "w-screen h-screen" : "max-w-full"
       }`}
       style={!isFullscreen ? {
