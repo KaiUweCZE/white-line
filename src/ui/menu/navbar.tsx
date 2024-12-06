@@ -1,11 +1,11 @@
-import { slides } from "./data/menu-data";
+import { slides, mobileSlides } from "./data/menu-data";
 import NavbarMenu from "./navbar-menu";
 import Slideshow from "./slide-show";
 
 const Navbar = () => {
   return (
     <header className="navbar">
-      <Slideshow slides={slides} />
+      <Slideshow slides={slides}  mobileSlides={mobileSlides} />
       <div className="header-bar bg-stone-950/70">
         <div className="flex pl-4 items-center">
           <span className="text-2xl font-bold">Whiteline</span>

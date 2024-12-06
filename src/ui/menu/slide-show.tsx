@@ -1,16 +1,25 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
+import { useOrientation } from "./hooks/use-orientation";
 
 interface SlideshowProps {
   slides: {
     src: StaticImageData;
     alt: string;
-  }[];
+  }[]
+  mobileSlides: {
+    src: StaticImageData;
+    alt: string;
+  }[]
+  ;
 }
 
-const Slideshow = ({ slides }: SlideshowProps) => {
+const Slideshow = ({ slides, mobileSlides }: SlideshowProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const orientation = useOrientation();
+
+  const actualSlides = orientation === "landscape" ? slides : mobileSlides;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,7 +31,7 @@ const Slideshow = ({ slides }: SlideshowProps) => {
 
   return (
     <div className="slideshow">
-      {slides.map((slide, index) => (
+      {actualSlides.map((slide, index) => (
         <div
           key={index}
           className={`slide ${index === currentSlide ? "active" : ""}`}
