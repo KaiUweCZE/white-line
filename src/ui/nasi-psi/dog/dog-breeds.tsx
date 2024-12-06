@@ -1,5 +1,5 @@
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 interface DogBreedsProps {
   breeds: { href: string; name: string; image: StaticImageData }[];
@@ -17,7 +17,7 @@ const DogBreeds = ({ breeds }: DogBreedsProps) => {
               key={breed.name}
               className="group rounded-lg overflow-hidden secondary-shadow relative"
             >
-              <Image src={breed.image} alt={`${breed.name} photo`} />
+              <Image src={breed.image} placeholder="blur" alt={`${breed.name} photo`} />
               <span className="gallery-link text-white bg-slate-800/70 w-full pl-4">
                 Prohlédnout Galerii
               </span>

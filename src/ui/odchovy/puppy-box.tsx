@@ -24,6 +24,7 @@ const PuppyBox = ({ puppies, gender }: PuppyBoxProps) => {
                   alt={puppy.name}
                   fill
                   className="object-cover"
+                  placeholder="blur"
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               ) : (

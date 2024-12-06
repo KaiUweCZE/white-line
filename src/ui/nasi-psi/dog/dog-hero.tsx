@@ -1,6 +1,6 @@
-import { CalendarDays, Globe, Medal, PawPrint } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import { CalendarDays, Globe, Medal, PawPrint } from 'lucide-react';
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 type DogHeroType = {
   name?: string;
@@ -30,6 +30,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
             alt={`${dog.name} photo`}
             height={400}
             width={300}
+            placeholder="blur"
             className="rounded-lg secondary-shadow"
           />
         )}
@@ -57,10 +58,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
               {dog.pedigree && (
                 <div className="flex gap-2">
                   <PawPrint className="h-5 w-5" />
-                  <Link
-                    href={dog.pedigree}
-                    className="text-gray-700 hover:font-bold"
-                  >
+                  <Link href={dog.pedigree} className="text-gray-700 hover:font-bold">
                     rodokmen
                   </Link>
                 </div>
@@ -69,20 +67,12 @@ const DogHero = ({ dog }: DogHeroProps) => {
 
             <div className="space-y-4">
               <div>
-                <h2 className="text-sm font-medium text-gray-500 mb-2">
-                  ZDRAVOTNÍ VYŠETŘENÍ
-                </h2>
-                <p className="text-gray-900">
-                  {dog?.health && dog.health.join(", ")}
-                </p>
+                <h2 className="text-sm font-medium text-gray-500 mb-2">ZDRAVOTNÍ VYŠETŘENÍ</h2>
+                <p className="text-gray-900">{dog?.health && dog.health.join(', ')}</p>
               </div>
               <div>
-                <h2 className="text-sm font-medium text-gray-500 mb-2">
-                  ZKOUŠKY
-                </h2>
-                <p className="text-gray-900">
-                  {dog?.exams && dog.exams.join(", ")}
-                </p>
+                <h2 className="text-sm font-medium text-gray-500 mb-2">ZKOUŠKY</h2>
+                <p className="text-gray-900">{dog?.exams && dog.exams.join(', ')}</p>
               </div>
             </div>
           </div>
