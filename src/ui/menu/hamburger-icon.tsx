@@ -1,14 +1,23 @@
-import { Dispatch, SetStateAction } from "react";
-import "./hamburger.css";
+import { Dispatch, SetStateAction } from 'react';
+import './hamburger.css';
 
 const HamburgerIcon = ({
   setIsMenuActive,
+  isMenuActive,
 }: {
   setIsMenuActive: Dispatch<SetStateAction<boolean>>;
+  isMenuActive: boolean;
 }) => {
   return (
     <label className="hamburger" role="button" aria-controls="mobile-menu" aria-label="main-menu">
-      <input type="checkbox" onClick={() => setIsMenuActive((prev) => !prev)} />
+      <input
+        type="checkbox"
+        checked={isMenuActive}
+        onChange={(e) => {
+          e.stopPropagation();
+          setIsMenuActive((isMenuActive) => !isMenuActive);
+        }}
+      />
       <svg viewBox="0 0 32 32" aria-hidden="true" role="presentation">
         <path
           className="line line-top-bottom"

@@ -1,15 +1,15 @@
-"use client";
-import { usePathname } from "next/navigation";
-import { useWindowSize } from "./hooks/use-window-size";
-import HamburgerIcon from "./hamburger-icon";
-import DesktopMenu from "./desktop-menu";
-import { useState } from "react";
-import MobileMenu from "./mobile-menu";
+'use client';
+import { usePathname } from 'next/navigation';
+import { useWindowSize } from './hooks/use-window-size';
+import HamburgerIcon from './hamburger-icon';
+import DesktopMenu from './desktop-menu';
+import { useState } from 'react';
+import MobileMenu from './mobile-menu';
 
 const navPaths = [
-  { name: "Úvod", href: "/" },
-  { name: "Odchovy", href: "/odchovy" },
-  { name: "Naši Psi", href: "/nasi-psi" },
+  { name: 'Úvod', href: '/' },
+  { name: 'Odchovy', href: '/odchovy' },
+  { name: 'Naši Psi', href: '/nasi-psi' },
 ];
 
 const NavbarMenu = () => {
@@ -17,20 +17,15 @@ const NavbarMenu = () => {
   const isSmall = useWindowSize();
   const [isMenuActive, setIsMenuActive] = useState(false);
 
-
   return (
     <nav className="flex items-center justify-end pr-4 relative" aria-label="main menu">
       {isSmall ? (
-        <HamburgerIcon setIsMenuActive={setIsMenuActive} />
+        <HamburgerIcon setIsMenuActive={setIsMenuActive} isMenuActive={isMenuActive} />
       ) : (
         <DesktopMenu pathname={pathname} navPaths={navPaths} />
       )}
       {isSmall && isMenuActive && (
-        <MobileMenu 
-          pathname={pathname} 
-          navPaths={navPaths} 
-          setIsMenuActive={setIsMenuActive}
-        />
+        <MobileMenu pathname={pathname} navPaths={navPaths} setIsMenuActive={setIsMenuActive} />
       )}
     </nav>
   );
