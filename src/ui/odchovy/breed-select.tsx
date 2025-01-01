@@ -1,11 +1,15 @@
 import { useState } from 'react';
 
-const BreedSelect = ({ setActualBreed, actualBreed }: { setActualBreed: (breed: string) => void, actualBreed: string }) => {
+const BreedSelect = ({
+  setActualBreed,
+  actualBreed,
+}: {
+  setActualBreed: (breed: string) => void;
+  actualBreed: string;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const breeds =  ['Bílý švýcarský ovčák','Německý ovčák', 'Corgi']
-  ;
-
+  const breeds = ['Bílý švýcarský ovčák', 'Německý ovčák', 'Corgi'];
   const handleSelect = (breed: string) => {
     setActualBreed(breed);
     setIsOpen(false);
@@ -27,9 +31,7 @@ const BreedSelect = ({ setActualBreed, actualBreed }: { setActualBreed: (breed: 
           transition-all duration-200
         "
       >
-        <span className="text-gray-800 text-sm font-medium">
-          {actualBreed}
-        </span>
+        <span className="text-gray-800 text-sm font-medium">{actualBreed}</span>
         <svg
           className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
             isOpen ? 'rotate-180' : ''
@@ -38,17 +40,13 @@ const BreedSelect = ({ setActualBreed, actualBreed }: { setActualBreed: (breed: 
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 
       {isOpen && (
-        <div className="
+        <div
+          className="
           absolute
           w-full
           mt-1
@@ -59,7 +57,8 @@ const BreedSelect = ({ setActualBreed, actualBreed }: { setActualBreed: (breed: 
           z-50
           transition-all
           duration-200
-        ">
+        "
+        >
           {breeds.map((breed) => (
             <button
               key={breed}
@@ -78,9 +77,11 @@ const BreedSelect = ({ setActualBreed, actualBreed }: { setActualBreed: (breed: 
                 text-left
               "
             >
-              <span className={`font-medium ${
-                actualBreed === breed ? 'text-gray-900' : 'text-gray-600'
-              }`}>
+              <span
+                className={`font-medium ${
+                  actualBreed === breed ? 'text-gray-900' : 'text-gray-600'
+                }`}
+              >
                 {breed}
               </span>
               {actualBreed === breed && (

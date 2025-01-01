@@ -1,45 +1,34 @@
-import img1 from '@/assets/images/news/a.jpg';
-import img2 from '@/assets/images/news/b.jpg';
-import img3 from '@/assets/images/news/c.jpg';
-import img4 from '@/assets/images/news/d.jpg';
-
-import img13cervena from '@/assets/images/news/a.jpg';
-import img13cervenb from '@/assets/images/news/b.jpg';
-import img13cervenc from '@/assets/images/news/c.jpg';
-import img13cervend from '@/assets/images/news/d.jpg';
-import img13cervene from '@/assets/images/news/e.webp';
-import img13cervenf from '@/assets/images/news/f.webp';
-import img13cerveng from '@/assets/images/news/g.webp';
-
-import cerven20a from '@/assets/images/news/20cerven/a.webp';
-import cerven20b from '@/assets/images/news/20cerven/b.webp';
-import cerven20c from '@/assets/images/news/20cerven/c.webp';
-import cerven20d from '@/assets/images/news/20cerven/d.webp';
-
-import tilda2811a from '../images/tilda-28-11-2024(1).jpeg';
-
-import img810a from '../images/8-10-2024/1.webp';
-import img810b from '../images/8-10-2024/2.webp';
-import img810c from '../images/8-10-2024/3.webp';
-import img810d from '../images/8-10-2024/4.webp';
-import img810e from '../images/8-10-2024/5.webp';
-import img810f from '../images/8-10-2024/6.webp';
-import img810g from '../images/8-10-2024/7.webp';
-import img810h from '../images/8-10-2024/8.webp';
-import img810i from '../images/8-10-2024/9.webp';
-
+import {
+  vrhAImages,
+  italiePaseniImages,
+  vrhPNarozeniImages,
+  stenataVenkuImages,
+  vrhPFotkyImages,
+  corgiVrhAImages,
+} from '@/assets/images/articles/2024';
 import { Article } from '../types';
 
 const galleryDefault = { width: 600, height: 350, expander: false };
 
 export const newsData: Article[] = [
   {
+    headline: 'Narodil se vrh A',
+    text: `20.12. se nám narodil náš první vrh cardiganů ve složení 3 fenky a 1 pejsek.🩷🩷🩷🩵
+Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v pořádku.`,
+    time: '20.12.2024',
+    year: 2024,
+    images: [...corgiVrhAImages.gallery],
+    labels: [],
+    galleryOptions: { width: 600, height: 450, expander: false },
+    tags: { name: 'štěňata', type: 'puppies' },
+  },
+  {
     headline: 'Corgi Vrh A',
     text: `Před Vánoci očekáváme narození našeho prvního vrhu plemene Welsh corgi cardigan🧡
 Za letáček děkujeme EWE Design - Grafika pro chovatele - Graphics for breeders`,
     time: '10.říjen 2024',
     year: 2024,
-    images: [tilda2811a],
+    images: [...vrhAImages.gallery],
     labels: ['Frída a štěňata', 'modrý kluk', 'zelený kluk', 'červený kluk'],
     galleryOptions: { width: 600, height: 450, expander: false },
     tags: { name: 'štěňata', type: 'puppies' },
@@ -55,7 +44,7 @@ Za letáček děkujeme EWE Design - Grafika pro chovatele - Graphics for breeder
     Děkuji za podporu Klubu bílého ovčáka!`,
     time: '8.říjen 2024',
     year: 2024,
-    images: [img810a, img810b, img810c, img810d, img810e, img810f, img810g, img810h, img810i],
+    images: [...italiePaseniImages.gallery],
     labels: [
       'Česká výprava',
       'Česká výprava',
@@ -77,7 +66,7 @@ Za letáček děkujeme EWE Design - Grafika pro chovatele - Graphics for breeder
     text: 'Štěňátka se budou již brzy stěhovat do venkovního výběhu, a tak jsme využili pěkného počasí a vzali je poprvé ven',
     time: '12.červenec 2024',
     year: 2024,
-    images: [img1, img2, img3, img4],
+    images: [...stenataVenkuImages.gallery],
     labels: ['Frída a štěňata', 'modrý kluk', 'zelený kluk', 'červený kluk'],
     galleryOptions: galleryDefault,
     tags: { name: 'závody', type: 'races' },
@@ -87,15 +76,7 @@ Za letáček děkujeme EWE Design - Grafika pro chovatele - Graphics for breeder
     text: 'Fotky štěňátek',
     time: '13.červenec 2024',
     year: 2024,
-    images: [
-      img13cervena,
-      img13cervenb,
-      img13cervenc,
-      img13cervend,
-      img13cervene,
-      img13cervenf,
-      img13cerveng,
-    ],
+    images: [...vrhPFotkyImages.gallery],
     labels: [
       'Frída s dětmi',
       'červený pejsek',
@@ -125,9 +106,9 @@ Za letáček děkujeme EWE Design - Grafika pro chovatele - Graphics for breeder
 Fridě a Largovi se narodili 3 chlapečci a 1 holčička 
 💙💙💙❤️
 Všichni jsou v pořádku a štěňátka jsou už zamluvena`,
-    time: '22.června 2023',
-    year: 2023,
-    images: [cerven20a, cerven20b, cerven20c, cerven20d],
+    time: '22.června 2024',
+    year: 2024,
+    images: [...vrhPNarozeniImages.gallery],
     labels: ['fenka', 'žlut pejsek', 'červený pejsek', 'modrý pejsek'],
     galleryOptions: { width: 300, height: 525, expander: false },
     tags: { name: 'štěňata', type: 'puppies' },

@@ -10,7 +10,7 @@
   --standard-transition: 0.4s;
   --md-radius: 0.5rem;
   --primary-bg: #fffafa;
-  --not-foun-bg: #fff6e9 ;
+  --not-foun-bg: #fff6e9;
 }
 
 * {
@@ -33,8 +33,9 @@ body {
 
 body:has(.container-error) {
   background-color: var(--not-foun-bg);
-  .navbar{
-  display: none;}
+  .navbar {
+    display: none;
+  }
 }
 
 .wrapper {
@@ -53,7 +54,7 @@ body:has(.container-error) {
   }
 }
 
-.container-error{
+.container-error {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   place-items: center;
@@ -61,8 +62,6 @@ body:has(.container-error) {
   width: 100%;
   margin-inline: auto;
 }
-
-
 
 main {
   max-width: var(--max-width);
@@ -181,13 +180,12 @@ main {
 @media (width < 50rem) {
   .container-breeds {
     grid-template-columns: minmax(0, 1fr);
-  } 
+  }
   .wrapper-dogs-gallery {
-  padding: 1rem; 
-}
+    padding: 1rem;
+  }
   .dogs-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-   
   }
 }
 
@@ -202,7 +200,7 @@ main {
 }
 
 @media (width < 30rem) {
-  .dogs-gallery{
+  .dogs-gallery {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -258,7 +256,7 @@ main {
     }
   }
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -276,6 +274,9 @@ main {
   max-height: 5rem;
   overflow-y: auto;
   overflow-x: hidden;
+  @media (width < 40rem) {
+    inset: 5rem 1.25rem auto auto;
+  }
 }
 
 .primary-scroll {

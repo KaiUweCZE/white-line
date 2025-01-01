@@ -22,12 +22,13 @@ const Slideshow = ({ slides, mobileSlides }: SlideshowProps) => {
   const actualSlides = orientation === "landscape" ? slides : mobileSlides;
 
   useEffect(() => {
+    console.log('Current slide:', currentSlide, 'Orientation:', orientation);
     const timer = setTimeout(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % actualSlides.length);
     }, 10000);
 
     return () => clearTimeout(timer);
-  }, [currentSlide, slides.length]);
+  }, [currentSlide, actualSlides.length, orientation]);
 
   return (
     <section 

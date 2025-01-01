@@ -1,13 +1,7 @@
-"use client";
-import { newsData } from "@/ui/articles/data/dataArticles";
-import { Article, RestrictOption } from "@/ui/articles/types";
-import {
-  createContext,
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useState,
-} from "react";
+'use client';
+import { newsData } from '@/ui/articles/data/data-articles';
+import { Article, RestrictOption } from '@/ui/articles/types';
+import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 'react';
 
 interface ArticleContextProps {
   currentArticle: Article;
@@ -18,9 +12,7 @@ interface ArticleContextProps {
   setYear: Dispatch<SetStateAction<number | null>>;
 }
 
-export const ArticleContext = createContext<ArticleContextProps | undefined>(
-  undefined
-);
+export const ArticleContext = createContext<ArticleContextProps | undefined>(undefined);
 
 export const ArticleProvider = ({ children }: { children: ReactNode }) => {
   const [currentArticle, setCurrentArticle] = useState<Article>(newsData[0]);
@@ -35,9 +27,5 @@ export const ArticleProvider = ({ children }: { children: ReactNode }) => {
     year,
     setYear,
   };
-  return (
-    <ArticleContext.Provider value={contextValues}>
-      {children}
-    </ArticleContext.Provider>
-  );
+  return <ArticleContext.Provider value={contextValues}>{children}</ArticleContext.Provider>;
 };

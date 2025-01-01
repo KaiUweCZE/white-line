@@ -1,9 +1,9 @@
-"use client";
-import { useContext } from "react";
-import ArticleSearch from "./article-search";
-import { newsData } from "./data/dataArticles";
-import PrimaryArticleView from "./primary-article-view";
-import { ArticleContext } from "@/context/article-context";
+'use client';
+import { useContext } from 'react';
+import ArticleSearch from './article-search';
+import { newsData } from './data/data-articles';
+import PrimaryArticleView from './primary-article-view';
+import { ArticleContext } from '@/context/article-context';
 
 const ArticleSection = () => {
   const data = newsData;
@@ -14,8 +14,7 @@ const ArticleSection = () => {
   const { searchOption, year } = context;
   const filteredData = data.filter(
     (data) =>
-      (searchOption?.toLocaleLowerCase() === data.tags?.name ||
-        searchOption === null) &&
+      (searchOption?.toLocaleLowerCase() === data.tags?.name || searchOption === null) &&
       (year === null || data.year === year) &&
       data
   );
