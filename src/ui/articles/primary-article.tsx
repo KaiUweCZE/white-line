@@ -36,10 +36,11 @@ const PrimaryArticle = () => {
       </article>
       <Gallery
         images={currentArticle.images}
-        alts={currentArticle?.labels ?? ['']}
+        labels={currentArticle?.labels ?? ['']}
         fullscreen={true}
         width={currentArticle?.galleryOptions?.width ?? 600}
         height={currentArticle?.galleryOptions?.height ?? 400}
+        sameSize={currentArticle?.sameSize ?? true}
       />
     </main>
   );

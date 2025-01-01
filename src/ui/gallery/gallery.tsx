@@ -1,22 +1,24 @@
-import { useCallback, useEffect, useState } from "react";
-import GalleryContent from "./gallery-content";
-import { useScrollLock } from "./hooks/use-scrolllock";
-import { useKeyboardShortcuts } from "./hooks/use-keybaord-shortcuts";
-import { StaticImageData } from "next/image";
+import { useCallback, useEffect, useState } from 'react';
+import GalleryContent from './gallery-content';
+import { useScrollLock } from './hooks/use-scrolllock';
+import { useKeyboardShortcuts } from './hooks/use-keybaord-shortcuts';
+import { StaticImageData } from 'next/image';
 
 interface GalleryProps {
   images: StaticImageData[];
-  alts: string[];
+  labels: string[];
   width?: number;
   height?: number;
   fullscreen: boolean;
+  sameSize?: boolean;
 }
 const Gallery = ({
   images,
-  alts,
+  labels,
   width = 600,
   height = 400,
   fullscreen,
+  sameSize,
 }: GalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -66,7 +68,7 @@ const Gallery = ({
   const galleryContent = (
     <GalleryContent
       images={images}
-      alts={alts}
+      labels={labels}
       activeIndex={activeIndex}
       isTransitioning={isTransitioning}
       fullscreen={fullscreen}
@@ -77,15 +79,14 @@ const Gallery = ({
       onPrev={prevSlide}
       onDotClick={handleDotClick}
       onFullscreenToggle={toggleFullscreen}
+      sameSize={sameSize ?? true}
     />
   );
 
   return (
     <>
       {!isFullscreen && galleryContent}
-      {isFullscreen && (
-        <div className="fixed inset-0 z-50">{galleryContent}</div>
-      )}
+      {isFullscreen && <div className="fixed inset-0 z-50">{galleryContent}</div>}
     </>
   );
 };

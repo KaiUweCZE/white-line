@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 interface GalleryContentProps {
   images: StaticImageData[];
-  alts: string[];
+  labels: string[];
   activeIndex: number;
   isTransitioning: boolean;
   isFullscreen: boolean;
@@ -15,11 +15,12 @@ interface GalleryContentProps {
   onDotClick: (index: number) => void;
   onFullscreenToggle: () => void;
   fullscreen: boolean;
+  sameSize?: boolean;
 }
 
 const GalleryContent = ({
   images,
-  alts,
+  labels,
   activeIndex,
   isTransitioning,
   isFullscreen,
@@ -30,6 +31,7 @@ const GalleryContent = ({
   onPrev,
   onDotClick,
   onFullscreenToggle,
+  sameSize,
 }: GalleryContentProps) => {
   const [activeInfo, setActiveInfo] = useState(false);
   return (
@@ -68,10 +70,12 @@ const GalleryContent = ({
             <div key={index} className="flex-shrink-0 w-full h-full relative">
               <Image
                 src={img}
-                alt={alts[index]}
+                alt={labels[index]}
                 fill
                 placeholder="blur"
-                className={`${isFullscreen ? 'object-contain bg-black/90' : 'object-cover'}`}
+                className={`${isFullscreen || !sameSize ? 'object-contain' : 'object-cover'} ${
+                  isFullscreen ? 'bg-black/90' : ''
+                }`}
                 priority={index === 0}
               />
             </div>
@@ -99,44 +103,52 @@ const GalleryContent = ({
           />
         </>
       )}
-      {/* Fullscreen toggle */}
-      {fullscreen && (
-        <>
-          {!isFullscreen ? (
-            <Maximize2
-              className="absolute top-4 right-4 cursor-pointer text-white hover:scale-110 transition-transform"
-              onClick={onFullscreenToggle}
-            />
-          ) : (
-            <X
-              className="absolute top-4 right-4 cursor-pointer text-white hover:scale-110 transition-transform"
-              onClick={onFullscreenToggle}
-            />
-          )}
-        </>
+
+      {/* Info button */}
+      {labels[activeIndex] && (
+        <button
+          onClick={() => setActiveInfo(!activeInfo)}
+          className="absolute bottom-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+        >
+          <Info className="h-5 w-5" color="white" />
+        </button>
       )}
 
-      {/* Navigační tečky */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => !isTransitioning && onDotClick(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              activeIndex === index ? 'bg-white' : 'bg-white/50'
-            }`}
-            aria-label={`Přejít na obrázek ${index + 1}`}
-          />
-        ))}
-      </div>
-      <div className="absolute top-4 left-4 text-white">
-        <Info
-          className="w-5 h-5"
-          onMouseEnter={() => setActiveInfo(true)}
-          onMouseLeave={() => setActiveInfo(false)}
-        />
-        {activeInfo && <span>{alts[activeIndex]}</span>}
-      </div>
+      {/* Fullscreen button */}
+      {fullscreen && (
+        <button
+          onClick={onFullscreenToggle}
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+        >
+          {isFullscreen ? (
+            <X className="h-6 w-6" color="white" />
+          ) : (
+            <Maximize2 className="h-5 w-5" color="white" />
+          )}
+        </button>
+      )}
+
+      {/* Info text */}
+      {activeInfo && labels[activeIndex] && (
+        <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-white text-sm">{labels[activeIndex]}</p>
+        </div>
+      )}
+
+      {/* Navigation dots */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === activeIndex ? 'bg-white' : 'bg-white/50'
+              }`}
+              onClick={() => onDotClick(index)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
