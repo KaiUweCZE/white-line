@@ -5,38 +5,60 @@ import Navbar from '@/ui/menu/navbar';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://whitelineczech.com'),
   title: 'Whiteline Czech | Chovatelská stanice bílého švýcarského ovčáka',
   description:
-    'Vítejte v chovatelské stanici White Line Czech. Specializujeme se na chov bílého švýcarského ovčáka, corgi a německého ovčáka. Nabízíme štěňata s PP.',
+    'Chovatelská stanice Whiteline Czech - chov bílého švýcarského ovčáka s PP. Nabízíme kvalitní štěňata s průkazem původu.',
   keywords: [
-    'bílý švýcarský ovčák',
-    'chovatelská stanice',
-    'německý ovčák',
-    'ovčák',
-    'corgi',
-    'štěňata',
-    'štěňata s PP',
-    'whiteline',
-    'whiteline czech',
-    'BŠO',
-    'chov psů',
+    'bílý švýcarský ovčák štěňata',
+    'štěňata BŠO s PP',
+    'chovatelská stanice BŠO',
+    'bílý švýcarský ovčák chov',
+    'prodej štěňat s PP',
+    'White Line Czech',
+    'chovatelská stanice z Táborska',
+    'štěňata bílého švýcarského ovčáka',
+    'BŠO chovatelská stanice',
   ],
-  authors: [{ name: 'White Line' }],
-  creator: 'Whiteline Czech',
-  publisher: 'Whiteline Czech',
-  robots: 'index, follow',
+  authors: [{ name: 'White Line Czech' }],
+  creator: 'White Line Czech',
+  publisher: 'White Line Czech',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://whitelineczech.com',
   },
   openGraph: {
-    title: 'White Line | Chovatelská stanice bílého švýcarského ovčáka',
-    description:
-      'Profesionální chov bílého švýcarského ovčáka. Štěňata s PP, chovatelský servis a poradenství.',
-    url: 'https://whitelineczech.com',
-    siteName: 'Whiteline Czech',
-    locale: 'cs_CZ',
     type: 'website',
+    locale: 'cs_CZ',
+    url: 'https://whitelineczech.com',
+    siteName: 'White Line Czech - Chovatelská stanice',
+    title: 'White Line Czech | Profesionální chov bílého švýcarského ovčáka',
+    description:
+      'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka. Nabízíme zdravá štěňata s PP, kompletní chovatelský servis a poradenství.',
+    images: [
+      {
+        url: '/assets/images/seo/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'White Line Czech - Bílý švýcarský ovčák',
+      },
+    ],
   },
+  verification: {
+    google: 'váš-google-verification-code', // Přidejte po verifikaci v Google Search Console
+  },
+  viewport: 'width=device-width, initial-scale=1',
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({
@@ -49,13 +71,22 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'Whiteline Czech',
     url: 'https://whitelineczech.com',
-    logo: 'https://whitelineczech.com/logo.png',
+    logo: 'https://whitelineczech.com/assets/images/seo/logo.webp',
     description:
-      'Specializujeme se na chov bílého švýcarského ovčáka, corgi a německého ovčáka. Nabízíme štěňata s PP.',
+      'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka s PP.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'CZ',
+      addressRegion: 'Jihočeský kraj',
+      addressLocality: 'Choustník',
     },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+420603219394',
+      contactType: 'customer service',
+      availableLanguage: ['Czech', 'English'],
+    },
+    sameAs: ['https://www.facebook.com/search/top?q=whiteline%20czech'],
   };
 
   const breedingService = {
@@ -67,19 +98,25 @@ export default function RootLayout({
       name: 'Whiteline Czech',
     },
     description: 'Profesionální chov psů s PP - bílý švýcarský ovčák, corgi, německý ovčák',
-    areaServed: 'Czech Republic',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Czech Republic',
+    },
     availableService: [
       {
         '@type': 'Service',
         name: 'Chov bílého švýcarského ovčáka',
+        description: 'Odchov štěňat BŠO s PP',
       },
       {
         '@type': 'Service',
         name: 'Chov corgi',
+        description: 'Odchov štěňat welsh corgi s PP',
       },
       {
         '@type': 'Service',
         name: 'Chov německého ovčáka',
+        description: 'Odchov štěňat německého ovčáka s PP',
       },
     ],
   };

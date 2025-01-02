@@ -350,3 +350,12 @@ a {
     }
   }
 }
+
+.og-img {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 42%, rgba(30, 133, 168, 0) 92%);
+  div {
+    position: absolute;
+    inset: auto auto 2rem 0.5rem;
+  }
+}
