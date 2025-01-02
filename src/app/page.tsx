@@ -1,7 +1,7 @@
-import ContactFooter from "@/ui/contact";
-import ArticleSection from "@/ui/articles/article-section";
-import { ArticleProvider } from "@/context/article-context";
-import PrimaryArticle from "@/ui/articles/primary-article";
+import ContactFooter from '@/ui/contact';
+import ArticleSection from '@/ui/articles/article-section';
+import { ArticleProvider } from '@/context/article-context';
+import PrimaryArticle from '@/ui/articles/primary-article';
 
 export default function Home() {
   return (
