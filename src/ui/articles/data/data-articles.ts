@@ -15,7 +15,7 @@ const galleryDefault = { width: 600, height: 350, expander: false };
 export const newsData: Article[] = [
   {
     headline: 'Narodil se vrh A',
-    text: `20.12. se nám narodil náš první vrh cardiganů ve složení 3 fenky a 1 pejsek.🩷🩷🩷🩵
+    text: `20.12. se nám narodil náš první vrh cardiganů ve složení 3 fenky a 1 pejsek.🧡🧡🧡
 Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v pořádku.`,
     time: '20.12.2024',
     year: 2024,

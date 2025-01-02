@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: 'Whiteline Czech | Chovatelská stanice bílého švýcarského ovčáka',
     description:
       'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka s PP.',
-    images: ['/assets/images/seo/og-image.webp'],
+    images: ['/images/seo/og-image.webp'],
   },
   openGraph: {
     type: 'website',
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
       'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka. Nabízíme zdravá štěňata s PP, kompletní chovatelský servis a poradenství.',
     images: [
       {
-        url: '/assets/images/seo/og-image.webp',
+        url: '/images/seo/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Whiteline Czech - Bílý švýcarský ovčák',
@@ -98,7 +98,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'Whiteline Czech',
     url: 'https://whitelineczech.com',
-    logo: 'https://whitelineczech.com/assets/images/seo/logo.webp',
+    logo: 'https://whitelineczech.com/images/seo/logo.webp',
     description:
       'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka s PP.',
     address: {
