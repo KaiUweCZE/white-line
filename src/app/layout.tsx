@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { type Metadata } from 'next';
 import { parkinsans } from './fonts/fonts';
 import './globals.css';
 import Navbar from '@/ui/menu/navbar';

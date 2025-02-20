@@ -6,6 +6,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --header-height: 55dvh;
+  --header-bar-height: 3rem;
   --max-width: 80rem;
   --standard-transition: 0.4s;
   --md-radius: 0.5rem;
@@ -75,21 +76,30 @@ main {
 .navbar {
   display: grid;
   position: sticky;
-  top: -50dvh;
-  z-index: 10;
+  top: calc(-55dvh + 2.9rem);
+  z-index: 11;
   max-width: var(--max-width);
   height: var(--header-height);
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 0 0 0.5rem 0.5rem;
+  animation: navbar-scroll linear both;
+  animation-timeline: scroll();
+  animation-range: 10dvh 55dvh;
+}
+
+@keyframes navbar-scroll {
+  to {
+    box-shadow: none;
+  }
 }
 
 .header-bar {
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-self: end;
-  height: 3rem;
+  height: var(--header-bar-height);
   width: 100%;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
@@ -98,18 +108,15 @@ main {
   border-radius: 0 0 0.5rem 0.5rem;
   animation: bg-fill linear both;
   animation-timeline: scroll();
-  animation-range: 10dvh 50dvh;
+  animation-range: 10dvh 55dvh;
 }
 
 @keyframes bg-fill {
   to {
-    background: #171717c9;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: #242424;
+    /* backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);*/
     border-radius: 0;
-    .navbar {
-      opacity: 0;
-    }
   }
 }
 
@@ -139,9 +146,9 @@ main {
   height: var(--header-height);
   overflow: hidden;
   border-radius: 0 0 0.5rem 0.5rem;
-  animation: bg-off linear both;
+  /* animation: bg-off linear both;
   animation-timeline: scroll();
-  animation-range: 45dvh 50dvh;
+  animation-range: 45dvh 50dvh;*/
 }
 
 @keyframes bg-off {
