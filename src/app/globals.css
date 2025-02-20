@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -73,11 +74,12 @@ main {
 
 .navbar {
   display: grid;
-  position: relative;
+  position: sticky;
+  top: -50dvh;
+  z-index: 10;
   max-width: var(--max-width);
   height: var(--header-height);
   width: 100%;
-  background-color: gray;
   margin: 0 auto;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 0 0 0.5rem 0.5rem;
@@ -94,6 +96,21 @@ main {
   z-index: 1;
   color: white;
   border-radius: 0 0 0.5rem 0.5rem;
+  animation: bg-fill linear both;
+  animation-timeline: scroll();
+  animation-range: 10dvh 50dvh;
+}
+
+@keyframes bg-fill {
+  to {
+    background: #171717c9;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 0;
+    .navbar {
+      opacity: 0;
+    }
+  }
 }
 
 .mobile-menu {
@@ -122,8 +139,16 @@ main {
   height: var(--header-height);
   overflow: hidden;
   border-radius: 0 0 0.5rem 0.5rem;
+  animation: bg-off linear both;
+  animation-timeline: scroll();
+  animation-range: 45dvh 50dvh;
 }
 
+@keyframes bg-off {
+  to {
+    opacity: 0;
+  }
+}
 .slide {
   position: absolute;
   width: 100%;
