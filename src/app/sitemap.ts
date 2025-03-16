@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { breedData } from '@/ui/odchovy/data/breed-data';
-import { dataDogs } from '@/app/nasi-psi/data/data-dogs';
+import { dataDogs } from '@/ui/nasi-psi/data/data-dogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://whitelineczech.com';

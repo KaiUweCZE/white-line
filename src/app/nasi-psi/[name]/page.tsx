@@ -1,19 +1,18 @@
-"use client";
-import React from "react";
-import { Award, Medal } from "lucide-react";
-import { useParams } from "next/navigation";
-import { dataDogs } from "../data/data-dogs";
-import DogHero from "@/ui/nasi-psi/dog/dog-hero";
-import DogBreeds from "@/ui/nasi-psi/dog/dog-breeds";
-import DogContests from "@/ui/nasi-psi/dog/dog-contests";
+'use client';
+import React from 'react';
+import { Award, Medal } from 'lucide-react';
+import { useParams } from 'next/navigation';
+import { dataDogs } from '../../../ui/nasi-psi/data/data-dogs';
+import DogHero from '@/ui/nasi-psi/dog/dog-hero';
+import DogBreeds from '@/ui/nasi-psi/dog/dog-breeds';
+import DogContests from '@/ui/nasi-psi/dog/dog-contests';
 
 const DogDetail = () => {
   const params = useParams();
-  const name = params.name;
+  // const name = params.name;
+  const name = typeof params.name === 'string' && decodeURIComponent(params.name);
 
-  console.log(name);
-
-  const data = dataDogs.find((e) => e.name === "Frederika");
+  const data = dataDogs.find((e) => e.name.toLowerCase() === name);
 
   const heroData = {
     name: data?.name,
@@ -29,6 +28,8 @@ const DogDetail = () => {
     pedigree: data?.pedigree,
   };
 
+  const areContests = data?.contests && data?.contests?.length > 0;
+  const areRaces = data?.races && data?.races?.length > 0;
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* Hero sekce */}
@@ -39,22 +40,12 @@ const DogDetail = () => {
 
       {/* Výstavy a závody */}
       <div className="grid lg:grid-cols-2 gap-12">
-        {data?.contests && (
-          <DogContests
-            title="Výstavy"
-            icon={Award}
-            items={data.contests}
-            resultKey="grade"
-          />
+        {areContests && (
+          <DogContests title="Výstavy" icon={Award} items={data.contests} resultKey="grade" />
         )}
 
-        {data?.races && (
-          <DogContests
-            title="Závody"
-            icon={Medal}
-            items={data.races}
-            resultKey="result"
-          />
+        {areRaces && (
+          <DogContests title="Závody" icon={Medal} items={data.races} resultKey="result" />
         )}
       </div>
     </div>

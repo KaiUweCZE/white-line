@@ -13,11 +13,11 @@ const PrimaryArticleView = (article: Article) => {
   const outlinedClass = () => {
     switch (article.tags?.type) {
       case 'puppies':
-        return 'outline outline-1 outline-fuchsia-300 bg-fuchsia-300/30';
+        return 'outline outline-1 outline-fuchsia-200 bg-fuchsia-200/30';
       case 'races':
-        return 'outline outline-1 outline-green-300 bg-green-300/30';
+        return 'outline outline-1 outline-green-200 bg-green-200/30';
       case 'exhibition':
-        return 'outline outline-1 outline-yellow-300 bg-yellow-300/20';
+        return 'outline outline-1 outline-yellow-200 bg-yellow-200/30';
     }
   };
 

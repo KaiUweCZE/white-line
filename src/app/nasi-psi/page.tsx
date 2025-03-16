@@ -1,13 +1,9 @@
-import { dataDogs } from "./data/data-dogs";
-import DogsGallery from "@/ui/nasi-psi/dogs-gallery";
+import { dataDogs } from '../../ui/nasi-psi/data/data-dogs';
+import DogsGallery from '@/ui/nasi-psi/dogs-gallery';
 
 const PsiPage = () => {
-  const alive = dataDogs.filter(
-    (dog) => dog.alive && { img: dog.img, name: dog.name }
-  );
-  const inMemory = dataDogs.filter(
-    (dog) => !dog.alive && { img: dog.img, name: dog.name }
-  );
+  const alive = dataDogs.filter((dog) => dog.alive && { img: dog.img, name: dog.name });
+  const inMemory = dataDogs.filter((dog) => !dog.alive && { img: dog.img, name: dog.name });
 
   return (
     <div className=" wrapper py-6 gap-8 primary-bg">
