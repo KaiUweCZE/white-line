@@ -7,7 +7,7 @@ import { useWindowSize } from '@/ui/menu/hooks/use-window-size';
 interface DogGalleryProps {
   images: StaticImageData[];
   title?: string;
-  metaData?: Record<string, any>;
+  metaData?: Record<string, string>;
 }
 
 const DogGallery = ({ images, title = 'Fotogalerie', metaData }: DogGalleryProps) => {
@@ -21,7 +21,6 @@ const DogGallery = ({ images, title = 'Fotogalerie', metaData }: DogGalleryProps
     const aspectRatio = image.width / image.height;
     const coefficient = isSmall ? (isExtraSmall ? 1.2 : 1.5) : 2.2;
     let rowSpan;
-    let colSpan;
 
     // Pevně definované výšky podle poměru stran
     if (aspectRatio >= 1) {
@@ -39,7 +38,7 @@ const DogGallery = ({ images, title = 'Fotogalerie', metaData }: DogGalleryProps
     }
 
     // Dopočítáme šířku podle poměru stran a přiřazené výšky
-    colSpan = Math.round(rowSpan * aspectRatio);
+    const colSpan = Math.round(rowSpan * aspectRatio);
     rowSpan = Math.round(rowSpan);
 
     console.log(aspectRatio, rowSpan, colSpan);
