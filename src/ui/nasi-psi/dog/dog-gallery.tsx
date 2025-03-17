@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import ImageViewer from './image-viewer';
-import { GalleryHorizontal, Images } from 'lucide-react';
+import { Images } from 'lucide-react';
 import { useWindowSize } from '@/ui/menu/hooks/use-window-size';
 
 interface DogGalleryProps {

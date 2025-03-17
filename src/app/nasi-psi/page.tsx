@@ -1,6 +1,5 @@
 import { dataDogs } from '../../ui/nasi-psi/data/data-dogs';
 import DogsGallery from '@/ui/nasi-psi/dogs-gallery';
-import { PawPrint } from 'lucide-react';
 
 const PsiPage = () => {
   // Oprava filtru, aby správně vrátil objekty s pouze img a name

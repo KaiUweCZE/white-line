@@ -11,13 +11,6 @@ import vrhIImg from '@/assets/images/our-breed/vrhi.jpg';
 import vrhMImg from '@/assets/images/our-breed/vrhm.jpg';
 import vrhKImg from '@/assets/images/our-breed/vrhk.jpg';
 import vrhJImg from '@/assets/images/our-breed/vrhj.jpg';
-
-import frederikaGallery1 from '@/assets/images/our-dogs/frederika/gallery/rika-pase.webp';
-import frederikaGallery2 from '@/assets/images/our-dogs/frederika/gallery/3header.webp';
-import frederikaGallery3 from '@/assets/images/our-dogs/frederika/gallery/corgi.webp';
-import galery1 from '@/assets/images/articles/2024/vrh-p-narozeni/a.webp';
-import galery2 from '@/assets/images/articles/2024/vrh-p-narozeni/b.webp';
-import galery3 from '@/assets/images/articles/2024/vrh-p-narozeni/c.webp';
 import { dogsImg } from '@/assets/images/our-dogs';
 import { frederikaImg } from '@/assets/images/our-dogs/frederika';
 

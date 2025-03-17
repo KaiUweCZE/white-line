@@ -1,5 +1,5 @@
 import Button from '@/ui/primitives/button';
-import { Camera, PawPrint } from 'lucide-react';
+import { Camera } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 
