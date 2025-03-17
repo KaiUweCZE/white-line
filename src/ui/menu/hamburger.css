@@ -1,5 +1,9 @@
 .hamburger {
   cursor: pointer;
+  display: none;
+  @media (width < 640px) {
+    display: block;
+  }
 }
 
 .hamburger input {

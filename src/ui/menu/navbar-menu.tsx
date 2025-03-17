@@ -1,6 +1,5 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { useWindowSize } from './hooks/use-window-size';
 import HamburgerIcon from './hamburger-icon';
 import DesktopMenu from './desktop-menu';
 import { useState } from 'react';
@@ -14,17 +13,15 @@ const navPaths = [
 
 const NavbarMenu = () => {
   const pathname = usePathname();
-  const isSmall = useWindowSize();
   const [isMenuActive, setIsMenuActive] = useState(false);
 
   return (
     <nav className="flex items-center justify-end pr-4 relative" aria-label="main menu">
-      {isSmall ? (
-        <HamburgerIcon setIsMenuActive={setIsMenuActive} isMenuActive={isMenuActive} />
-      ) : (
-        <DesktopMenu pathname={pathname} navPaths={navPaths} />
-      )}
-      {isSmall && isMenuActive && (
+      <HamburgerIcon setIsMenuActive={setIsMenuActive} isMenuActive={isMenuActive} />
+
+      <DesktopMenu pathname={pathname} navPaths={navPaths} />
+
+      {isMenuActive && (
         <MobileMenu pathname={pathname} navPaths={navPaths} setIsMenuActive={setIsMenuActive} />
       )}
     </nav>
@@ -32,3 +29,14 @@ const NavbarMenu = () => {
 };
 
 export default NavbarMenu;
+
+{
+  /*isSmall ? (
+  <HamburgerIcon setIsMenuActive={setIsMenuActive} isMenuActive={isMenuActive} />
+) : (
+  <DesktopMenu pathname={pathname} navPaths={navPaths} />
+)}
+{isSmall && isMenuActive && (
+  <MobileMenu pathname={pathname} navPaths={navPaths} setIsMenuActive={setIsMenuActive} />
+)*/
+}

@@ -19,6 +19,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -83,10 +84,17 @@ main {
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 0 0 0.5rem 0.5rem;
   animation: navbar-scroll linear both;
   animation-timeline: scroll();
-  animation-range: 10dvh 55dvh;
+  animation-range: 55dvh 55dvh;
+  /* container-type: scroll-state;
+  @container scroll-state(stuck: top) {
+    .header-bar {
+      width: 98dvw;
+    }
+  }*/
 }
 
 @keyframes navbar-scroll {
@@ -105,7 +113,7 @@ main {
   -webkit-backdrop-filter: blur(2px);
   z-index: 1;
   color: white;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0 0.35rem 0.35rem;
   animation: bg-fill linear both;
   animation-timeline: scroll();
   animation-range: 10dvh 55dvh;
@@ -114,14 +122,25 @@ main {
 @keyframes bg-fill {
   to {
     background: #242424;
+
     /* backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);*/
     border-radius: 0;
   }
 }
 
+.desktop-menu {
+  display: none;
+  @media (width >= 640px) {
+    display: flex;
+  }
+}
+
 .mobile-menu {
-  display: grid;
+  display: none;
+  @media (width < 640px) {
+    display: grid;
+  }
   grid-template-rows: 1fr;
   /*  grid-template-columns: minmax(0, 1fr); */
   transition: grid-template-rows 0.4s;
@@ -156,6 +175,7 @@ main {
     opacity: 0;
   }
 }
+
 .slide {
   position: absolute;
   width: 100%;
@@ -341,14 +361,6 @@ main {
 
 .dogs-gallery figure {
   transition: var(--standard-transition);
-  &:hover {
-    scale: 1.05;
-    transition: var(--standard-transition);
-    figcaption::after {
-      width: 6rem;
-      translate: 20rem;
-    }
-  }
   figcaption {
     transition: 0.4s;
     overflow: hidden;
@@ -376,10 +388,10 @@ a {
       visibility: visible;
       translate: 0;
     }
-    div {
+    /*div {
       transition: var(--standard-transition);
       translate: 0 2rem;
-    }
+    }*/
   }
 }
 
@@ -389,5 +401,101 @@ a {
   div {
     position: absolute;
     inset: auto auto 2rem 0.5rem;
+  }
+}
+
+.text-shadow {
+  text-shadow: 0 2px 6px black;
+}
+
+/*gallery dense*/
+
+.gallery-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dog-gallery {
+  --grid-size: 1px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-size), 1fr));
+  grid-auto-rows: var(--grid-size);
+  grid-auto-flow: dense;
+  width: 100%;
+  max-width: 80rem;
+  gap: 0.25rem;
+}
+
+.dog-gallery-item {
+  position: relative;
+  cursor: pointer;
+
+  min-height: 0;
+  min-width: 0;
+  transform: scale(0.98);
+  transition: transform 0.3s ease;
+}
+
+.dog-gallery-item:hover {
+  transform: scale(1);
+  z-index: 10;
+}
+
+.dog-gallery-image {
+  object-fit: cover;
+  border-radius: 0.35rem;
+}
+
+.container-our-dogs-breeds {
+  container-type: inline-size;
+}
+
+.our-dogs-breed {
+  display: flex;
+  justify-content: space-between;
+  .our-dogs-frame {
+    max-width: 30dvw;
+  }
+
+  @container (inline-size < 50rem) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    .our-dogs-frame {
+      max-width: 100%;
+    }
+  }
+
+  @container (inline-size < 30rem) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr);
+
+    img {
+      width: 100%;
+    }
+    .our-dogs-frame {
+      max-width: fit-content;
+      margin: 0 auto;
+    }
+  }
+}
+
+.image-viewer {
+  display: grid;
+  transition: 0.5s;
+  opacity: 1;
+  container-type: inline-size;
+
+  @starting-style {
+    opacity: 0;
+  }
+
+  @container (inline-size < 80rem) {
+    img {
+      max-width: 80dvw;
+    }
   }
 }

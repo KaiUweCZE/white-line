@@ -6,6 +6,8 @@ import { dataDogs } from '../../../ui/nasi-psi/data/data-dogs';
 import DogHero from '@/ui/nasi-psi/dog/dog-hero';
 import DogBreeds from '@/ui/nasi-psi/dog/dog-breeds';
 import DogContests from '@/ui/nasi-psi/dog/dog-contests';
+import DogMatings from '@/ui/nasi-psi/dog/dog-matings';
+import DogGallery from '@/ui/nasi-psi/dog/dog-gallery';
 
 const DogDetail = () => {
   const params = useParams();
@@ -20,6 +22,7 @@ const DogDetail = () => {
     type: data?.type,
     breed: data?.breed,
     birth: data?.birth,
+    kennel: data?.kennel,
     description: data?.description,
     registration: data?.registration,
     titles: data?.titles,
@@ -30,14 +33,21 @@ const DogDetail = () => {
 
   const areContests = data?.contests && data?.contests?.length > 0;
   const areRaces = data?.races && data?.races?.length > 0;
+  const areBreeds = data?.breeds && data?.breeds?.length > 0;
+  const areMating = data?.matings && data?.matings?.length > 0;
+  const areGallery = data?.gallery && data?.gallery?.length > 0;
   return (
-    <div className="container mx-auto px-4 py-8 max-w-7xl">
+    <div className="mx-auto px-4 py-8 max-w-7xl grid gap-12">
       {/* Hero sekce */}
       <DogHero dog={heroData} />
 
       {/* Sekce s vrhy */}
-      {data?.breeds && <DogBreeds breeds={data?.breeds} />}
+      {areBreeds && <DogBreeds breeds={data.breeds} />}
 
+      {/* Sekce s krytím */}
+      {areMating && <DogMatings matings={data.matings} />}
+      {/*Galerie */}
+      {areGallery && <DogGallery images={data.gallery} />}
       {/* Výstavy a závody */}
       <div className="grid lg:grid-cols-2 gap-12">
         {areContests && (

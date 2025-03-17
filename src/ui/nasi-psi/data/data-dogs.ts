@@ -1,19 +1,11 @@
 import alexiaMain from '@/assets/images/our-dogs/Alexia_smecka.webp';
 import alliaMain from '@/assets/images/our-dogs/Allia_smecka.webp';
 import artabanMain from '@/assets/images/our-dogs/artaban_smecka.webp';
-import fenixMain from '@/assets/images/our-dogs/fenix_smecka.webp';
-import frederikaMain from '@/assets/images/our-dogs/frederika_smecka.webp';
-import freeMain from '@/assets/images/our-dogs/free_smecka.webp';
 import gennyMain from '@/assets/images/our-dogs/Genny_smecka.webp';
-import hopeMain from '@/assets/images/our-dogs/hope_smecka.webp';
-import chessieMain from '@/assets/images/our-dogs/chessie_smecka.webp';
-import chupMain from '@/assets/images/our-dogs/chup_smecka.webp';
 import sarumanMain from '@/assets/images/our-dogs/saruman_smecka.webp';
 import tildaMain from '@/assets/images/our-dogs/tilda_smecka.webp';
 import frederikaPortret from '@/assets/images/our-dogs/frederika/frederika_portret.webp';
-import freePortret from '@/assets/images/our-dogs/free/free_portret.webp';
 import fenixPortret from '@/assets/images/our-dogs/fenix/fenix_portret.webp';
-import chessiePortret from '@/assets/images/our-dogs/chessie/chessie_portret.webp';
 import vrhChImg from '@/assets/images/our-breed/vrhch.jpg';
 import vrhIImg from '@/assets/images/our-breed/vrhi.jpg';
 import vrhMImg from '@/assets/images/our-breed/vrhm.jpg';
@@ -23,6 +15,11 @@ import vrhJImg from '@/assets/images/our-breed/vrhj.jpg';
 import frederikaGallery1 from '@/assets/images/our-dogs/frederika/gallery/rika-pase.webp';
 import frederikaGallery2 from '@/assets/images/our-dogs/frederika/gallery/3header.webp';
 import frederikaGallery3 from '@/assets/images/our-dogs/frederika/gallery/corgi.webp';
+import galery1 from '@/assets/images/articles/2024/vrh-p-narozeni/a.webp';
+import galery2 from '@/assets/images/articles/2024/vrh-p-narozeni/b.webp';
+import galery3 from '@/assets/images/articles/2024/vrh-p-narozeni/c.webp';
+import { dogsImg } from '@/assets/images/our-dogs';
+import { frederikaImg } from '@/assets/images/our-dogs/frederika';
 
 export const dataDogs = [
   {
@@ -139,68 +136,89 @@ export const dataDogs = [
     kennel: 'Bílá Merci',
     breed: 'bílý švýcarský ovčák',
     type: 'chovný pes FCI',
-    img: fenixMain, // Toto je placeholder, bude potřeba doplnit správný import obrázku
+    img: dogsImg.fenix.smecka, // Toto je placeholder, bude potřeba doplnit správný import obrázku
     alive: true,
     registration: 'Z Reg/ACO/3554/15/17',
     birth: '27.5.2015',
     description: 'dlouhosrstý, 65 cm, plnochrupý, skus nůžkový, DNA',
     health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
     exams: ['BH-VT', 'HWT', 'NHAT'],
-    portrait: fenixPortret, // Toto je placeholder, bude potřeba doplnit
+    portrait: dogsImg.fenix.portret, // Toto je placeholder, bude potřeba doplnit
     titles: [], // Není v datech uvedeno
     pedigree: '', // Odkaz na rodokmen, bude potřeba doplnit
-    /* breeds: [
+    matings: [
       {
-        name: "B White Essence",
-        image: vrh, // Placeholder
-        href: "", // Odkaz na galerii
+        name: 'Vrh B White Essence',
+        // image: vrhMImg, // Placeholder
+        href: '',
+        partner: 'Baby Ely Falco line',
+        puppies: '3 psi + 2 feny',
       },
       {
-        name: "A pod Javorovým",
-        image: podJavorovymImg, // Placeholder
-        href: "", 
+        name: 'Vrh A pod Javorovým',
+        //  image: vrhMImg,
+        href: '',
+        partner: 'Lotty z Blatenských luk',
+        puppies: '3 psi + 2 feny',
       },
       {
-        name: "E Donnevara",
-        image: donnevaraImg, // Placeholder
-        href: "", 
+        name: 'Vrh E Donnevara',
+        //  image: vrhMImg,
+        href: '',
+        partner: 'Britney Donnevara',
+        puppies: '4 psi + 6 fen',
       },
       {
-        name: "H Meroxen",
-        image: meroxenImg, // Placeholder
-        href: "", 
+        name: 'Vrh H Meroxen',
+        // image: vrhMImg,
+        href: '',
+        partner: 'Greis Meroxen',
+        puppies: '4 psi + 1 fena',
       },
       {
-        name: "A z Farmy Pole",
-        image: farmyPoleImg, // Placeholder
-        href: "", 
+        name: 'Vrh A z Farmy Pole',
+        //image: vrhMImg,
+        href: '',
+        partner: 'Baileys Venturado',
+        puppies: '5 psů + 3 feny',
       },
       {
-        name: "A Goral Tatrika",
-        image: goralTatrikaImg, // Placeholder
-        href: "", 
+        name: 'Vrh A Goral Tatrika',
+        //image: vrhMImg,
+        href: '',
+        partner: 'Xahna AKBO-Parchovany',
+        puppies: '3 feny',
       },
       {
-        name: "K Whiteline Czech",
-        image: whitelineCzechImg, // Placeholder
-        href: "", 
+        name: 'Vrh K Whiteline Czech',
+        // image: vrhMImg,
+        href: '',
+        partner: 'Flying Free vom Weissen Unterberg',
+        puppies: '4 psi + 4 feny',
       },
       {
-        name: "B Salli Sambatrae",
-        image: salliSambatraeImg, // Placeholder
-        href: "", 
+        name: 'Vrh B Salli Sambatrae',
+        // image: vrhMImg,
+        href: '',
+        partner: 'Kylie Star z Ranče Montara',
+        puppies: '4 psi + 4 feny',
       },
       {
-        name: "A Lineage of Danthea",
-        image: lineageOfDantheaImg, // Placeholder
-        href: "", 
+        name: 'Vrh A Lineage of Danthea',
+        //image: vrhMImg,
+        href: '',
+        partner: 'Arthéa Dark Albedi Blondi',
+        puppies: '6 psů + 2 feny',
       },
       {
-        name: "F Falco line",
-        image: falcoLineImg, // Placeholder
-        href: "", 
-      }
-    ],*/
+        name: 'Vrh F Falco line',
+        //image: vrhMImg,
+        href: '',
+        partner: 'Canis Ronja Falco line',
+        puppies: '4 psi + 3 feny',
+      },
+    ],
+
     races: [], // V datech nejsou uvedeny žádné závody
     contests: [
       {
@@ -301,14 +319,14 @@ export const dataDogs = [
     kennel: 'Bílá Merci',
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena',
-    img: frederikaMain,
+    img: dogsImg.frederika.smecka,
     alive: true,
     registration: 'Z Reg/ACO/3556/15/18',
     birth: '27.5.2015',
     description: 'dlouhosrstá, 61 cm, plnochrupá, skus nůžkový',
     health: [' HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
     exams: ['IHT3-TS,', 'IHT2-TS,', 'IHT1-TS,', 'HWT,', 'NHAT'],
-    portrait: frederikaPortret,
+    portrait: dogsImg.frederika.portret,
     titles: ['Český šampion práce', 'Mistr ČR v pasení TS 2022'],
     pedigree: 'https://db.bily-ovcak.cz/psi/376/frederika-bila-merci',
     breeds: [
@@ -485,7 +503,7 @@ export const dataDogs = [
         grade: 'V1, CAJC, BOJ- Ing. L. Jančík',
       },
     ],
-    gallery: [], // Placeholder pro galerii
+    gallery: [...frederikaImg.gallery],
   },
   {
     name: 'Genny Lee',
@@ -592,14 +610,14 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'nechovná fena',
     kennel: "von King's Silbertal",
-    img: hopeMain, // Placeholder
+    img: dogsImg.hope.smecka, // Placeholder
     alive: true,
     registration: 'VDH/RWS18/2998',
     birth: '6.1.2018',
     description: 'dlouhosrstá, DNA',
     health: ['MDR1 +/+*'],
     exams: [], // Nejsou uvedeny
-    portrait: frederikaPortret, // Placeholder
+    portrait: dogsImg.hope.portret, // Placeholder
     titles: [], // Nejsou uvedeny
     pedigree: '',
     breeds: [], // Nemá vrhy
@@ -612,14 +630,14 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
     kennel: 'Whiteline Czech',
-    img: chessieMain,
+    img: dogsImg.chessie.smecka,
     alive: true,
     registration: 'CMKU/ACO/4444/18',
     birth: '19.6.2018',
     description: 'dlouhosrstá, 61 cm, plnochrupá, skus nůžkový',
     health: ['HD A', 'ED 0', 'MDR1 +/+*', 'DM N/N*'],
     exams: ['NHAT'],
-    portrait: chessiePortret, // Placeholder pro portrét
+    portrait: dogsImg.chessie.portret, // Placeholder pro portrét
     titles: [], // Není v datech uvedeno
     pedigree: '', // Odkaz na rodokmen, bude potřeba doplnit
     breeds: [
@@ -659,14 +677,14 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
     kennel: 'Weissen Unterberg', // Chovatelská stanice
-    img: freeMain, // Placeholder pro hlavní obrázek
+    img: dogsImg.free.smecka, // Placeholder pro hlavní obrázek
     alive: true,
     registration: 'CMKU/ACO/4990/-20/19/20',
     birth: '13.2.2019',
     description: 'dlouhosrstá, 60 cm, plnochrupá, těsné nůžky',
     health: ['HD A', 'ED 0', 'DM N/N', 'MDR1 +/-'],
     exams: [], // Nejsou uvedeny žádné zkoušky
-    portrait: freePortret, // Placeholder pro portrét
+    portrait: dogsImg.free.portret, // Placeholder pro portrét
     titles: [], // Není v datech uvedeno
     pedigree: '', // Odkaz na rodokmen, bude potřeba doplnit
     breeds: [
@@ -712,18 +730,18 @@ export const dataDogs = [
     gallery: [], // Placeholder pro galerii
   },
   {
-    name: 'Chupacabra Whiteline Czech',
+    name: 'Chupacabra',
     breed: 'bílý švýcarský ovčák',
     type: 'nechovný pes',
     kennel: 'Whiteline Czech',
-    img: chupMain, // Placeholder
+    img: dogsImg.chup.smecka, // Placeholder
     alive: true,
     registration: 'CMKU/ACO/4442/18',
     birth: '19.6.2018',
     description: 'dlouhosrstý, 65 cm, plnochrupý, skus klešťový',
     health: ['HD A', 'ED 0', 'MDR1 +/+*', 'DM N/N*'],
     exams: ['NHAT'],
-    portrait: frederikaPortret, // Placeholder
+    portrait: dogsImg.chup.portret, // Placeholder
     titles: [], // Nejsou uvedeny
     pedigree: '',
     breeds: [], // Nemá vrhy
