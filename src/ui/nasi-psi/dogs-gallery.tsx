@@ -23,7 +23,7 @@ const DogsGallery = ({ dogs }: DogsGalleryProps) => {
     <div className="grid grid-cols-3 gap-4 dogs-gallery">
       {dogs.map((dog) => (
         <div key={dog.name}>
-          <figure className="relative rounded-lg overflow-hidden secondary-shadow cursor-pointer">
+          <figure className="relative rounded-sm overflow-hidden secondary-shadow cursor-pointer">
             <Image
               src={dog.img}
               alt={`photo of ${dog.name}`}
