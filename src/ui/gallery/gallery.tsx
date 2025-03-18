@@ -3,7 +3,6 @@ import GalleryContent from './gallery-content';
 import { useScrollLock } from './hooks/use-scrolllock';
 import { useKeyboardShortcuts } from './hooks/use-keybaord-shortcuts';
 import { StaticImageData } from 'next/image';
-import ImageViewer from '../nasi-psi/dog/image-viewer';
 
 interface GalleryProps {
   images: StaticImageData[];

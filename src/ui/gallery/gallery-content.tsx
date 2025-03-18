@@ -1,4 +1,3 @@
-import { Info, Maximize2, X } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 import NavigationButtons from './navigation-buttons';

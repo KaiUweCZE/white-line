@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import { ArrowLeft, ArrowRight, X, Info } from 'lucide-react';
+import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 import Button from '@/ui/primitives/button';
 import { useSwipeNavigation } from '@/hooks/useSwipeNavigation';
 import SwipeInfo from '@/ui/swipe-info';
