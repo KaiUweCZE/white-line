@@ -37,7 +37,7 @@ const buttonVariants = cva(
         clean: '',
         outlined: 'border-2 border-stone-700',
         accent:
-          'bg-sky-200/40 backdrop-blur-sm hover:bg-sky-400/60 duration-300 border border-sky-100/30',
+          'bg-sky-100/30 backdrop-blur-sm hover:bg-sky-400/60 duration-300 border border-sky-200/30',
       },
       animation: {
         undeline: 'underline-button',

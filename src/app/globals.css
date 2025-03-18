@@ -275,6 +275,14 @@ main {
   border-radius: 50%;
 }
 
+.gallery-wrapper {
+  /* opacity: 1;
+  transition: opacity 0.4s;
+  @starting-style {
+    opacity: 0;
+  }*/
+}
+
 .gallery {
   border-radius: var(--md-radius);
 }
@@ -290,6 +298,10 @@ main {
   overflow: hidden;
   gap: 1rem;
   max-width: fit-content;
+  contain: layout style;
+  min-height: 0;
+
+  position: relative;
 }
 
 .box-breed-content {
@@ -299,6 +311,18 @@ main {
   gap: 1rem;
   padding-inline: 1.5rem;
   padding-bottom: 1.5rem;
+  container-type: inline-size;
+  container-name: box-breed;
+}
+/*
+.long-text {
+  @container (inline-size > 10rem) {
+    background-color: red;
+  }
+}
+*/
+.short-text {
+  display: none;
 }
 
 .underline-button {
@@ -495,7 +519,88 @@ a {
 
   @container (inline-size < 80rem) {
     img {
-      max-width: 80dvw;
+      max-width: 98dvw;
     }
+  }
+}
+
+.button-arrow {
+  @media (width < 40rem) {
+    z-index: 1;
+    padding: 0;
+    padding-inline: 0.15rem;
+    background: rgba(0, 0, 0, 0.411);
+  }
+}
+
+.arrow {
+  @media (width < 40rem) {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.swipe-info {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: swipeInfoTiming 2s forwards;
+}
+
+.swipe-info-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.swipe-indicator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.swipe-gif {
+  filter: brightness(0.15) invert(1);
+}
+
+.swipe-info p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@keyframes swipeInfoTiming {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -10px);
+  }
+}
+
+@media (width > 40rem) {
+  .swipe-info {
+    display: none;
   }
 }

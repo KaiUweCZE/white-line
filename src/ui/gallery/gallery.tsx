@@ -3,6 +3,7 @@ import GalleryContent from './gallery-content';
 import { useScrollLock } from './hooks/use-scrolllock';
 import { useKeyboardShortcuts } from './hooks/use-keybaord-shortcuts';
 import { StaticImageData } from 'next/image';
+import ImageViewer from '../nasi-psi/dog/image-viewer';
 
 interface GalleryProps {
   images: StaticImageData[];
@@ -72,6 +73,7 @@ const Gallery = ({
       activeIndex={activeIndex}
       isTransitioning={isTransitioning}
       fullscreen={fullscreen}
+      // need to remove isFullscreen for image viewer
       isFullscreen={isFullscreen}
       width={width}
       height={height}
@@ -86,7 +88,17 @@ const Gallery = ({
   return (
     <>
       {!isFullscreen && galleryContent}
-      {isFullscreen && <div className="fixed inset-0 z-50">{galleryContent}</div>}
+      {/*isFullscreen && (
+        <ImageViewer
+          images={images}
+          active={isFullscreen}
+          setActive={setIsFullscreen}
+          initialIndex={activeIndex}
+        />
+      )*/}
+      {isFullscreen && (
+        <div className="gallery-wrapper fixed h-screen w-screen inset-0 z-50">{galleryContent}</div>
+      )}
     </>
   );
 };
