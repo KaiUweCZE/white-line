@@ -201,6 +201,10 @@ main {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.14);
 }
 
+.accent-shadow {
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.11);
+}
+
 .arrow-icon {
   filter: drop-shadow(0 0 2px black);
   transition: var(--standard-transition);
@@ -298,10 +302,20 @@ main {
   overflow: hidden;
   gap: 1rem;
   max-width: fit-content;
-  contain: layout style;
   min-height: 0;
-
   position: relative;
+}
+
+@media (width > 50rem) and (width < 80rem) {
+  .box-breed {
+    min-width: 100%;
+  }
+}
+
+@media (width < 50rem) {
+  .box-breed {
+    contain: layout style;
+  }
 }
 
 .box-breed-content {
@@ -311,16 +325,10 @@ main {
   gap: 1rem;
   padding-inline: 1.5rem;
   padding-bottom: 1.5rem;
-  container-type: inline-size;
-  container-name: box-breed;
+  min-height: 0;
+  min-width: 0;
 }
-/*
-.long-text {
-  @container (inline-size > 10rem) {
-    background-color: red;
-  }
-}
-*/
+
 .short-text {
   display: none;
 }

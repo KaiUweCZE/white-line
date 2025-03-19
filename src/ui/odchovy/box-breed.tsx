@@ -11,7 +11,7 @@ const BoxBreed = ({ breed }: { breed: BreedType }) => {
   return (
     <article className="box-breed secondary-shadow rounded-md border-2 border-gray-100 bg-white hover:border-gray-300 hover:bg-slate-50 transition">
       {/* Parent photos section with overlay */}
-      <figure className="relative">
+      <figure className="relative w-full">
         <Image
           src={breed.img}
           placeholder="blur"
