@@ -119,23 +119,36 @@ export default function RootLayout({
       '@type': 'Country',
       name: 'Czech Republic',
     },
-    availableService: [
-      {
-        '@type': 'Service',
-        name: 'Chov bílého švýcarského ovčáka',
-        description: 'Odchov štěňat BŠO s PP',
-      },
-      {
-        '@type': 'Service',
-        name: 'Chov corgi',
-        description: 'Odchov štěňat welsh corgi s PP',
-      },
-      {
-        '@type': 'Service',
-        name: 'Chov německého ovčáka',
-        description: 'Odchov štěňat německého ovčáka s PP',
-      },
-    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Chovatelská stanice',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Chov bílého švýcarského ovčáka',
+            description: 'Odchov štěňat BŠO s PP',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Chov corgi',
+            description: 'Odchov štěňat welsh corgi s PP',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Chov německého ovčáka',
+            description: 'Odchov štěňat německého ovčáka s PP',
+          },
+        },
+      ],
+    },
   };
 
   const localBusinessSchema = {
@@ -154,8 +167,11 @@ export default function RootLayout({
         addressCountry: 'CZ',
         addressRegion: 'Jihočeský kraj',
         addressLocality: 'Choustník',
+        postalCode: '39118',
+        streetAddress: 'Choustník 8',
       },
     },
+    priceRange: '12000-40000',
     description:
       'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka. Odchováváme 1-2 vrhy ročně s důrazem na zdraví a kvalitu štěňat.',
     // Přidej vhodné kategorie
