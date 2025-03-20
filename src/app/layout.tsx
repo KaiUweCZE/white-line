@@ -3,6 +3,7 @@ import { parkinsans } from './fonts/fonts';
 import './globals.css';
 import Navbar from '@/ui/menu/navbar';
 import JsonLd from '@/components/JsonLd';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whitelineczech.com'),
@@ -176,6 +177,7 @@ export default function RootLayout({
         <Navbar />
         <main id="main-content" className="">
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
