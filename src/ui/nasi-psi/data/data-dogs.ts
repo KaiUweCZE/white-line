@@ -13,6 +13,9 @@ import vrhKImg from '@/assets/images/our-breed/vrhk.jpg';
 import vrhJImg from '@/assets/images/our-breed/vrhj.jpg';
 import { dogsImg } from '@/assets/images/our-dogs';
 import { frederikaImg } from '@/assets/images/our-dogs/frederika';
+import { fenixImg } from '@/assets/images/our-dogs/fenix';
+import { freeImg } from '@/assets/images/our-dogs/free';
+import { chupImg } from '@/assets/images/our-dogs/chupacabra';
 
 export const dataDogs = [
   {
@@ -305,7 +308,7 @@ export const dataDogs = [
         grade: 'VD1- M. Václavík',
       },
     ],
-    gallery: [],
+    gallery: fenixImg.galleryLabels,
   },
   {
     name: 'Frederika',
@@ -496,7 +499,7 @@ export const dataDogs = [
         grade: 'V1, CAJC, BOJ- Ing. L. Jančík',
       },
     ],
-    gallery: [...frederikaImg.gallery],
+    gallery: frederikaImg.galleryLabels,
   },
   {
     name: 'Genny Lee',
@@ -720,7 +723,7 @@ export const dataDogs = [
         grade: 'V1, CAJC, BOJ- Ing. L. Jančík',
       },
     ],
-    gallery: [], // Placeholder pro galerii
+    gallery: freeImg.galleryLabels, // Placeholder pro galerii
   },
   {
     name: 'Chupacabra',
@@ -751,7 +754,7 @@ export const dataDogs = [
         grade: 'V2- M. Redlicki (PL)',
       },
     ],
-    gallery: [], // Placeholder pro galerii
+    gallery: chupImg.galleryLabels, // Placeholder pro galerii
   },
   {
     name: 'Saruman',

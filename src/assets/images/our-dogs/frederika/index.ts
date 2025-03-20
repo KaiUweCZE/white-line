@@ -8,6 +8,7 @@ import frederikaGalleryFifth from './gallery/e.webp';
 import frederikaGallerySixth from './gallery/f.webp';
 import frederikaGallerySeventh from './gallery/g.webp';
 import frederikaGalleryEighth from './gallery/h.webp';
+import frederikaGalleryNinth from './gallery/frederika9.webp';
 
 export const frederikaImg = {
   portret: frederikaPortret,
@@ -21,5 +22,43 @@ export const frederikaImg = {
     frederikaGallerySixth,
     frederikaGallerySeventh,
     frederikaGalleryEighth,
+  ],
+  galleryLabels: [
+    {
+      label: 'Frederika u moře v Itálii',
+      image: frederikaGalleryFirst,
+    },
+    {
+      label: 'Frederika a Tilda',
+      image: frederikaGallerySecond,
+    },
+    {
+      label: 'Frederika pase ovce ',
+      image: frederikaGalleryThird,
+    },
+    {
+      label: 'Frederika po závodech v pasení',
+      image: frederikaGalleryFourth,
+    },
+    {
+      label: 'Frederika pase ovce',
+      image: frederikaGalleryFifth,
+    },
+    {
+      label: 'Frederika a Matěj pasou ovce',
+      image: frederikaGallerySixth,
+    },
+    {
+      label: 'Frederika a štěňata',
+      image: frederikaGallerySeventh,
+    },
+    {
+      label: 'Frederika 5 let',
+      image: frederikaGalleryEighth,
+    },
+    {
+      label: 'Frederika(2 roky) pase ovce ',
+      image: frederikaGalleryNinth,
+    },
   ],
 };

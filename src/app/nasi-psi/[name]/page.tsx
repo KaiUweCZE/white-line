@@ -51,6 +51,9 @@ const DogDetail = () => {
   const areBreeds = data?.breeds && data?.breeds?.length > 0;
   const areMating = data?.matings && data?.matings?.length > 0;
   const areGallery = data?.gallery && data?.gallery?.length > 0;
+
+  const images = (areGallery && data.gallery.map((e) => e.image)) || [];
+  const labels = (areGallery && data.gallery.map((e) => e.label)) || [];
   return (
     <>
       <DogJsonLd dog={JsonLdDogData} />
@@ -64,7 +67,7 @@ const DogDetail = () => {
         {/* Sekce s krytím */}
         {areMating && <DogMatings matings={data.matings} />}
         {/*Galerie */}
-        {areGallery && <DogGallery images={data.gallery} />}
+        {areGallery && <DogGallery images={images} labels={labels} />}
         {/* Výstavy a závody */}
         <div className="grid lg:grid-cols-2 gap-12">
           {areContests && (

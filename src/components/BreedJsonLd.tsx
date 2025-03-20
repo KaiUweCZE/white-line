@@ -1,4 +1,3 @@
-// components/BreedJsonLd.tsx
 'use client';
 
 import { StaticImageData } from 'next/image';
