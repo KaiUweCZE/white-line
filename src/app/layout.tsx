@@ -96,6 +96,8 @@ export default function RootLayout({
       addressCountry: 'CZ',
       addressRegion: 'Jihočeský kraj',
       addressLocality: 'Choustník',
+      postalCode: '39118',
+      streetAddress: 'Choustník 8',
     },
     contactPoint: {
       '@type': 'ContactPoint',
@@ -160,6 +162,14 @@ export default function RootLayout({
     telephone: '+420603219394',
     email: 'matej.mikulas.pise@gmail.com',
     url: 'https://whitelineczech.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'CZ',
+      addressRegion: 'Jihočeský kraj',
+      addressLocality: 'Choustník',
+      postalCode: '39118',
+      streetAddress: 'Choustník 8',
+    },
     location: {
       '@type': 'Place',
       address: {
