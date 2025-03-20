@@ -29,7 +29,7 @@ const PrimaryArticle = () => {
   if (!context) return <span>Context is missing</span>;
   const { currentArticle } = context;
   return (
-    <section className="gap-4 primary-article">
+    <div className="gap-4 primary-article">
       <article className="max-w-full">
         <h2 className="text-2xl font-bold">{currentArticle.headline}</h2>
         <div>{formatArticleText(currentArticle.text)}</div>
@@ -42,7 +42,7 @@ const PrimaryArticle = () => {
         height={currentArticle?.galleryOptions?.height ?? 400}
         sameSize={currentArticle?.sameSize ?? true}
       />
-    </section>
+    </div>
   );
 };
 

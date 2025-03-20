@@ -4,7 +4,7 @@ import Slideshow from './slide-show';
 
 const Navbar = () => {
   return (
-    <header className="navbar" role="banner">
+    <header className="navbar">
       <Slideshow slides={slides} mobileSlides={mobileSlides} />
       <div className="header-bar bg-stone-950/70">
         <h1 className="flex pl-4 items-center" aria-label="logo">

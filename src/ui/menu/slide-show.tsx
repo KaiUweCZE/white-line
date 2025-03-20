@@ -30,7 +30,7 @@ const Slideshow = ({ slides, mobileSlides }: SlideshowProps) => {
   }, [currentSlide, actualSlides.length, orientation]);
 
   return (
-    <section className="slideshow" aria-label="hero slideshow" role="region">
+    <section className="slideshow" aria-label="hero slideshow">
       {actualSlides.map((slide, index) => (
         <div key={index} className={`slide ${index === currentSlide ? 'active' : ''}`}>
           <Image

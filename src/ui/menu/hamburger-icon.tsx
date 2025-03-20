@@ -12,7 +12,6 @@ const HamburgerIcon = ({
     <label className="hamburger" aria-label="main-menu">
       <input
         type="checkbox"
-        role="button"
         checked={isMenuActive}
         onChange={(e) => {
           e.stopPropagation();
