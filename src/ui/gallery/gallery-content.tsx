@@ -54,7 +54,9 @@ const GalleryContent = ({
   const imageDisplayClass = isFullscreen || !sameSize ? 'object-contain' : 'object-cover';
 
   return (
-    <div
+    <section
+      role="region"
+      aria-label="Galerie fotografií"
       className={`grid relative mx-auto ${isFullscreen && 'bg-black/60'} backdrop-blur-md ${
         isFullscreen ? 'w-screen h-screen' : 'max-w-full'
       }`}
@@ -115,7 +117,7 @@ const GalleryContent = ({
         onDotClick={onDotClick}
         images={images}
       />
-    </div>
+    </section>
   );
 };
 

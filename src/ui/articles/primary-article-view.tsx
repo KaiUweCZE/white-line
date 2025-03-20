@@ -37,7 +37,7 @@ const PrimaryArticleView = (article: Article) => {
       <Tag variant={article.tags?.type}>{article.tags?.name}</Tag>
       <p className="line-clamp-2">{article.text}...</p>
       <footer className="flex justify-between">
-        <time className="text-xs">{article.time}</time>
+        <span className="text-xs">{article.time}</span>
         <Button size="sm" animation="undeline" onClick={handleSetArticle}>
           Více
         </Button>

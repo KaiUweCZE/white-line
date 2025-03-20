@@ -9,9 +9,10 @@ const HamburgerIcon = ({
   isMenuActive: boolean;
 }) => {
   return (
-    <label className="hamburger" role="button" aria-controls="mobile-menu" aria-label="main-menu">
+    <label className="hamburger" aria-label="main-menu">
       <input
         type="checkbox"
+        role="button"
         checked={isMenuActive}
         onChange={(e) => {
           e.stopPropagation();

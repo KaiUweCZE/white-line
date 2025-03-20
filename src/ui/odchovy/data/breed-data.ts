@@ -13,6 +13,8 @@ import vrhK from '@/assets/images/breed/vrhk.webp';
 import vrhL from '@/assets/images/breed/vrhl.webp';
 import vrhM from '@/assets/images/breed/vrhm.webp';
 import vrhN from '@/assets/images/breed/vrhn.webp';
+// corgi breed's images
+import cVrhA from '@/assets/images/breed/corgi/vrha.webp';
 import { StaticImageData } from 'next/image';
 
 export interface BreedType {
@@ -237,6 +239,6 @@ export const breedData = [
     females: ['Amy', 'Arnica', 'Amádea'],
     males: ['Artaban', 'Ahepjuk'],
     birth: '20.12.2024',
-    img: vrhA,
+    img: cVrhA,
   },
 ];

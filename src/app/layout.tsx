@@ -14,22 +14,11 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
   category: 'chovatelská stanice',
   keywords: [
-    'bílý švýcarský ovčák štěňata',
-    'štěňata BŠO s PP',
-    'chovatelská stanice BŠO',
-    'bílý švýcarský ovčák chov',
-    'prodej štěňat s PP',
+    'bílý švýcarský ovčák štěňata s PP',
+    'chovatelská stanice BŠO Jižní Čechy',
+    'welsh corgi štěňata',
     'Whiteline Czech',
-    'chovatelská stanice z Táborska',
-    'štěňata bílého švýcarského ovčáka',
-    'BŠO chovatelská stanice Jižní Čechy',
-    'čistokrevná štěňata bílého švýcarského ovčáka',
-    'chovatelská stanice Jižní Čechy',
-    'štěňata s PP Jihočeský kraj',
-    'chovný pes BŠO',
-    'chovná fena BŠO',
-    'chovná fena corgi',
-    'welsh corgi',
+    'chov psů s průkazem původu',
   ],
   authors: [{ name: 'Whiteline Czech' }],
   creator: 'Whiteline Czech',
@@ -58,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Whiteline Czech | Chovatelská stanice bílého švýcarského ovčáka',
     description:
-      'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka s PP.',
+      'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka. Nabízíme zdravá štěňata s PP, kompletní chovatelský servis a poradenství.',
     images: ['/images/seo/og-image.webp'],
   },
   openGraph: {
@@ -148,11 +137,40 @@ export default function RootLayout({
     ],
   };
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://whitelineczech.com/#business',
+    name: 'Whiteline Czech - Chovatelská stanice',
+    image: 'https://whitelineczech.com/images/seo/logo.webp',
+    telephone: '+420603219394',
+    email: 'matej.mikulas.pise@gmail.com',
+    url: 'https://whitelineczech.com',
+    location: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'CZ',
+        addressRegion: 'Jihočeský kraj',
+        addressLocality: 'Choustník',
+      },
+    },
+    description:
+      'Profesionální chovatelská stanice zaměřená na chov bílého švýcarského ovčáka. Odchováváme 1-2 vrhy ročně s důrazem na zdraví a kvalitu štěňat.',
+    // Přidej vhodné kategorie
+    additionalType: [
+      'http://www.productontology.org/id/Dog_breeder',
+      'http://www.productontology.org/id/Animal_husbandry',
+    ],
+  };
+
   return (
     <html lang="cs">
       <head>
+        {/* <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js" /> */}
         <JsonLd data={jsonLd} />
         <JsonLd data={breedingService} />
+        <JsonLd data={localBusinessSchema} />
       </head>
       <body className={`${parkinsans.variable} font-parkinsans antialiased`}>
         <Navbar />

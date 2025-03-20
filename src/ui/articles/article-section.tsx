@@ -25,6 +25,7 @@ const ArticleSection = () => {
       <ArticleSearch />
       <div className="p-1 max-h-[30rem] primary-scroll overflow-y-auto">
         <section className="articles-section grid grid-cols-3 gap-2">
+          <h2 className="sr-only">Články</h2>
           {filteredData.map((article, index) => (
             <PrimaryArticleView key={index} {...article} />
           ))}

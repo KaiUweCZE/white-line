@@ -126,6 +126,9 @@ main {
   animation: bg-fill linear both;
   animation-timeline: scroll();
   animation-range: 10dvh 55dvh;
+  @media (width < 640px) {
+    border-radius: 0;
+  }
 }
 
 @keyframes bg-fill {
