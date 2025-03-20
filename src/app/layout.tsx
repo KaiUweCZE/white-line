@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     countryName: 'Czech Republic',
   },
   verification: {
-    google: 'váš-google-verification-code', // Přidejte po verifikaci v Google Search Console
+    google: 'google-site-verification=NY76x19ODko37iQ2mNf2x5RcHH6xwVt1xxjfO3ab230',
   },
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#ffffff',
