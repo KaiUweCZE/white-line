@@ -1,4 +1,4 @@
-import { Ruler, Award, Heart, Cross } from 'lucide-react';
+import { Ruler, Award, Cross } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 import LiDot from '../li-dot';
 
@@ -12,7 +12,7 @@ interface ParentBoxProps {
 }
 
 const ParentBox = ({ name, images, physical, health, titles, gender }: ParentBoxProps) => {
-  const dotColor = gender === 'Otec' ? 'bg-blue-500' : 'bg-pink-500';
+  //const dotColor = gender === 'Otec' ? 'bg-blue-500' : 'bg-pink-500';
 
   return (
     <div className="space-y-4">

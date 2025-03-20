@@ -14,7 +14,7 @@ interface ImageViewerProps {
 }
 
 const ImageViewer = ({ active, setActive, images, initialIndex, captions }: ImageViewerProps) => {
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(true);
   const [showSwipeGuide, setShowSwipeGuide] = useState(true);
 
   const { currentIndex, setCurrentIndex, goToNext, goToPrev, isSwiping, swipeHandlers } =
@@ -81,7 +81,7 @@ const ImageViewer = ({ active, setActive, images, initialIndex, captions }: Imag
 
   return (
     <div
-      className="image-viewer fixed inset-0 z-50 flex items-center justify-center bg-black/80 transition-all duration-300"
+      className="image-viewer fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm transition-all duration-300"
       aria-modal="true"
       role="dialog"
       aria-label="Prohlížeč obrázků"
@@ -124,21 +124,22 @@ const ImageViewer = ({ active, setActive, images, initialIndex, captions }: Imag
         className="relative w-full h-full flex items-center justify-center"
         style={{ touchAction: 'none' }}
       >
-        <Image
-          src={images[currentIndex]}
-          alt={captions?.[currentIndex] || `Obrázek ${currentIndex + 1}`}
-          className="object-contain max-h-screen h-auto w-auto"
-          height={images[currentIndex].height}
-          priority
-          placeholder="blur"
-        />
-
-        {/* caption about picture*/}
-        {showInfo && captions && captions[currentIndex] && (
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-            <p className="text-white text-sm md:text-base">{captions[currentIndex]}</p>
-          </div>
-        )}
+        <figure className="relative">
+          <Image
+            src={images[currentIndex]}
+            alt={captions?.[currentIndex] || `Obrázek ${currentIndex + 1}`}
+            className="object-contain max-h-screen h-auto w-auto"
+            height={images[currentIndex].height}
+            priority
+            placeholder="blur"
+          />
+          {/* caption about picture*/}
+          {showInfo && captions && captions[currentIndex] && (
+            <figcaption className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+              <p className="text-white text-sm md:text-base">{captions[currentIndex]}</p>
+            </figcaption>
+          )}
+        </figure>
 
         {/* position dots*/}
         {images.length > 1 && (

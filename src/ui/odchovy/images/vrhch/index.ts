@@ -19,7 +19,7 @@ export interface GalleryImage {
 
 export const breedAImages: GalleryImage[] = [
   {
-    label: 'Chara Jasmine',
+    label: 'Chessie 23 měsíců',
     image: chessie1,
   },
   {
@@ -55,7 +55,7 @@ export const breedAImages: GalleryImage[] = [
     image: chupAndChessie,
   },
   {
-    label: 'Chupacabra a Chessie a Rika',
+    label: 'Chupacabra, Frederika(matka), Chessie',
     image: chupRikaChessie,
   },
   {

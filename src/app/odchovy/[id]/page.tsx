@@ -4,7 +4,6 @@ import { breedDetails } from '@/ui/odchovy/data/breed-details';
 import PuppiesReview from '@/ui/odchovy/odchov/puppies-review';
 import ParentBox from '@/ui/odchovy/parent-box';
 import { ChevronLeft, Calendar } from 'lucide-react';
-import { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { notFound, useParams } from 'next/navigation';
 
