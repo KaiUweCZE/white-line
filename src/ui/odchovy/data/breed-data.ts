@@ -40,6 +40,7 @@ export const breedData = [
     shortMotherName: 'Chessie',
     females: ['Nessie', 'Nicole-Allia'],
     males: ['Nero', 'Newton', 'Nobel'],
+    birth: '19.5.2022',
     img: vrhN,
   },
   {
@@ -52,6 +53,7 @@ export const breedData = [
     shortMotherName: 'Frederika',
     females: ['Mademoiselle', 'Maya', 'Melanie', 'Mercedes', 'Minerva'],
     males: ['Maximilian'],
+    birth: '8.2.2022',
     img: vrhM,
   },
   {
@@ -64,6 +66,7 @@ export const breedData = [
     shortMotherName: 'Chessie',
     females: null,
     males: ['Lego', 'Lucius Wolf', 'Lupin'],
+    birth: '22.4.2021',
     img: vrhL,
   },
   {
@@ -76,6 +79,7 @@ export const breedData = [
     shortMotherName: 'Frída',
     females: ['Kalinka', 'Kalypso', 'Keira', 'Kubra'],
     males: ['Kallikrates', 'Kamikaze', 'Kilimanjaro', 'Kohinoor'],
+    birth: '19.1.2021',
     img: vrhK,
   },
   {
@@ -88,6 +92,7 @@ export const breedData = [
     shortMotherName: 'Chessie',
     females: ["J'Adore", 'Jeana Aira', 'Jetaimie', 'Jewel'],
     males: ['Jad Aaron'],
+    birth: '5.8.2020',
     img: vrhJ,
   },
   {
@@ -100,6 +105,7 @@ export const breedData = [
     shortMotherName: 'Frederika',
     females: ['Imaculada', 'Iwanga'],
     males: ['Iarlaith', 'Ignac', 'Iniobong', 'Izydor'],
+    birth: '8.5.2020',
     img: vrhI,
   },
   {
@@ -112,6 +118,7 @@ export const breedData = [
     shortMotherName: 'Frederika',
     females: ['Chara Jasmine', 'Chessie', 'Chilli'],
     males: ['Chariowalda', 'Cheddar', 'Che Guevara', 'Cheiron', 'Chupacabra'],
+    birth: '19.6.2018',
     img: vrhCh,
   },
   {
@@ -124,6 +131,7 @@ export const breedData = [
     shortMotherName: 'Alexia',
     females: ['Go-go', 'Grace', 'Gwendoline'],
     males: ['Grim', 'Gringo', 'Grizzly Bear'],
+    birth: '16.4.2010',
     img: vrhH,
   },
   {
@@ -136,6 +144,7 @@ export const breedData = [
     shortMotherName: 'Frederika',
     females: ['Imaculada', 'Iwanga'],
     males: ['Iarlaith', 'Ignac', 'Iniobong', 'Izydor'],
+    birth: '16.7.2007',
     img: vrhG,
   },
   {
@@ -148,6 +157,7 @@ export const breedData = [
     shortMotherName: 'Allia',
     females: ['Fancy', 'Fanny', 'Farah', 'Fee', 'Flower'],
     males: ['Fenix', 'Foster King'],
+    birth: '11.5.2007',
     img: vrhF,
   },
   {
@@ -160,7 +170,22 @@ export const breedData = [
     shortMotherName: 'Genny',
     females: ['Electra', 'Eyscha', 'Eywy'],
     males: ['Efram', 'Eliott Whity', 'Emily', 'Eugene'],
+    birth: '1.2.2007',
     img: vrhE,
+  },
+  {
+    // need to fix image
+    id: 'swd',
+    name: 'Vrh D',
+    type: 'Bílý švýcarský ovčák',
+    father: 'Herkules King vom Nicolaiberg',
+    shortFatherName: 'Herkules',
+    mother: 'Allia - Nicole of Haely´s Future',
+    shortMotherName: 'Allia',
+    females: ['Fancy', 'Fanny', 'Farah', 'Fee', 'Flower'],
+    males: ['Fenix', 'Foster King'],
+    birth: '14.10.2006',
+    img: vrhC,
   },
   {
     id: 'swc',
@@ -172,6 +197,7 @@ export const breedData = [
     shortMotherName: 'Genny',
     females: ['Carmen', 'Carol', 'Carrie'],
     males: ['Carl v. B.', 'Clipper', 'Cirith', 'Cooper'],
+    birth: '6.1.2006',
     img: vrhC,
   },
   {
@@ -184,6 +210,7 @@ export const breedData = [
     shortMotherName: 'Genny',
     females: ['Bessie', 'Blanche', 'Buffy'],
     males: ['Baquero', 'Bean', 'Berry', 'Black Jack', 'Brilliant'],
+    birth: '28.12.2004',
     img: vrhB,
   },
   {
@@ -196,6 +223,7 @@ export const breedData = [
     shortMotherName: 'Genny',
     females: ['Amy', 'Arnica', 'Amádea'],
     males: ['Artaban', 'Ahepjuk'],
+    birth: '31.5.2004',
     img: vrhA,
   },
   {
@@ -208,6 +236,7 @@ export const breedData = [
     shortMotherName: 'Genny',
     females: ['Amy', 'Arnica', 'Amádea'],
     males: ['Artaban', 'Ahepjuk'],
+    birth: '20.12.2024',
     img: vrhA,
   },
 ];

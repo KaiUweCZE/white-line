@@ -2,10 +2,7 @@ import { CalendarDays, ChevronRight /*, PawPrint*/ } from 'lucide-react';
 import { BreedType } from './data/breed-data';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const LiDot = () => {
-  return <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-slate-300"></span>;
-};
+import LiDot from '../li-dot';
 
 const BoxBreed = ({ breed }: { breed: BreedType }) => {
   return (
@@ -20,10 +17,10 @@ const BoxBreed = ({ breed }: { breed: BreedType }) => {
           height={400}
           className="object-cover "
         />{' '}
-        <div className="absolute top-3 right-3 bg-white/90 text-slate-800 text-xs font-medium px-2 py-1 rounded flex items-center gap-1 shadow-sm">
+        <div className="absolute top-3 right-3 bg-white/70  text-slate-800 text-xs font-medium px-2 py-1 rounded-sm flex items-center gap-2">
           <CalendarDays className="h-3.5 w-3.5" />
           {/* <span>datum narození:</span>*/}
-          <span>10.10.2023</span>
+          <span>{breed.birth}</span>
         </div>
       </figure>
       {/* Content section */}

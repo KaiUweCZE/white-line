@@ -7,7 +7,7 @@ import DogHero from '@/ui/nasi-psi/dog/dog-hero';
 import DogBreeds from '@/ui/nasi-psi/dog/dog-breeds';
 import DogContests from '@/ui/nasi-psi/dog/dog-contests';
 import DogMatings from '@/ui/nasi-psi/dog/dog-matings';
-import DogGallery from '@/ui/nasi-psi/dog/dog-gallery';
+import DogGallery from '@/ui/dog-gallery';
 
 const DogDetail = () => {
   const params = useParams();

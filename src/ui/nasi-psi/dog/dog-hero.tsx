@@ -35,7 +35,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
               height={400}
               width={300}
               placeholder="blur"
-              className=" secondary-shadow"
+              className="secondary-shadow"
             />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-900/70 to-transparent pt-8 pb-4 px-4">
               <h1 className="text-3xl font-bold text-white">{dog?.name}</h1>

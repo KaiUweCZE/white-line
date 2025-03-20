@@ -11,33 +11,7 @@ import chessieImg1 from '../images/vrhch/chessie.webp';
 import chessieImg2 from '../images/vrhch/chessie2.webp';
 import cheironImg1 from '../images/vrhch/cheiron1.webp';
 import cheironImg2 from '../images/vrhch/cheiron2.webp';
-/*import { StaticImageData } from 'next/image';
-
-interface ParentInfo {
-  name: string;
-  images: StaticImageData[];
-  physical?: string[];
-  health?: string[];
-  titles?: string[];
-}
-
-interface BreedDetail {
-  id: string;
-  name: string;
-  birth: string;
-  father: ParentInfo;
-  mother: ParentInfo;
-  females?: {
-    name: string;
-    images: StaticImageData[];
-    labels: string[];
-  }[];
-  males?: {
-    name: string;
-    images: StaticImageData[];
-    labels: string[];
-  }[];
-}*/
+import { breedAImages } from '../images/vrhch';
 
 export const breedDetails = [
   {
@@ -53,7 +27,7 @@ export const breedDetails = [
     mother: {
       name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plonochrupá'],
+      physical: ['61 cm', 'plnochrupá'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
@@ -115,7 +89,7 @@ export const breedDetails = [
     mother: {
       name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plonochrupá'],
+      physical: ['61 cm', 'plnochrupá'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
@@ -239,7 +213,7 @@ export const breedDetails = [
     mother: {
       name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plonochrupá'],
+      physical: ['61 cm', 'plnochrupá'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
@@ -301,7 +275,7 @@ export const breedDetails = [
     mother: {
       name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plonochrupá'],
+      physical: ['61 cm', 'plnochrupá'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
@@ -353,7 +327,7 @@ export const breedDetails = [
   {
     id: 'swch',
     name: 'Vrh Ch',
-    birth: '4.6.2019',
+    birth: '19.6.2018',
     father: {
       name: 'Bland Blaez vom Weissen Unterberg',
       images: [blaezImg1, blaezImg2],
@@ -364,7 +338,7 @@ export const breedDetails = [
     mother: {
       name: 'Frederika Bílá Merci',
       images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plonochrupá'],
+      physical: ['61 cm', 'plnochrupá'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
@@ -412,5 +386,6 @@ export const breedDetails = [
         labels: ['Chupacabra'],
       },
     ],
+    gallery: breedAImages,
   },
 ];

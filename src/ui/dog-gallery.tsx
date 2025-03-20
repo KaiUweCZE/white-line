@@ -6,11 +6,12 @@ import { useWindowSize } from '@/ui/menu/hooks/use-window-size';
 
 interface DogGalleryProps {
   images: StaticImageData[];
+  labels?: string[];
   title?: string;
   metaData?: Record<string, string>;
 }
 
-const DogGallery = ({ images, title = 'Fotogalerie', metaData }: DogGalleryProps) => {
+const DogGallery = ({ images, labels, title = 'Fotogalerie', metaData }: DogGalleryProps) => {
   // Funkce pro výpočet grid-span hodnot na základě poměru stran
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -41,13 +42,15 @@ const DogGallery = ({ images, title = 'Fotogalerie', metaData }: DogGalleryProps
     const colSpan = Math.round(rowSpan * aspectRatio);
     rowSpan = Math.round(rowSpan);
 
-    console.log(aspectRatio, rowSpan, colSpan);
+    //  console.log(aspectRatio, rowSpan, colSpan);
 
     return {
       rowSpan,
       colSpan,
     };
   };
+
+  images.forEach((i) => console.log(i, labels?.[images.indexOf(i)]));
 
   const captions = metaData?.captions
     ? images.map((_, index) => metaData.captions[index] || `Fotka ${index + 1}`)

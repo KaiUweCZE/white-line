@@ -1,5 +1,6 @@
-import { Ruler, Award, Heart } from 'lucide-react';
+import { Ruler, Award, Heart, Cross } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
+import LiDot from '../li-dot';
 
 interface ParentBoxProps {
   name: string;
@@ -16,7 +17,7 @@ const ParentBox = ({ name, images, physical, health, titles, gender }: ParentBox
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-semibold">{gender}</h2>
-      <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden secondary-shadow">
+      <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden accent-shadow">
         {images[0] && (
           <Image
             src={images[0]}
@@ -29,8 +30,8 @@ const ParentBox = ({ name, images, physical, health, titles, gender }: ParentBox
         )}
       </div>
       <div className="space-y-3">
-        <h3 className="font-medium text-lg">{name}</h3>
-        <div className="space-y-4">
+        <h3 className="font-medium text-lg  border-b border-gray-200/70">{name}</h3>
+        <div className="space-y-4  ">
           {physical && physical.length > 0 && (
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-gray-700">
@@ -39,7 +40,7 @@ const ParentBox = ({ name, images, physical, health, titles, gender }: ParentBox
               </div>
               {physical.map((info, index) => (
                 <p key={index} className="flex items-center gap-2 text-sm text-gray-600 pl-6">
-                  <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`}></span>
+                  <LiDot />
                   {info}
                 </p>
               ))}
@@ -49,12 +50,12 @@ const ParentBox = ({ name, images, physical, health, titles, gender }: ParentBox
           {health && health.length > 0 && (
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-gray-700">
-                <Heart className="w-4 h-4" />
+                <Cross className="w-4 h-4" />
                 <span className="text-sm font-medium">Zdravotní testy</span>
               </div>
               {health.map((info, index) => (
                 <p key={index} className="flex items-center gap-2 text-sm text-gray-600 pl-6">
-                  <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`}></span>
+                  <LiDot />
                   {info}
                 </p>
               ))}
@@ -69,7 +70,7 @@ const ParentBox = ({ name, images, physical, health, titles, gender }: ParentBox
               </div>
               {titles.map((info, index) => (
                 <p key={index} className="flex items-center gap-2 text-sm text-gray-600 pl-6">
-                  <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`}></span>
+                  <LiDot />
                   {info}
                 </p>
               ))}

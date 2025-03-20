@@ -74,6 +74,9 @@ main {
   background-color: #f8f8ff;*/
 }
 
+.page-headline {
+}
+
 .navbar {
   display: grid;
   position: sticky;
@@ -203,6 +206,7 @@ main {
 
 .accent-shadow {
   box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.11);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13), 0 1px 1px 0 rgba(0, 0, 0, 0.11);
 }
 
 .arrow-icon {
