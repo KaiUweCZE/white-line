@@ -30,7 +30,7 @@ const BreedDetail = () => {
       <div className="space-y-12">
         <div className="bg-white rounded-sm accent-shadow p-6 pb-0 mb-8 grid gap-4">
           <header>
-            <h1 className="text-3xl font-bold mb-4">{name}</h1>
+            <h1 className="page-headline">{name}</h1>
 
             <div className="flex items-center mb-6 text-gray-600">
               <Calendar className="w-5 h-5 mr-2" />
@@ -69,13 +69,3 @@ const BreedDetail = () => {
 };
 
 export default BreedDetail;
-
-/*
-  {(females?.length > 0 || males?.length > 0) && (
-    <div className="bg-white rounded-sm accent-shadow p-6">
-      <h2 className="text-2xl font-bold mb-8">Štěňata</h2>
-      {females && females.length > 0 && <PuppyBox puppies={females} gender="Fenky" />}
-
-      {males && males.length > 0 && <PuppyBox puppies={males} gender="Psi" />}
-    </div>
-  )}*/

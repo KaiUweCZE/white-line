@@ -24,7 +24,7 @@ const OdchovyPage = () => {
     <div className="wrapper mx-auto primary-bg max-width pt-8 px-8 min-h-[45dvh]">
       <div className="grid gap-8 h-fit">
         <div className="grid gap-2">
-          <h2 className="text-2xl font-bold">Odchovy {title()}</h2>
+          <h1 className="page-headline">Odchovy {title()}</h1>
           <BreedSelect setActualBreed={setActualBreed} actualBreed={actualBreed} />
         </div>
         <main>{data && <ContainerBreeds data={data} />}</main>

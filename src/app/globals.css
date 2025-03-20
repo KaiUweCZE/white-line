@@ -12,6 +12,8 @@
   --md-radius: 0.5rem;
   --primary-bg: #fffafa;
   --not-foun-bg: #fff6e9;
+  --font-primary: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --text-color: #252525;
 }
 
 * {
@@ -39,6 +41,13 @@ body:has(.container-error) {
   .navbar {
     display: none;
   }
+}
+
+.page-headline {
+  font-size: var(--font-primary);
+
+  font-weight: bold;
+  color: var(--text-color);
 }
 
 .wrapper {
@@ -72,9 +81,6 @@ main {
   margin: 0 auto;
   /* background-color: #f0f8ff;
   background-color: #f8f8ff;*/
-}
-
-.page-headline {
 }
 
 .navbar {

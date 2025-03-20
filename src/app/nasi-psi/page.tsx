@@ -14,7 +14,7 @@ const PsiPage = () => {
     <main className="max-w-7xl mx-auto py-8 md:py-12 primary-bg">
       {/* Sekce živých psů */}
       <section className="mb-16 px-4">
-        <h2 className="text-2xl font-bold  pb-2 inline-block">Naši psi</h2>
+        <h1 className="page-headline">Naši psi</h1>
         <div>
           <DogsGallery dogs={alive} />
         </div>

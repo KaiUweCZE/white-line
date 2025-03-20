@@ -38,7 +38,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
               className="secondary-shadow"
             />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-900/70 to-transparent pt-8 pb-4 px-4">
-              <h1 className="text-3xl font-bold text-white">{dog?.name}</h1>
+              <h1 className="text-3xl mb-0 text-white">{dog?.name}</h1>
               <p className="text-blue-100 font-medium">{dog.kennel}</p>
             </div>
           </div>
@@ -82,7 +82,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
               {dog.pedigree && (
                 <Link
                   href={dog.pedigree}
-                  className="inline-flex items-center gap-2 mt-2 text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                  className="inline-flex items-center gap-2 mt-2 text-sky-800 hover:text-blue-800 font-medium transition-colors"
                 >
                   <ExternalLink className="h-4 w-4" />
                   Zobrazit rodokmen
@@ -131,7 +131,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
               {dog.titles.map((title, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 bg-blue-50 text-blue-500 px-4 py-2 rounded-md shadow-sm"
+                  className="flex items-center gap-2 bg-sky-50 text-sky-700 px-4 py-2 rounded-md shadow-sm"
                 >
                   <Medal className="w-4 h-4" />
                   <span className="font-medium">{title}</span>

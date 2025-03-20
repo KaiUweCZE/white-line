@@ -155,18 +155,10 @@ export default function RootLayout({
         <JsonLd data={breedingService} />
       </head>
       <body className={`${parkinsans.variable} font-parkinsans antialiased`}>
-        <a href="#main-content" className="sr-only focus:not-sr-only">
-          Přeskočit na hlavní obsah
-        </a>
         <Navbar />
         <main id="main-content" className="">
           {children}
         </main>
-        {/* <footer className="bg-stone-950 text-white py-8">
-          <div className="container mx-auto">
-            <p className="text-center">&copy; {new Date().getFullYear()} Whiteline Czech. Všechna práva vyhrazena.</p>
-          </div>
-        </footer> */}
       </body>
     </html>
   );

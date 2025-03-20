@@ -12,9 +12,7 @@ const NotFound = () => {
         Zpět na odchovy
       </Link>
 
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">
-        Detailní informace nejsou k dispozici
-      </h1>
+      <h1 className="page-headline">Detailní informace nejsou k dispozici</h1>
     </section>
   );
 };
