@@ -1,7 +1,6 @@
 import alexiaMain from '@/assets/images/our-dogs/Alexia_smecka.webp';
 import alliaMain from '@/assets/images/our-dogs/Allia_smecka.webp';
 import gennyMain from '@/assets/images/our-dogs/Genny_smecka.webp';
-import tildaMain from '@/assets/images/our-dogs/tilda_smecka.webp';
 import frederikaPortret from '@/assets/images/our-dogs/frederika/frederika_portret.webp';
 import { dogsImg } from '@/assets/images/our-dogs';
 import { frederikaImg } from '@/assets/images/our-dogs/frederika';
