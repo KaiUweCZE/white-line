@@ -3,12 +3,6 @@ import alliaMain from '@/assets/images/our-dogs/Allia_smecka.webp';
 import gennyMain from '@/assets/images/our-dogs/Genny_smecka.webp';
 import tildaMain from '@/assets/images/our-dogs/tilda_smecka.webp';
 import frederikaPortret from '@/assets/images/our-dogs/frederika/frederika_portret.webp';
-import fenixPortret from '@/assets/images/our-dogs/fenix/fenix_portret.webp';
-import vrhChImg from '@/assets/images/our-breed/vrhch.jpg';
-import vrhIImg from '@/assets/images/our-breed/vrhi.jpg';
-import vrhMImg from '@/assets/images/our-breed/vrhm.jpg';
-import vrhKImg from '@/assets/images/our-breed/vrhk.jpg';
-import vrhJImg from '@/assets/images/our-breed/vrhj.jpg';
 import { dogsImg } from '@/assets/images/our-dogs';
 import { frederikaImg } from '@/assets/images/our-dogs/frederika';
 import { fenixImg } from '@/assets/images/our-dogs/fenix';
@@ -18,6 +12,8 @@ import { chessieImg } from '@/assets/images/our-dogs/chessie';
 import { hopeImg } from '@/assets/images/our-dogs/hope';
 import { kodyImg } from '@/assets/images/our-dogs/kody';
 import { artabanImg } from '@/assets/images/our-dogs/artaban';
+import { breedImgs } from '@/assets/images/our-breed';
+import { tildaImg } from '@/assets/images/our-dogs/tilda';
 
 export const dataDogs = [
   {
@@ -35,11 +31,11 @@ export const dataDogs = [
     exams: [], // Nejsou uvedeny
     portrait: frederikaPortret, // Placeholder
     titles: ['Český šampion', 'Slovenský šampion krásy'],
-    pedigree: '',
+    pedigree: 'https://db.bily-ovcak.cz/psi/4527/alexia-of-trebons-berger-blanc',
     breeds: [
       {
         name: 'Vrh G Whiteline Czech',
-        image: vrhMImg,
+        image: breedImgs.vrhCh,
         href: '',
       },
     ],
@@ -62,16 +58,16 @@ export const dataDogs = [
     exams: ['ZOP'],
     portrait: frederikaPortret, // Placeholder
     titles: ['Český šampion', 'Slovenský šampion krásy'],
-    pedigree: '',
+    pedigree: 'https://db.bily-ovcak.cz/psi/4341/allia-nicole-of-haelys-future',
     breeds: [
       {
         name: 'Vrh D Whiteline Czech',
-        image: vrhMImg, // Podle požadavku používám stejný placeholder
+        image: breedImgs.vrhCh, // Podle požadavku používám stejný placeholder
         href: '',
       },
       {
         name: 'Vrh F Whiteline Czech',
-        image: vrhMImg,
+        image: breedImgs.vrhCh,
         href: '',
       },
     ],
@@ -95,7 +91,7 @@ export const dataDogs = [
     exams: ['ZOP', 'ZZO', 'CANISTERAPIE'],
     portrait: artabanImg.portret, // Placeholder
     titles: [], // Nejsou uvedeny tituly
-    pedigree: '',
+    pedigree: 'https://db.bily-ovcak.cz/psi/4237/artaban-whiteline-czech',
     breeds: [], // Nemá odchovy
     races: [], // Nemá závody
     contests: [
@@ -138,16 +134,16 @@ export const dataDogs = [
     kennel: 'Bílá Merci',
     breed: 'bílý švýcarský ovčák',
     type: 'chovný pes FCI',
-    img: dogsImg.fenix.smecka, // Toto je placeholder, bude potřeba doplnit správný import obrázku
+    img: dogsImg.fenix.smecka,
     alive: true,
     registration: 'Z Reg/ACO/3554/15/17',
     birth: '27.5.2015',
     description: 'dlouhosrstý, 65 cm, plnochrupý, skus nůžkový, DNA',
     health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
     exams: ['BH-VT', 'HWT', 'NHAT'],
-    portrait: dogsImg.fenix.portret, // Toto je placeholder, bude potřeba doplnit
-    titles: [], // Není v datech uvedeno
-    pedigree: '', // Odkaz na rodokmen, bude potřeba doplnit
+    portrait: dogsImg.fenix.portret,
+    titles: [],
+    pedigree: 'https://db.bily-ovcak.cz/psi/356/fenix-bila-merci',
     matings: [
       {
         name: 'Vrh B White Essence',
@@ -335,17 +331,17 @@ export const dataDogs = [
     breeds: [
       {
         name: 'Vrh Ch',
-        image: vrhChImg,
+        image: breedImgs.vrhCh,
         href: 'https://www.rajce.idnes.cz/whitelineczech/album/vrh-litter-ch-whiteline-czech',
       },
       {
         name: 'Vrh I',
-        image: vrhIImg,
+        image: breedImgs.vrhI,
         href: 'https://www.rajce.idnes.cz/whitelineczech/album/vrh-i-whiteline-czech-bily-svycarsky-ovcak',
       },
       {
         name: 'Vrh M',
-        image: vrhMImg,
+        image: breedImgs.vrhM,
         href: 'https://www.rajce.idnes.cz/whitelineczech/album/vrh-m-whiteline-czech-bily-svycarsky-ovcak',
       },
     ],
@@ -531,46 +527,46 @@ export const dataDogs = [
       'Klubový šampion',
       'Miss 2003',
     ],
-    pedigree: '',
+    pedigree: 'https://db.bily-ovcak.cz/psi/2952/genny-lee-donnevara',
     breeds: [
       {
         name: 'Vrh A Whiteline Czech',
-        image: vrhMImg, // Podle požadavku
+        image: breedImgs.vrhCh, // Podle požadavku
         href: '',
       },
       {
         name: 'Vrh B Whiteline Czech',
-        image: vrhMImg,
+        image: breedImgs.vrhCh,
         href: '',
       },
       {
         name: 'Vrh C Whiteline Czech',
-        image: vrhMImg,
+        image: breedImgs.vrhM,
         href: '',
       },
       {
         name: 'Vrh E Whiteline Czech',
-        image: vrhMImg,
+        image: breedImgs.vrhM,
         href: '',
       },
       {
         name: 'Vrh N Donnevara',
-        image: vrhMImg,
+        image: breedImgs.vrhM,
         href: '',
       },
       {
         name: 'Vrh P Donnevara',
-        image: vrhMImg,
+        image: breedImgs.vrhM,
         href: '',
       },
       {
         name: 'Vrh R Donnevara',
-        image: vrhMImg,
+        image: breedImgs.vrhM,
         href: '',
       },
       {
         name: 'Vrh T Donnevara',
-        image: vrhMImg,
+        image: breedImgs.vrhM,
         href: '',
       },
     ],
@@ -624,7 +620,8 @@ export const dataDogs = [
     exams: [], // Nejsou uvedeny
     portrait: dogsImg.hope.portret, // Placeholder
     titles: [], // Nejsou uvedeny
-    pedigree: '',
+    pedigree:
+      'http://www.pedigreedatabase.com/white_shepherd/dog.html?id=2725015-hopen-honour-von-kings-silbertal',
     breeds: [], // Nemá vrhy
     races: [], // Nemá závody
     contests: [], // Nemá výstavy
@@ -645,21 +642,21 @@ export const dataDogs = [
     exams: ['NHAT'],
     portrait: dogsImg.chessie.portret, // Placeholder pro portrét
     titles: [], // Není v datech uvedeno
-    pedigree: '', // Odkaz na rodokmen, bude potřeba doplnit
+    pedigree: 'https://db.bily-ovcak.cz/psi/1240/chessie-whiteline-czech',
     breeds: [
       {
         name: 'Vrh J',
-        image: vrhJImg, // Placeholder
+        image: breedImgs.vrhJ, // Placeholder
         href: '', // Odkaz na galerii
       },
       {
-        name: 'Vrh I',
-        image: vrhIImg, // Placeholder
+        name: 'Vrh L',
+        image: breedImgs.vrhL, // Placeholder
         href: '',
       },
       {
-        name: 'Vrh M',
-        image: vrhMImg, // Placeholder
+        name: 'Vrh N',
+        image: breedImgs.vrhN, // Placeholder
         href: '',
       },
     ],
@@ -692,16 +689,16 @@ export const dataDogs = [
     health: ['HD A', 'ED 0', 'DM N/N', 'MDR1 +/-'],
     exams: [], // Nejsou uvedeny žádné zkoušky
     portrait: dogsImg.free.portret, // Placeholder pro portrét
-    titles: [], // Není v datech uvedeno
-    pedigree: '', // Odkaz na rodokmen, bude potřeba doplnit
+    titles: [],
+    pedigree: 'https://db.bily-ovcak.cz/psi/6839/flying-free-vom-weissen-unterberg', // Odkaz na rodokmen, bude potřeba doplnit
     breeds: [
       {
         name: 'Vrh K',
-        image: vrhKImg, // Placeholder
-        href: '', // Odkaz na galerii
+        image: breedImgs.vrhK,
+        href: 'https://www.rajce.idnes.cz/whitelineczech/album/vrh-k-whiteline-czech-bily-svycarsky-ovcak',
       },
     ],
-    races: [], // V datech nejsou uvedeny žádné závody
+    races: [],
     contests: [
       {
         date: '5.2.2022',
@@ -751,7 +748,7 @@ export const dataDogs = [
     exams: ['NHAT'],
     portrait: dogsImg.chup.portret, // Placeholder
     titles: [], // Nejsou uvedeny
-    pedigree: '',
+    pedigree: 'https://db.bily-ovcak.cz/psi/1224/chupacabra-whiteline-czech',
     breeds: [], // Nemá vrhy
     races: [], // Nemá závody
     contests: [
@@ -782,9 +779,9 @@ export const dataDogs = [
     description: 'krátkosrstý, plnochrupý, skus nůžkový',
     health: ['HD C', 'ED 0'],
     exams: [], // Nejsou uvedeny
-    portrait: fenixPortret, // Placeholder
+    portrait: kodyImg.portret, // Placeholder
     titles: [], // Nejsou uvedeny
-    pedigree: '',
+    pedigree: 'https://db.bily-ovcak.cz/psi/4578/saruman-white-miraja',
     breeds: [], // Nemá odchovy
     races: [], // Nemá závody
     contests: [
@@ -814,8 +811,34 @@ export const dataDogs = [
   {
     id: 'tilda',
     name: 'Tilda',
-    breed: '',
-    img: tildaMain,
+    breed: 'Welsh Corgi Cardigan',
+    type: 'chovná fena FCI',
+    kennel: 'Whiteline Czech',
+    img: tildaImg.smecka,
     alive: true,
+    registration: 'CMKU/WCC/616/-22/21',
+    birth: '19.12.2021',
+    description: 'červená, krátkosrstá, 31.5 cm, plnochrupá, skus nůžkový',
+
+    portrait: tildaImg.portret, // Placeholder
+    titles: [], // Nejsou uvedeny
+    pedigree:
+      'https://genealogie.corgiklub.eu/fe-item1velord2/view/4877?filter=1%26Jmeno%3Dtilda%26Plemeno%3D0%26CisloZapisuOrder%3D0%26Barva%3D0%26Pohlavi%3D0%26DatNarozeni%3D0%26Chovnost%3D0%26DOG_FILTER_PROB_DKK%3D0%26DOG_FILTER_PROB_DLK%3D0%26DOG_FILTER_HEALTH%3D0%26DOG_FILTER_LAND%3D0%26DOG_FILTER_BREEDER%3D0%26filter%3Dfiltrovat%26_do%3DdogFilterForm-submit%26',
+    breeds: [
+      {
+        name: 'Vrh A',
+        image: breedImgs.vrhCh,
+        href: '',
+      },
+    ], // Nemá vrhy
+    races: [], // Nemá závody
+    contests: [
+      {
+        date: '7.5.2023',
+        name: 'Olomouc',
+        grade: 'VD, CAC',
+      },
+    ], // Nemá výstavy
+    gallery: tildaImg.galleryLabels, // Placeholder pro galerii
   },
 ];

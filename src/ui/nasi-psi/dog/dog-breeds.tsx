@@ -20,7 +20,7 @@ const DogBreeds = ({ breeds }: DogBreedsProps) => {
 
       <div className="our-dogs-breed">
         {breeds.map((breed) => (
-          <div key={breed.name} className="relative shadow-md rounded-md our-dogs-frame">
+          <div key={breed.name} className="relative accent-shadow rounded-md our-dogs-frame">
             {/* Obrázek s pevným poměrem stran */}
             <div className="relative overflow-hidden">
               <Image
@@ -29,7 +29,7 @@ const DogBreeds = ({ breeds }: DogBreedsProps) => {
                 alt={`${breed.name} - fotogalerie štěňat`}
                 height={300}
                 width={400}
-                className="breed-img w-full"
+                className="breed-img w-full rounded-md "
               />
 
               {/* Gradient overlay pro lepší čitelnost */}

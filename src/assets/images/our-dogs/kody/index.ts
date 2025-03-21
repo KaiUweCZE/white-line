@@ -1,4 +1,5 @@
 import kodySmecka from '../saruman_smecka.webp';
+import kodyPortret from './saruman-portret.webp';
 import kody1 from './gallery/kody1.webp';
 import kody2 from './gallery/kody2.webp';
 import kody3 from './gallery/kody3.webp';
@@ -11,6 +12,7 @@ import kody9 from './gallery/kody9.webp';
 import kody10 from './gallery/kody10.webp';
 
 export const kodyImg = {
+  portret: kodyPortret,
   smecka: kodySmecka,
   galleryLabels: [
     {
