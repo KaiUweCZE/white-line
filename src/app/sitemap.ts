@@ -30,7 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/nasi-psi/${dog.name
       .toLowerCase()
       .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')}`,
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, '-')}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

@@ -10,7 +10,7 @@ interface BreedJsonLdProps {
     father:
       | {
           name: string;
-          images?: (string | StaticImageData)[];
+          images?: string | StaticImageData;
           physical?: string[];
           health?: string[];
           titles?: string[];
@@ -19,7 +19,7 @@ interface BreedJsonLdProps {
     mother:
       | {
           name: string;
-          images?: (string | StaticImageData)[];
+          images?: string | StaticImageData;
           physical?: string[];
           health?: string[];
           titles?: string[];

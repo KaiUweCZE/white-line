@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 import chessie1 from './gallery/chessie.webp';
 import chessie2 from './gallery/chessie2.webp';
 import chup1 from './gallery/chup.webp';
@@ -11,13 +10,9 @@ import chariowalda1 from './gallery/chariowalda.webp';
 import chariowalda2 from './gallery/chariowalda2.webp';
 import chupAndChessie from './gallery/chup-a-chessie.webp';
 import chupRikaChessie from './gallery/chup-chessie-rika.webp';
+import { GalleryImage } from '@/types/types';
 
-export interface GalleryImage {
-  label: string;
-  image: StaticImageData;
-}
-
-export const breedAImages: GalleryImage[] = [
+export const breedChImages: GalleryImage[] = [
   {
     label: 'Chessie 23 měsíců',
     image: chessie1,

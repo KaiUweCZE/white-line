@@ -55,7 +55,7 @@ const BreedDetail = () => {
             <section className="grid md:grid-cols-2 gap-8">
               <ParentBox
                 name={father.name}
-                images={father.images}
+                image={father.image}
                 physical={father.physical}
                 health={father.health}
                 titles={father.titles}
@@ -64,7 +64,7 @@ const BreedDetail = () => {
 
               <ParentBox
                 name={mother.name}
-                images={mother.images}
+                image={mother.image}
                 physical={mother.physical}
                 health={mother.health}
                 titles={mother.titles}
@@ -72,7 +72,7 @@ const BreedDetail = () => {
               />
             </section>
 
-            <PuppiesReview females={females.map((p) => p.name)} males={males.map((p) => p.name)} />
+            <PuppiesReview females={females} males={males} />
           </div>
         </div>
         <section>

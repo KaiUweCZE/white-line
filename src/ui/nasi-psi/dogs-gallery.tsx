@@ -5,6 +5,7 @@ import Button from '../primitives/button';
 import { useRouter } from 'next/navigation';
 
 type GalleryDogType = {
+  id: string;
   name: string;
   img: StaticImageData;
 };
@@ -22,7 +23,7 @@ const DogsGallery = ({ dogs }: DogsGalleryProps) => {
   return (
     <div className="grid grid-cols-3 gap-4 dogs-gallery">
       {dogs.map((dog) => (
-        <div key={dog.name}>
+        <div key={dog.id}>
           <figure className="relative rounded-sm overflow-hidden secondary-shadow cursor-pointer">
             <Image
               src={dog.img}
@@ -37,7 +38,7 @@ const DogsGallery = ({ dogs }: DogsGalleryProps) => {
                 variant="accent"
                 size="sm"
                 leftIcon={<SquareArrowOutUpRight className="h-4 w-4 text-white" />}
-                onClick={() => handleNavigate(`/nasi-psi/${dog.name}`)}
+                onClick={() => handleNavigate(`/nasi-psi/${dog.id}`)}
               >
                 <span className="text-white">Detail psa</span>
               </Button>

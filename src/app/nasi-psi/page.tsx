@@ -5,10 +5,10 @@ const PsiPage = () => {
   // Oprava filtru, aby správně vrátil objekty s pouze img a name
   const alive = dataDogs
     .filter((dog) => dog.alive)
-    .map((dog) => ({ img: dog.img, name: dog.name }));
+    .map((dog) => ({ id: dog.id, img: dog.img, name: dog.name }));
   const inMemory = dataDogs
     .filter((dog) => !dog.alive)
-    .map((dog) => ({ img: dog.img, name: dog.name }));
+    .map((dog) => ({ id: dog.id, img: dog.img, name: dog.name }));
 
   return (
     <main className="wrapper mx-auto py-8 md:py-12 primary-bg">

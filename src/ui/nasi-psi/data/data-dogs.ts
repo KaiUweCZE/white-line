@@ -19,6 +19,7 @@ import { chupImg } from '@/assets/images/our-dogs/chupacabra';
 
 export const dataDogs = [
   {
+    id: 'alexia',
     name: 'Alexia',
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
@@ -45,7 +46,8 @@ export const dataDogs = [
     gallery: [], // Placeholder pro galerii
   },
   {
-    name: 'Allia-Nicole',
+    id: 'allia-nicole',
+    name: 'Allia Nicole',
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
     kennel: "Haely's Future",
@@ -76,6 +78,7 @@ export const dataDogs = [
     gallery: [], // Placeholder pro galerii
   },
   {
+    id: 'artaban',
     name: 'Artaban',
     breed: 'bílý švýcarský ovčák',
     type: 'pes',
@@ -128,6 +131,7 @@ export const dataDogs = [
     gallery: [], // Placeholder pro galerii
   },
   {
+    id: 'fenix',
     name: 'Fenix',
     kennel: 'Bílá Merci',
     breed: 'bílý švýcarský ovčák',
@@ -311,6 +315,7 @@ export const dataDogs = [
     gallery: fenixImg.galleryLabels,
   },
   {
+    id: 'frederika',
     name: 'Frederika',
     kennel: 'Bílá Merci',
     breed: 'bílý švýcarský ovčák',
@@ -502,6 +507,7 @@ export const dataDogs = [
     gallery: frederikaImg.galleryLabels,
   },
   {
+    id: 'genny-lee',
     name: 'Genny Lee',
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
@@ -602,6 +608,7 @@ export const dataDogs = [
     gallery: [], // Placeholder pro galerii
   },
   {
+    id: 'hope-and-honor',
     name: 'Hope and Honor',
     breed: 'bílý švýcarský ovčák',
     type: 'nechovná fena',
@@ -622,6 +629,7 @@ export const dataDogs = [
     gallery: [], // Placeholder pro galerii
   },
   {
+    id: 'chessie',
     name: 'Chessie',
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
@@ -669,6 +677,7 @@ export const dataDogs = [
     gallery: [], // Placeholder pro galerii
   },
   {
+    id: 'flying-free',
     name: 'Flying Free',
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
@@ -726,6 +735,7 @@ export const dataDogs = [
     gallery: freeImg.galleryLabels, // Placeholder pro galerii
   },
   {
+    id: 'chupacabra',
     name: 'Chupacabra',
     breed: 'bílý švýcarský ovčák',
     type: 'nechovný pes',
@@ -757,6 +767,7 @@ export const dataDogs = [
     gallery: chupImg.galleryLabels, // Placeholder pro galerii
   },
   {
+    id: 'saruman',
     name: 'Saruman',
     breed: 'bílý švýcarský ovčák',
     type: 'pes',
@@ -798,8 +809,8 @@ export const dataDogs = [
     ],
     gallery: [], // Placeholder pro galerii
   },
-
   {
+    id: 'tilda',
     name: 'Tilda',
     breed: '',
     img: tildaMain,

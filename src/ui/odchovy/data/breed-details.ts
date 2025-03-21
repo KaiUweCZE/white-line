@@ -1,391 +1,78 @@
 // vrh ch
 import blaezImg1 from '../images/vrhch/blaez.webp';
-import blaezImg2 from '../images/vrhch/blaez2.webp';
 import rikaImg1 from '../images/vrhch/rika1.webp';
-import rikaImg2 from '../images/vrhch/rika2.webp';
-import img1 from '../images/vrhch/chup.webp';
-import chupImg1 from '../images/vrhch/chup.webp';
-import chupImg2 from '../images/vrhch/chup2.webp';
-import chupImg3 from '../images/vrhch/chup3.webp';
-import chessieImg1 from '../images/vrhch/chessie.webp';
-import chessieImg2 from '../images/vrhch/chessie2.webp';
-import cheironImg1 from '../images/vrhch/cheiron1.webp';
-import cheironImg2 from '../images/vrhch/cheiron2.webp';
-import { breedAImages } from '../images/vrhch';
+import fenixImg1 from '../images/vrhk/fenix-otec.webp';
+import freeImg1 from '../images/vrhk/free-matka.webp';
+import simpleIgorImg1 from '../images/vrhm/simply-igor-otec.webp';
+import { breedChImages } from '../images/vrhch';
+import { BreedDetailType } from '@/types/types';
+import { breedKImages } from '../images/vrhk';
+import { breedMImages } from '../images/vrhm';
 
-export const breedDetails = [
-  {
-    id: 'swa',
-    name: 'Vrh Ch',
-    father: {
-      name: 'Bland Blaez vom Weissen Unterberg',
-      images: [blaezImg1, blaezImg2],
-      physical: ['65 cm', 'plnochrupý'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['junioršampion Slovinska'],
-    },
-    mother: {
-      name: 'Frederika Bílá Merci',
-      images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plnochrupá'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
-    },
-    females: [
-      {
-        name: 'Chara Jasmine',
-        images: [img1],
-        labels: ['Chara Jasmine'],
-      },
-      {
-        name: 'Chessie',
-        images: [chessieImg1, chessieImg2],
-        labels: ['Chessie'],
-      },
-      {
-        name: 'Chilli',
-        images: [img1],
-        labels: ['Chilli'],
-      },
-    ],
-    males: [
-      {
-        name: 'Chariowalda',
-        images: [img1],
-        labels: ['Chariowalda'],
-      },
-      {
-        name: 'Cheddar',
-        images: [img1],
-        labels: ['Cheddar'],
-      },
-      {
-        name: 'Che Guevara',
-        images: [img1],
-        labels: ['Che Guevara'],
-      },
-      {
-        name: 'Cheiron',
-        images: [cheironImg1, cheironImg2],
-        labels: ['Cheiron'],
-      },
-      {
-        name: 'Chupacabra',
-        images: [chupImg1, chupImg2, chupImg3],
-        labels: ['Chupacabra'],
-      },
-    ],
-  },
-  {
-    id: 'swb',
-    name: 'Vrh Ch',
-    father: {
-      name: 'Bland Blaez vom Weissen Unterberg',
-      images: [blaezImg1, blaezImg2],
-      physical: ['65 cm', 'plnochrupý'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['junioršampion Slovinska'],
-    },
-    mother: {
-      name: 'Frederika Bílá Merci',
-      images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plnochrupá'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
-    },
-    females: [
-      {
-        name: 'Chara Jasmine',
-        images: [img1],
-        labels: ['Chara Jasmine'],
-      },
-      {
-        name: 'Chessie',
-        images: [chessieImg1, chessieImg2],
-        labels: ['Chessie'],
-      },
-      {
-        name: 'Chilli',
-        images: [img1],
-        labels: ['Chilli'],
-      },
-    ],
-    males: [
-      {
-        name: 'Chariowalda',
-        images: [img1],
-        labels: ['Chariowalda'],
-      },
-      {
-        name: 'Cheddar',
-        images: [img1],
-        labels: ['Cheddar'],
-      },
-      {
-        name: 'Che Guevara',
-        images: [img1],
-        labels: ['Che Guevara'],
-      },
-      {
-        name: 'Cheiron',
-        images: [cheironImg1, cheironImg2],
-        labels: ['Cheiron'],
-      },
-      {
-        name: 'Chupacabra',
-        images: [chupImg1, chupImg2, chupImg3],
-        labels: ['Chupacabra'],
-      },
-    ],
-  },
-  {
-    id: 'swc',
-    name: 'Vrh Ch',
-    father: {
-      name: 'Bland Blaez vom Weissen Unterberg',
-      images: [blaezImg1, blaezImg2],
-      physical: ['65 cm', 'plnochrupý'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['junioršampion Slovinska'],
-    },
-    mother: {
-      name: 'Frederika Bílá Merci',
-      images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plnochrupá'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
-    },
-    females: [
-      {
-        name: 'Chara Jasmine',
-        images: [img1],
-        labels: ['Chara Jasmine'],
-      },
-      {
-        name: 'Chessie',
-        images: [chessieImg1, chessieImg2],
-        labels: ['Chessie'],
-      },
-      {
-        name: 'Chilli',
-        images: [img1],
-        labels: ['Chilli'],
-      },
-    ],
-    males: [
-      {
-        name: 'Chariowalda',
-        images: [img1],
-        labels: ['Chariowalda'],
-      },
-      {
-        name: 'Cheddar',
-        images: [img1],
-        labels: ['Cheddar'],
-      },
-      {
-        name: 'Che Guevara',
-        images: [img1],
-        labels: ['Che Guevara'],
-      },
-      {
-        name: 'Cheiron',
-        images: [cheironImg1, cheironImg2],
-        labels: ['Cheiron'],
-      },
-      {
-        name: 'Chupacabra',
-        images: [chupImg1, chupImg2, chupImg3],
-        labels: ['Chupacabra'],
-      },
-    ],
-  },
-  {
-    id: 'swd',
-    name: 'Vrh Ch',
-    father: {
-      name: 'Bland Blaez vom Weissen Unterberg',
-      images: [blaezImg1, blaezImg2],
-      physical: ['65 cm', 'plnochrupý'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['junioršampion Slovinska'],
-    },
-    mother: {
-      name: 'Frederika Bílá Merci',
-      images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plnochrupá'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
-    },
-    females: [
-      {
-        name: 'Chara Jasmine',
-        images: [img1],
-        labels: ['Chara Jasmine'],
-      },
-      {
-        name: 'Chessie',
-        images: [chessieImg1, chessieImg2],
-        labels: ['Chessie'],
-      },
-      {
-        name: 'Chilli',
-        images: [img1],
-        labels: ['Chilli'],
-      },
-    ],
-    males: [
-      {
-        name: 'Chariowalda',
-        images: [img1],
-        labels: ['Chariowalda'],
-      },
-      {
-        name: 'Cheddar',
-        images: [img1],
-        labels: ['Cheddar'],
-      },
-      {
-        name: 'Che Guevara',
-        images: [img1],
-        labels: ['Che Guevara'],
-      },
-      {
-        name: 'Cheiron',
-        images: [cheironImg1, cheironImg2],
-        labels: ['Cheiron'],
-      },
-      {
-        name: 'Chupacabra',
-        images: [chupImg1, chupImg2, chupImg3],
-        labels: ['Chupacabra'],
-      },
-    ],
-  },
-  {
-    id: 'swe',
-    name: 'Vrh Ch',
-    father: {
-      name: 'Bland Blaez vom Weissen Unterberg',
-      images: [blaezImg1, blaezImg2],
-      physical: ['65 cm', 'plnochrupý'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['junioršampion Slovinska'],
-    },
-    mother: {
-      name: 'Frederika Bílá Merci',
-      images: [rikaImg1, rikaImg2],
-      physical: ['61 cm', 'plnochrupá'],
-      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
-      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
-    },
-    females: [
-      {
-        name: 'Chara Jasmine',
-        images: [img1],
-        labels: ['Chara Jasmine'],
-      },
-      {
-        name: 'Chessie',
-        images: [chessieImg1, chessieImg2],
-        labels: ['Chessie'],
-      },
-      {
-        name: 'Chilli',
-        images: [img1],
-        labels: ['Chilli'],
-      },
-    ],
-    males: [
-      {
-        name: 'Chariowalda',
-        images: [img1],
-        labels: ['Chariowalda'],
-      },
-      {
-        name: 'Cheddar',
-        images: [img1],
-        labels: ['Cheddar'],
-      },
-      {
-        name: 'Che Guevara',
-        images: [img1],
-        labels: ['Che Guevara'],
-      },
-      {
-        name: 'Cheiron',
-        images: [cheironImg1, cheironImg2],
-        labels: ['Cheiron'],
-      },
-      {
-        name: 'Chupacabra',
-        images: [chupImg1, chupImg2, chupImg3],
-        labels: ['Chupacabra'],
-      },
-    ],
-  },
+export const breedDetails: BreedDetailType[] = [
   {
     id: 'swch',
     name: 'Vrh Ch',
     birth: '19.6.2018',
     father: {
       name: 'Bland Blaez vom Weissen Unterberg',
-      images: [blaezImg1, blaezImg2],
+      image: blaezImg1,
       physical: ['65 cm', 'plnochrupý'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['junioršampion Slovinska'],
     },
     mother: {
       name: 'Frederika Bílá Merci',
-      images: [rikaImg1, rikaImg2],
+      image: rikaImg1,
       physical: ['61 cm', 'plnochrupá'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
     },
-    females: [
-      {
-        name: 'Chara Jasmine',
-        images: [img1],
-        labels: ['Chara Jasmine'],
-      },
-      {
-        name: 'Chessie',
-        images: [chessieImg1, chessieImg2],
-        labels: ['Chessie'],
-      },
-      {
-        name: 'Chilli',
-        images: [img1],
-        labels: ['Chilli'],
-      },
-    ],
-    males: [
-      {
-        name: 'Chariowalda',
-        images: [img1],
-        labels: ['Chariowalda'],
-      },
-      {
-        name: 'Cheddar',
-        images: [img1],
-        labels: ['Cheddar'],
-      },
-      {
-        name: 'Che Guevara',
-        images: [img1],
-        labels: ['Che Guevara'],
-      },
-      {
-        name: 'Cheiron',
-        images: [cheironImg1, cheironImg2],
-        labels: ['Cheiron'],
-      },
-      {
-        name: 'Chupacabra',
-        images: [chupImg1, chupImg2, chupImg3],
-        labels: ['Chupacabra'],
-      },
-    ],
-    gallery: breedAImages,
+    females: ['Chara Jasmine', 'Chessie', 'Chilli'],
+    males: ['Chariowalda', 'Cheddar', 'Che Guevara', 'Cheiron', 'Chupacabra'],
+    gallery: breedChImages,
+  },
+  {
+    id: 'swk',
+    name: 'Vrh K',
+    birth: '19.1.2021',
+    father: {
+      name: 'Fénix Bílá Merci',
+      image: fenixImg1,
+      physical: ['dlouhosrstý', '65 cm', 'plnochrupý', 'skus nůžkový', 'DNA'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['BH-VT', 'HWT', 'NHAT'],
+    },
+    mother: {
+      name: 'Flying Free vom Weissen Unterberg',
+      image: freeImg1,
+      physical: ['dlouhosrstá', '60 cm', 'plnochrupá', 'těsné nůžky'],
+      health: ['HD A', 'ED 0', 'DM N/N', 'MDR1 +/-'],
+    },
+    females: ['Kalinka', 'Kalypso', 'Keira', 'Kubra'],
+    males: ['Kallikrates', 'Kamikaze', 'Kilimanjaro', 'Kohinoor'],
+    gallery: breedKImages,
+  },
+  {
+    id: 'swm',
+    name: 'Vrh M',
+    birth: '8.2.2022',
+    father: {
+      name: 'Simply One Igor',
+      image: simpleIgorImg1,
+      physical: ['dlouhosrstý', '63 cm', 'plnochrupý', 'DKK: A', 'DLK: 0'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['šampion Polska'],
+    },
+    mother: {
+      name: 'Frederika Bílá Merci',
+      image: rikaImg1,
+      physical: ['61 cm', 'plnochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
+    },
+    females: ['Mademoiselle', 'Maya', 'Melanie', 'Mercedes', 'Minerva'],
+    males: ['Maximilian'],
+    gallery: breedMImages,
   },
 ];

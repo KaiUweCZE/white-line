@@ -35,6 +35,15 @@ export default function DogJsonLd({ dog }: DogSchemaProps) {
     // Pokud existuje číslo zápisu, přidejme ho jako sku
     ...(dog.registration ? { sku: dog.registration } : {}),
     category: dog.breed,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock', // nebo OutOfStock
+      price: '0', // Můžeš použít 0 pokud pes není na prodej
+      priceCurrency: 'CZK',
+      url: `https://whitelineczech.com/nasi-psi/${encodeURIComponent(
+        dog.name?.toLowerCase() || ''
+      )}`,
+    },
     additionalProperty: [
       // Datum narození
       ...(dog.birth

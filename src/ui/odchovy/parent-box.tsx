@@ -4,23 +4,23 @@ import LiDot from '../li-dot';
 
 interface ParentBoxProps {
   name: string;
-  images: StaticImageData[];
+  image: StaticImageData;
   physical?: string[];
   health?: string[];
   titles?: string[];
   gender: 'Matka' | 'Otec';
 }
 
-const ParentBox = ({ name, images, physical, health, titles, gender }: ParentBoxProps) => {
+const ParentBox = ({ name, image, physical, health, titles, gender }: ParentBoxProps) => {
   //const dotColor = gender === 'Otec' ? 'bg-blue-500' : 'bg-pink-500';
 
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-semibold">{gender}</h2>
       <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden accent-shadow">
-        {images[0] && (
+        {image && (
           <Image
-            src={images[0]}
+            src={image}
             alt={name}
             fill
             placeholder="blur"
