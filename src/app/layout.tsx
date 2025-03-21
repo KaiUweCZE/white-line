@@ -198,6 +198,7 @@ export default function RootLayout({
         <JsonLd data={jsonLd} />
         <JsonLd data={breedingService} />
         <JsonLd data={localBusinessSchema} />
+        <meta name="seznam-wmt" content="jgM2Oyr7TA7D79qtjDa5ZoQFmPxYWHbz" />
       </head>
       <body className={`${parkinsans.variable} font-parkinsans antialiased`}>
         <Navbar />
