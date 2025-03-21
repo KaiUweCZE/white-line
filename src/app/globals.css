@@ -505,7 +505,6 @@ a {
   .our-dogs-frame {
     max-width: 30dvw;
   }
-
   @container (inline-size < 50rem) {
     display: grid;
     gap: 1rem;
@@ -514,12 +513,10 @@ a {
       max-width: 100%;
     }
   }
-
   @container (inline-size < 30rem) {
     display: grid;
     gap: 1rem;
     grid-template-columns: minmax(0, 1fr);
-
     img {
       width: 100%;
     }
@@ -528,6 +525,11 @@ a {
       margin: 0 auto;
     }
   }
+}
+
+.breed-img {
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
 }
 
 .image-viewer {

@@ -1,8 +1,6 @@
 import alexiaMain from '@/assets/images/our-dogs/Alexia_smecka.webp';
 import alliaMain from '@/assets/images/our-dogs/Allia_smecka.webp';
-import artabanMain from '@/assets/images/our-dogs/artaban_smecka.webp';
 import gennyMain from '@/assets/images/our-dogs/Genny_smecka.webp';
-import sarumanMain from '@/assets/images/our-dogs/saruman_smecka.webp';
 import tildaMain from '@/assets/images/our-dogs/tilda_smecka.webp';
 import frederikaPortret from '@/assets/images/our-dogs/frederika/frederika_portret.webp';
 import fenixPortret from '@/assets/images/our-dogs/fenix/fenix_portret.webp';
@@ -16,6 +14,10 @@ import { frederikaImg } from '@/assets/images/our-dogs/frederika';
 import { fenixImg } from '@/assets/images/our-dogs/fenix';
 import { freeImg } from '@/assets/images/our-dogs/free';
 import { chupImg } from '@/assets/images/our-dogs/chupacabra';
+import { chessieImg } from '@/assets/images/our-dogs/chessie';
+import { hopeImg } from '@/assets/images/our-dogs/hope';
+import { kodyImg } from '@/assets/images/our-dogs/kody';
+import { artabanImg } from '@/assets/images/our-dogs/artaban';
 
 export const dataDogs = [
   {
@@ -83,7 +85,7 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'pes',
     kennel: 'Whiteline Czech',
-    img: artabanMain, // Placeholder
+    img: artabanImg.smecka, // Placeholder
     alive: false,
     registration: 'Z Reg/ACO/1408/04',
     birth: '31.5.2004',
@@ -91,7 +93,7 @@ export const dataDogs = [
     description: 'krátkosrstý, plnochrupý, skus nůžkový',
     health: [], // Nejsou uvedeny zdravotní údaje
     exams: ['ZOP', 'ZZO', 'CANISTERAPIE'],
-    portrait: fenixPortret, // Placeholder
+    portrait: artabanImg.portret, // Placeholder
     titles: [], // Nejsou uvedeny tituly
     pedigree: '',
     breeds: [], // Nemá odchovy
@@ -128,7 +130,7 @@ export const dataDogs = [
         grade: 'VN 3',
       },
     ],
-    gallery: [], // Placeholder pro galerii
+    gallery: artabanImg.galleryLabels, // Placeholder pro galerii
   },
   {
     id: 'fenix',
@@ -626,7 +628,7 @@ export const dataDogs = [
     breeds: [], // Nemá vrhy
     races: [], // Nemá závody
     contests: [], // Nemá výstavy
-    gallery: [], // Placeholder pro galerii
+    gallery: hopeImg.galleryLabels, // Placeholder pro galerii
   },
   {
     id: 'chessie',
@@ -674,7 +676,7 @@ export const dataDogs = [
         grade: 'VD- I. Nováková',
       },
     ],
-    gallery: [], // Placeholder pro galerii
+    gallery: chessieImg.galleryLabels, // Placeholder pro galerii
   },
   {
     id: 'flying-free',
@@ -772,7 +774,7 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'pes',
     kennel: 'White Miraja',
-    img: sarumanMain, // Placeholder
+    img: kodyImg.smecka, // Placeholder
     alive: false,
     registration: 'Z Reg/ACO/1745/06',
     birth: '5.4.2006',
@@ -807,7 +809,7 @@ export const dataDogs = [
         grade: 'VN',
       },
     ],
-    gallery: [], // Placeholder pro galerii
+    gallery: kodyImg.galleryLabels, // Placeholder pro galerii
   },
   {
     id: 'tilda',

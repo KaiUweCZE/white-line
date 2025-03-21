@@ -8,7 +8,8 @@ import frederikaGalleryFifth from './gallery/e.webp';
 import frederikaGallerySixth from './gallery/f.webp';
 import frederikaGallerySeventh from './gallery/g.webp';
 import frederikaGalleryEighth from './gallery/h.webp';
-import frederikaGalleryNinth from './gallery/frederika9.webp';
+import frederikaGalleryNinth from './gallery/j.webp';
+import frederikaGalleryTenth from './gallery/i.webp';
 
 export const frederikaImg = {
   portret: frederikaPortret,
@@ -57,8 +58,12 @@ export const frederikaImg = {
       image: frederikaGalleryEighth,
     },
     {
-      label: 'Frederika(2 roky) pase ovce ',
+      label: 'Frederika(2 roky) pase ovce',
       image: frederikaGalleryNinth,
+    },
+    {
+      label: 'Frederika ve skoku',
+      image: frederikaGalleryTenth,
     },
   ],
 };

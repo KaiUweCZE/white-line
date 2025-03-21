@@ -4,7 +4,7 @@ import chupGalleryFirst from './gallery/chup.webp';
 import chupGallerySecond from './gallery/chup2.webp';
 import chupGalleryThird from './gallery/chup3.webp';
 import chupGalleryFourth from './gallery/chup4.webp';
-import chupGalleryFifth from './gallery/chup-chessie.webp';
+import chupGalleryFifth from './gallery/chup5.webp';
 
 export const chupImg = {
   portret: chupPortret,

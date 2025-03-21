@@ -4,10 +4,14 @@ import rikaImg1 from '../images/vrhch/rika1.webp';
 import fenixImg1 from '../images/vrhk/fenix-otec.webp';
 import freeImg1 from '../images/vrhk/free-matka.webp';
 import simpleIgorImg1 from '../images/vrhm/simply-igor-otec.webp';
+import simbaImg1 from '../images/c-vrha/simba.webp';
+import tildaImg1 from '../images/c-vrha/tilda.webp';
+
 import { breedChImages } from '../images/vrhch';
 import { BreedDetailType } from '@/types/types';
 import { breedKImages } from '../images/vrhk';
 import { breedMImages } from '../images/vrhm';
+import { breedCAImages } from '../images/c-vrha';
 
 export const breedDetails: BreedDetailType[] = [
   {
@@ -74,5 +78,27 @@ export const breedDetails: BreedDetailType[] = [
     females: ['Mademoiselle', 'Maya', 'Melanie', 'Mercedes', 'Minerva'],
     males: ['Maximilian'],
     gallery: breedMImages,
+  },
+  {
+    id: 'cra',
+    name: 'Vrh A',
+    birth: '20.12.2024',
+    father: {
+      name: 'Simba Tender Lion z Jurajského Zamku',
+      image: simbaImg1,
+      physical: ['65 cm', 'plnochrupý'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['šampion Polska'],
+    },
+    mother: {
+      name: 'Lovlipon Tilda Tango',
+      image: tildaImg1,
+      physical: ['61 cm', 'plnochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
+    },
+    females: ['Abba', 'Astrid', 'Axa'],
+    males: ['Almqvist'],
+    gallery: breedCAImages,
   },
 ];
