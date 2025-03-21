@@ -15,7 +15,7 @@ const DogDetail = () => {
   // const name = params.name;
   const name = typeof params.name === 'string' && decodeURIComponent(params.name);
 
-  const data = dataDogs.find((e) => e.name.toLowerCase() === name);
+  const data = dataDogs.find((e) => e.id === name);
 
   const heroData = {
     name: data?.name,

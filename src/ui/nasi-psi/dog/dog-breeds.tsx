@@ -29,7 +29,7 @@ const DogBreeds = ({ breeds }: DogBreedsProps) => {
                 alt={`${breed.name} - fotogalerie štěňat`}
                 height={300}
                 width={400}
-                className="object-cover rounded-md"
+                className="object-cover rounded-md w-full"
               />
 
               {/* Gradient overlay pro lepší čitelnost */}

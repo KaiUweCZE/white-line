@@ -499,8 +499,9 @@ a {
 }
 
 .our-dogs-breed {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
   .our-dogs-frame {
     max-width: 30dvw;
   }
