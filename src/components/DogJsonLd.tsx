@@ -25,7 +25,7 @@ export default function DogJsonLd({ dog }: DogSchemaProps) {
     '@type': 'Product',
     name: `${dog.name} ${dog.kennel ? dog.kennel : ''} - ${dog.breed}`,
     description: dog.description || `${dog.breed} z chovatelské stanice Whiteline Czech`,
-    image: dog.img,
+    image: 'https://whitelineczech.com/images/seo/logo.webp',
     brand: {
       '@type': 'Brand',
       name: 'Whiteline Czech',
@@ -33,7 +33,7 @@ export default function DogJsonLd({ dog }: DogSchemaProps) {
     // Registrační číslo jako produktové ID - důležité pro vyhledávače
     productID: dog.registration,
     // Pokud existuje číslo zápisu, přidejme ho jako sku
-    ...(dog.registration ? { sku: dog.registration } : {}),
+    sku: dog.registration || `dog-${dog.name?.toLowerCase().replace(/\s+/g, '-')}`,
     category: dog.breed,
     offers: {
       '@type': 'Offer',
