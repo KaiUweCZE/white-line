@@ -65,6 +65,8 @@ export default function BreedJsonLd({ breed }: BreedJsonLdProps) {
 
   const totalPuppies = (processedFemales.length || 0) + (processedMales.length || 0);
 
+  const price = isCurrentLitter ? (breedType === 'welsh corgi cardigan' ? '40000' : '20000') : '0';
+
   const breedSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -83,7 +85,7 @@ export default function BreedJsonLd({ breed }: BreedJsonLdProps) {
         ? 'https://schema.org/InStock'
         : 'https://schema.org/OutOfStock',
       availabilityStarts: breed.birth,
-      price: isCurrentLitter ? '25000' : '0', // Cena jen pro aktuální vrhy
+      price: price,
       priceCurrency: 'CZK',
       url: `https://whitelineczech.com/odchovy/${breed.id}`,
     },

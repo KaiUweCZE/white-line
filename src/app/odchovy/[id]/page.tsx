@@ -27,7 +27,7 @@ const BreedDetail = () => {
     females: females,
     males: males,
     birth: birth,
-    img: images?.[0],
+    img: images?.[0].src,
   };
   return (
     <>

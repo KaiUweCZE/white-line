@@ -37,7 +37,7 @@ const DogDetail = () => {
     kennel: data?.kennel,
     breed: data?.breed,
     description: data?.description,
-    img: data?.portrait,
+    img: data?.portrait.src,
     titles: data?.titles,
     races: data?.races,
     contests: data?.contests,

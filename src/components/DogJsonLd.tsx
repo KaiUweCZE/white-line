@@ -25,7 +25,7 @@ export default function DogJsonLd({ dog }: DogSchemaProps) {
     '@type': 'Product',
     name: `${dog.name} ${dog.kennel ? dog.kennel : ''} - ${dog.breed}`,
     description: dog.description || `${dog.breed} z chovatelské stanice Whiteline Czech`,
-    image: 'https://whitelineczech.com/images/seo/logo.webp',
+    image: dog.img,
     brand: {
       '@type': 'Brand',
       name: 'Whiteline Czech',
