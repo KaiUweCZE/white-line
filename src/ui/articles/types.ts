@@ -11,6 +11,7 @@ export interface GalleryType {
 export interface Article {
   headline: string;
   text: string;
+  content?: string;
   time: string;
   year: number;
   images: StaticImageData[];

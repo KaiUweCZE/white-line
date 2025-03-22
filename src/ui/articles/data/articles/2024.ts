@@ -18,7 +18,7 @@ export const articles2024: Article[] = [
   {
     headline: 'Narodil se vrh A',
     text: `20.12. se nám narodil náš první vrh cardiganů ve složení 3 fenky a 1 pejsek.🩷🩷🩷🩵
-Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v pořádku.`,
+  Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v pořádku.`,
     time: '23.12.2024',
     year: 2024,
     images: vrhAUrls,
@@ -43,7 +43,7 @@ Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v poř
     Na loňském MČR jsme se s Frederikou kvalifikovali ze 2. místa na ME, které se tento rok konalo v Italském městečku Bibbona.
     Celkem zde startovalo 31 psů z 11 zemí. Z kvalifikačních kol, která probíhala v pátek a v sobotu trať nikdo nedokončil a jen 11 týmům se podařilo získat body. 
     Do nedělního finále, kam postupovalo 10 nejlepších týmů, jsme se kvalifikovali ze 7. místa.
-    Ani finálové běhy se ale nepodařili dokončit všem, naštěstí jsme to s Frederikou nakonec zvládli a umístili se opět na 7. místě.🏅
+    Ani finálové běhy se ale nepodařili dokončit všem, naštěstí jsme to s Frederikou nakonec zvládli a umístili se opět na **7. místě**.🏅
     Děkuji za podporu Klubu bílého ovčáka!`,
     time: '8.říjen 2024',
     year: 2024,

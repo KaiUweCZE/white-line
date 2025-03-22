@@ -43,13 +43,16 @@ const GalleryContent = ({
 
   const containerStyles = !isFullscreen && {
     width: width ? `${width}px` : '100%',
+    height: height ? `${height}px` : '100%',
     maxWidth: '100%',
   };
 
-  const wrapperStyles = !isFullscreen && {
-    paddingBottom: `${(height / width) * 100}%`,
-    position: 'relative' as const,
-  };
+  const wrapperStyles =
+    !isFullscreen &&
+    {
+      /* paddingBottom: `${(height / width) * 100}%`,
+    position: 'relative' as const,*/
+    };
 
   const imageDisplayClass = isFullscreen || !sameSize ? 'object-contain' : 'object-cover';
 
@@ -78,7 +81,7 @@ const GalleryContent = ({
           {images.map((img, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full h-full relative max-h-[90dvh] place-self-center "
+              className="flex-shrink-0 w-full h-full relative max-h-[90dvh] place-self-center"
             >
               <Image
                 src={img}

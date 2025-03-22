@@ -1,9 +1,11 @@
 'use client';
 import { useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
 import Gallery from '../gallery/gallery';
 import { ArticleContext } from '@/context/article-context';
 import { formatDate } from '@/utils/form-date';
-import { formatArticleText } from '@/utils/format-article-text';
+import '@/assets/styles/article.css';
+import { fixIndentation } from '@/utils/fix-indentation';
 
 const PrimaryArticle = () => {
   const context = useContext(ArticleContext);
@@ -40,21 +42,26 @@ const PrimaryArticle = () => {
 
   const { specialClass, textColor } = getCategoryColors();
 
+  const cleanText = fixIndentation(currentArticle.content ?? text);
+
   return (
     <div className="gap-4 primary-article ">
       <article className="max-w-full rounded overflow-hidden">
         <header className={`px-4 pt-6 pb-3 border-b   border-l-4 ${specialClass}`}>
           <h2 className="text-2xl font-bold">{headline}</h2>
           <div className="flex items-center gap-2 mt-2">
-            <time dateTime={time} className="text-sm text-slate-500">
+            <time dateTime={time} className="text-sm text-slate-600">
               {formatDate(time)}
             </time>
             <span className="text-sm text-slate-400">•</span>
             <span className={`text-sm font-medium ${textColor}`}>{tags?.name}</span>
           </div>
         </header>
-        <div className="p-4">
-          <div className="prose max-w-none mb-8">{formatArticleText(text)}</div>
+        <div className="p-4 article-content">
+          <ReactMarkdown>{currentArticle.content ? cleanText : text}</ReactMarkdown>
+
+          {/* <ReactMarkdown>{text}</ReactMarkdown> */}
+          {/* <div className="prose max-w-none mb-8">{formatArticleText(text)}</div> */}
         </div>
       </article>
       <Gallery
