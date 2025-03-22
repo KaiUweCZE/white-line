@@ -4,6 +4,7 @@ import ArticleSearch from './article-search';
 import { newsData } from './data/data-articles';
 import PrimaryArticleView from './primary-article-view';
 import { ArticleContext } from '@/context/article-context';
+import '@/assets/styles/article.css';
 
 const ArticleSection = () => {
   const data = newsData;

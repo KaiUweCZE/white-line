@@ -50,9 +50,9 @@ const PrimaryArticle = () => {
   return (
     <div className="gap-4 primary-article">
       <article className="max-w-full rounded scroll-colo">
-        <header className={`px-4 pt-6 pb-3 border-b   border-l-4 ${specialClass}`}>
+        <header className={`p-4 pb-2 border-b border-l-4 ${specialClass}`}>
           <h2 className="text-2xl font-bold">{headline}</h2>
-          <div className="flex items-center gap-2 mt-2">
+          <div className="flex items-center gap-2 mt-1">
             <time dateTime={time} className="text-sm text-slate-600">
               {formatDate(time)}
             </time>

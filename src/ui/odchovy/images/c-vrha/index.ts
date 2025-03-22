@@ -18,6 +18,8 @@ import pes1 from './4-t-pes.webp';
 // eslint-disable-next-line
 import tilda1 from './tilda-po-porodu.webp';
 
+export const reducedImagesCA = [fena1, fena2, fena3, pes1, abba1, axa1, almqvist1];
+
 export const breedCAImages: GalleryImage[] = [
   { label: 'Abba 5 týdnů', image: abba1 },
   { label: 'Astrid 5 týdnů', image: astrid1 },

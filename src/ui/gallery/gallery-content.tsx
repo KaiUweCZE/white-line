@@ -61,7 +61,7 @@ const GalleryContent = ({
     >
       {/* Carousel wrapper */}
       <div
-        className={`relative overflow-hidden w-full gallery accent-shadow ${
+        className={`relative overflow-hidden w-full gallery ${sameSize && 'accent-shadow'} ${
           isFullscreen ? 'rounded-none' : 'rounded-lg'
         }`}
       >
