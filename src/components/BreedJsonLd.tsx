@@ -46,25 +46,30 @@ export default function BreedJsonLd({ breed }: BreedJsonLdProps) {
     ? breed.males.map((m) => (typeof m === 'string' ? m : m.name))
     : [];
 
-  // Celkový počet štěňat
-  const totalPuppies = (processedFemales.length || 0) + (processedMales.length || 0);
+  const isCurrentLitter = breed.birth
+    ? new Date(breed.birth).getFullYear() >= new Date().getFullYear()
+    : false;
 
-  // Předpokládaný typ štěněte z názvu vrhu (např. "Vrh Ch - Bílý švýcarský ovčák")
-  const breedType = breed.name.includes('-')
-    ? breed.name.split('-')[1].trim()
-    : breed.name.includes('Vrh')
-    ? 'Bílý švýcarský ovčák'
-    : 'Pes s PP';
+  const breedType =
+    breed.id[0] === 's'
+      ? 'švýcarský ovčák'
+      : breed.id[0] === 'c'
+      ? 'welsh corgi cardigan'
+      : 'německý ovčák';
+
+  const litterDescription = `${
+    breed.name
+  } - odchov plemene ${breedType}. Otec: ${fatherName}, matka: ${motherName}. ${
+    breed.birth ? `Datum narození: ${breed.birth}` : ''
+  }`;
+
+  const totalPuppies = (processedFemales.length || 0) + (processedMales.length || 0);
 
   const breedSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: breed.name,
-    description: `${
-      breed.name
-    } - odchov plemene ${breedType}. Otec: ${fatherName}, matka: ${motherName}. ${
-      breed.birth ? `Datum narození: ${breed.birth}` : ''
-    }`,
+    description: litterDescription,
     image: breed.img,
     brand: {
       '@type': 'Brand',
@@ -72,17 +77,26 @@ export default function BreedJsonLd({ breed }: BreedJsonLdProps) {
     },
     category: breedType,
     // Pokud je vrh z letošního roku, je pravděpodobně aktuální
-    offers:
-      breed.birth && new Date(breed.birth).getFullYear() >= new Date().getFullYear()
-        ? {
-            '@type': 'Offer',
-            availability: 'https://schema.org/InStock',
-            availabilityStarts: breed.birth,
-            price: '25000', // Přibližná cena štěňat - upravit dle skutečnosti
-            priceCurrency: 'CZK',
-            url: `https://whitelineczech.com/odchovy/${breed.id}`,
-          }
-        : undefined,
+    offers: {
+      '@type': 'Offer',
+      availability: isCurrentLitter
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+      availabilityStarts: breed.birth,
+      price: isCurrentLitter ? '25000' : '0', // Cena jen pro aktuální vrhy
+      priceCurrency: 'CZK',
+      url: `https://whitelineczech.com/odchovy/${breed.id}`,
+      // Přidáme validTo pro starší vrhy, aby Google chápal, že nabídka již skončila
+      ...(isCurrentLitter
+        ? {}
+        : {
+            validThrough: breed.birth
+              ? new Date(
+                  new Date(breed.birth).setMonth(new Date(breed.birth).getMonth() + 3)
+                ).toISOString()
+              : undefined,
+          }),
+    },
     additionalProperty: [
       ...(breed.birth
         ? [

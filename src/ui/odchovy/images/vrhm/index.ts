@@ -1,18 +1,34 @@
 import { GalleryImage } from '@/types/types';
-import minerva1 from '../vrhm/vrh-m-minerva.webp';
-import max1 from '../vrhm/vrh-m-maxmilian.webp';
-import maya1 from '../vrhm/vrh-m-maya.webp';
+import max1 from './max1.webp';
+import max2 from './max2.webp';
+import maya1 from './maya1.webp';
+import mercedes1 from './mercedes1.webp';
+import minerva1 from './minerva1.webp';
+import madmasel1 from './madmasel1.webp';
+
 export const breedMImages: GalleryImage[] = [
   {
-    label: 'Minerva',
+    label: 'Minerva (1 rok)',
     image: minerva1,
   },
   {
-    label: 'Maximilian',
+    label: 'Maximilian s Frederikou',
     image: max1,
   },
   {
-    label: 'Maya',
+    label: 'Maya (1 rok)',
     image: maya1,
+  },
+  {
+    label: 'Mercedes při západu slunce (1 rok)',
+    image: mercedes1,
+  },
+  {
+    label: 'Mademoiselle slaví 1. narozeniny',
+    image: madmasel1,
+  },
+  {
+    label: 'Maximilian (1 rok)',
+    image: max2,
   },
 ];

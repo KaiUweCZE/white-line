@@ -1,7 +1,3 @@
-import alexiaMain from '@/assets/images/our-dogs/Alexia_smecka.webp';
-import alliaMain from '@/assets/images/our-dogs/Allia_smecka.webp';
-import gennyMain from '@/assets/images/our-dogs/Genny_smecka.webp';
-import frederikaPortret from '@/assets/images/our-dogs/frederika/frederika_portret.webp';
 import { dogsImg } from '@/assets/images/our-dogs';
 import { frederikaImg } from '@/assets/images/our-dogs/frederika';
 import { fenixImg } from '@/assets/images/our-dogs/fenix';
@@ -13,6 +9,9 @@ import { kodyImg } from '@/assets/images/our-dogs/kody';
 import { artabanImg } from '@/assets/images/our-dogs/artaban';
 import { breedImgs } from '@/assets/images/our-breed';
 import { tildaImg } from '@/assets/images/our-dogs/tilda';
+import { alexiaImg } from '@/assets/images/our-dogs/alexia';
+import { nicoleImgs } from '@/assets/images/our-dogs/nicole';
+import { gennyImgs } from '@/assets/images/our-dogs/genny';
 
 export const dataDogs = [
   {
@@ -21,14 +20,14 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
     kennel: 'Trebons Berger Blanc',
-    img: alexiaMain, // Placeholder
+    img: alexiaImg.smecka, // Placeholder
     alive: false,
     registration: 'Z Reg/ACO/1723/-06/05',
     birth: '25.3.2005',
     description: 'dlouhosrstá, 62 cm, plnochrupá, skus nůžkový',
     health: ['HD C'],
     exams: [], // Nejsou uvedeny
-    portrait: frederikaPortret, // Placeholder
+    portrait: alexiaImg.portret, // Placeholder
     titles: ['Český šampion', 'Slovenský šampion krásy'],
     pedigree: 'https://db.bily-ovcak.cz/psi/4527/alexia-of-trebons-berger-blanc',
     breeds: [
@@ -48,14 +47,14 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
     kennel: "Haely's Future",
-    img: alliaMain, // Placeholder
+    img: nicoleImgs.smecka, // Placeholder
     alive: false,
     registration: 'Z Reg/ACO/1448/-04/04',
     birth: '10.1.2004',
     description: 'dlouhosrstá, 57 cm, plnochrupá, skus nůžkový',
     health: ['HD A'],
     exams: ['ZOP'],
-    portrait: frederikaPortret, // Placeholder
+    portrait: nicoleImgs.portret, // Placeholder
     titles: ['Český šampion', 'Slovenský šampion krásy'],
     pedigree: 'https://db.bily-ovcak.cz/psi/4341/allia-nicole-of-haelys-future',
     breeds: [
@@ -509,14 +508,14 @@ export const dataDogs = [
     breed: 'bílý švýcarský ovčák',
     type: 'chovná fena FCI',
     kennel: 'Donnevara',
-    img: gennyMain, // Placeholder
+    img: gennyImgs.smecka, // Placeholder
     alive: false, // Ve vzpomínkách
     registration: 'N Reg/ACO/1027/02/04',
     birth: '8.4.2002',
     description: 'krátkosrstá, 61 cm, plnochrupá, skus nůžkový',
     health: ['HD A'],
     exams: ['ZOP', 'ZPU1'],
-    portrait: frederikaPortret, // Placeholder
+    portrait: gennyImgs.portret, // Placeholder
     titles: [
       'Vítěz střední a východní Evropy 2004',
       'Český junior šampion',
@@ -808,11 +807,11 @@ export const dataDogs = [
     gallery: kodyImg.galleryLabels, // Placeholder pro galerii
   },
   {
-    id: 'tilda',
-    name: 'Tilda',
+    id: 'tilda-tango',
+    name: 'Tilda Tango',
     breed: 'Welsh Corgi Cardigan',
     type: 'chovná fena FCI',
-    kennel: 'Whiteline Czech',
+    kennel: 'Lovlipon',
     img: tildaImg.smecka,
     alive: true,
     registration: 'CMKU/WCC/616/-22/21',
@@ -826,7 +825,7 @@ export const dataDogs = [
     breeds: [
       {
         name: 'Vrh A',
-        image: breedImgs.vrhCh,
+        image: breedImgs.cvrhA,
         href: '',
       },
     ], // Nemá vrhy

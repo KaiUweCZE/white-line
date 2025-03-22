@@ -5,13 +5,13 @@ import fenixImg1 from '../images/vrhk/fenix-otec.webp';
 import freeImg1 from '../images/vrhk/free-matka.webp';
 import simpleIgorImg1 from '../images/vrhm/simply-igor-otec.webp';
 import simbaImg1 from '../images/c-vrha/simba.webp';
-import tildaImg1 from '../images/c-vrha/tilda.webp';
 
 import { breedChImages } from '../images/vrhch';
 import { BreedDetailType } from '@/types/types';
 import { breedKImages } from '../images/vrhk';
 import { breedMImages } from '../images/vrhm';
 import { breedCAImages } from '../images/c-vrha';
+import { tildaImg } from '@/assets/images/our-dogs/tilda';
 
 export const breedDetails: BreedDetailType[] = [
   {
@@ -92,7 +92,7 @@ export const breedDetails: BreedDetailType[] = [
     },
     mother: {
       name: 'Lovlipon Tilda Tango',
-      image: tildaImg1,
+      image: tildaImg.smecka,
       physical: ['61 cm', 'plnochrupá'],
       health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
       titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
