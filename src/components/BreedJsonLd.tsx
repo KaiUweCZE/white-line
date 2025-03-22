@@ -46,10 +46,6 @@ export default function BreedJsonLd({ breed }: BreedJsonLdProps) {
     ? breed.males.map((m) => (typeof m === 'string' ? m : m.name))
     : [];
 
-  const isCurrentLitter = breed.birth
-    ? new Date(breed.birth).getFullYear() >= new Date().getFullYear()
-    : false;
-
   const breedType =
     breed.id[0] === 's'
       ? 'švýcarský ovčák'
@@ -62,6 +58,10 @@ export default function BreedJsonLd({ breed }: BreedJsonLdProps) {
   } - odchov plemene ${breedType}. Otec: ${fatherName}, matka: ${motherName}. ${
     breed.birth ? `Datum narození: ${breed.birth}` : ''
   }`;
+
+  const isCurrentLitter = breed.birth
+    ? breed.birth.slice(-4) === new Date().getFullYear().toString()
+    : false;
 
   const totalPuppies = (processedFemales.length || 0) + (processedMales.length || 0);
 
@@ -86,16 +86,6 @@ export default function BreedJsonLd({ breed }: BreedJsonLdProps) {
       price: isCurrentLitter ? '25000' : '0', // Cena jen pro aktuální vrhy
       priceCurrency: 'CZK',
       url: `https://whitelineczech.com/odchovy/${breed.id}`,
-      // Přidáme validTo pro starší vrhy, aby Google chápal, že nabídka již skončila
-      ...(isCurrentLitter
-        ? {}
-        : {
-            validThrough: breed.birth
-              ? new Date(
-                  new Date(breed.birth).setMonth(new Date(breed.birth).getMonth() + 3)
-                ).toISOString()
-              : undefined,
-          }),
     },
     additionalProperty: [
       ...(breed.birth
