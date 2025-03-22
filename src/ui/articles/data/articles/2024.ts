@@ -8,11 +8,11 @@ import {
 } from '@/assets/images/articles/2024';
 
 // Předpočítané URL obrázků
-const vrhAUrls = vrhAImages.gallery.map(img => img.src);
-const corgiVrhAUrls = corgiVrhAImages.gallery.map(img => img.src);
-const italiePaseniUrls = italiePaseniImages.gallery.map(img => img.src);
-const stenataVenkuUrls = stenataVenkuImages.gallery.map(img => img.src);
-const vrhPFotkyUrls = vrhPFotkyImages.gallery.map(img => img.src);
+const vrhAUrls = vrhAImages.gallery.map((img) => img.src);
+const corgiVrhAUrls = corgiVrhAImages.gallery.map((img) => img.src);
+const italiePaseniUrls = italiePaseniImages.gallery.map((img) => img.src);
+const stenataVenkuUrls = stenataVenkuImages.gallery.map((img) => img.src);
+const vrhPFotkyUrls = vrhPFotkyImages.gallery.map((img) => img.src);
 
 export const articles2024: Article[] = [
   {
@@ -70,7 +70,7 @@ Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v poř
     images: stenataVenkuUrls,
     labels: ['Frída a štěňata', 'modrý kluk', 'zelený kluk', 'červený kluk'],
     galleryOptions: { width: 600, height: 350, expander: false },
-    tags: { name: 'závody', type: 'races' },
+    tags: { name: 'štěňata', type: 'puppies' },
   },
   {
     headline: 'Fotky vrhu P',
@@ -88,7 +88,7 @@ Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v poř
       'frída s dětmi',
     ],
     galleryOptions: { width: 600, height: 350, expander: false },
-    tags: { name: 'závody', type: 'races' },
+    tags: { name: 'štěňata', type: 'puppies' },
   },
   {
     headline: '2 týdny',
@@ -99,6 +99,6 @@ Porod proběhl přirozeně, bez komplikací a maminka i štěňátka jsou v poř
     images: [],
     labels: [],
     galleryOptions: { width: 600, height: 350, expander: false },
-    tags: { name: 'výstava', type: 'exhibition' },
+    tags: { name: 'štěňata', type: 'puppies' },
   },
 ];
