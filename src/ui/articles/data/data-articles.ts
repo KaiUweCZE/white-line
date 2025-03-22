@@ -7,6 +7,7 @@ import {
 } from '@/assets/images/articles/2024';
 import { Article } from '../types';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const galleryDefault = { width: 600, height: 350, expander: false };
 
 export const newsData: Article[] = [
@@ -69,17 +70,20 @@ Děkuji za podporu [Klubu bílého ovčáka](https://www.bily-ovcak.cz/)!`,
   },
 
   {
-    headline: 'Narodila se štěňata',
+    headline: 'Vrh P - Bílý švýcarský ovčák',
     text: `22.6.2024 se narodil náš vrh 🅿️
 Fridě a Largovi se narodili 3 chlapečci a 1 holčička 
 💙💙💙❤️
 Všichni jsou v pořádku a štěňátka jsou už zamluvena`,
     content: `
-22. června 2024 se narodil náš vrh 🅿️ bílého švýcarského ovčáka. Matce **Frídě** a otci **Largovi** se narodili tři chlapečci a jedna holčička (3💙 + 1❤️). Všichni jsou v pořádku a štěňátka byla okamžitě zamluvena.
 
-V polovině července nastal čas prvních velkých dobrodružství. Využili jsme pěkného počasí a vzali štěňátka poprvé ven. Každé štěně má své barevné označení - **modrý kluk**, **zelený kluk**, **červený kluk** a naše jediná **holčička**.
+ V červenu 2024 přivítala naše chovatelská stanice vrh 🅿️ bílého švýcarského ovčáka. Matce **Frídě** a otci **Largovi** se narodili tři psi a jedna fena (3💙 + 1❤️). Všechna štěňata jsou v perfektním zdravotním stavu a již mají své budoucí majitele.
 
-Za pár dní se celá smečka přestěhovala do venkovního výběhu, kde mají více prostoru pro hry a učení. Jejich zvídavost a neúnavná energie nás každý den ohromuje.
+V polovině července jsme začali s postupnou socializací. První vycházky do venkovního prostředí proběhly bez problémů. Pro identifikaci používáme barevné rozlišení - **modrý**, **zelený**, **červený** a naše jediná **fenka**.
+
+O týden později byla štěňata přesunuta do prostorného venkovního výběhu.
+
+Děkujeme budoucím majitelům za projevenou důvěru a přejeme mnoho společných radostných chvil.
 
 [Detail odchovu vrhu P](https://whitelineczech.com/odchovy/swp)`,
     time: '22.června 2024',
