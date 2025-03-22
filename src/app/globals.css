@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --header-height: 55dvh;
+  --header-height: 55svh;
   --header-bar-height: 3rem;
   --max-width: 80rem;
   --standard-transition: 0.4s;
@@ -86,7 +86,7 @@ main {
 .navbar {
   display: grid;
   position: sticky;
-  top: calc(-55dvh + 2.9rem);
+  top: calc(-55svh + 2.9rem);
   z-index: 11;
   max-width: var(--max-width);
   height: var(--header-height);
@@ -97,7 +97,7 @@ main {
   border-radius: 0 0 0.5rem 0.5rem;
   animation: navbar-scroll linear both;
   animation-timeline: scroll();
-  animation-range: 55dvh 55dvh;
+  animation-range: 55svh 55svh;
   /* container-type: scroll-state;
   @container scroll-state(stuck: top) {
     .header-bar {
@@ -125,7 +125,7 @@ main {
   border-radius: 0 0 0.35rem 0.35rem;
   animation: bg-fill linear both;
   animation-timeline: scroll();
-  animation-range: 10dvh 55dvh;
+  animation-range: 10svh 55svh;
   @media (width < 640px) {
     border-radius: 0;
   }
@@ -302,6 +302,10 @@ main {
 
 .gallery {
   border-radius: var(--md-radius);
+}
+
+.gallery-image {
+  height: auto;
 }
 
 .primary-bg {
@@ -541,7 +545,7 @@ a {
     opacity: 0;
   }
   img {
-    max-height: 90dvh;
+    max-height: 90svh;
   }
   @container (inline-size < 80rem) {
     img {

@@ -74,6 +74,10 @@ Do nedělního finále, kam postupovalo 10 nejlepších týmů, jsme se kvalifik
 
 Ani finálové běhy se ale nepodařili dokončit všem, naštěstí jsme to s Frederikou nakonec zvládli a umístili se opět na **7. místě**. 🏅
 
+o 31 psů z 11 zemí. Z kvalifikačních kol, která probíhala v pátek a v sobotu trať nikdo nedokončil a jen 11 týmům se podařilo získat body.
+Do nedělního finále, kam postupovalo 10 nejlepších týmů, jsme se kvalifikovali ze 7. místa.
+Ani finálové běhy se ale nepodařili dokončit všem, naštěstí jsme to s Frederikou nakonec zvládli a umístili se opět na 7. místě. 🏅
+Děkuji za podporu Klubu bílého ovčáka!
 ---
 
 Děkuji za podporu [Klubu bílého ovčáka](https://www.bily-ovcak.cz/)!`,

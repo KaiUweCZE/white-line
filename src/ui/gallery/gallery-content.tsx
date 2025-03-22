@@ -40,19 +40,13 @@ const GalleryContent = ({
   const [showInfo, setShowInfo] = useState(false);
   const currentLabel = labels[activeIndex];
   const hasMultipleImages = images.length > 1;
+  const aspectRatio = (width / height).toFixed(2);
 
   const containerStyles = !isFullscreen && {
     width: width ? `${width}px` : '100%',
-    height: height ? `${height}px` : '100%',
     maxWidth: '100%',
+    aspectRatio: aspectRatio,
   };
-
-  const wrapperStyles =
-    !isFullscreen &&
-    {
-      /* paddingBottom: `${(height / width) * 100}%`,
-    position: 'relative' as const,*/
-    };
 
   const imageDisplayClass = isFullscreen || !sameSize ? 'object-contain' : 'object-cover';
 
@@ -67,10 +61,9 @@ const GalleryContent = ({
     >
       {/* Carousel wrapper */}
       <div
-        className={`relative overflow-hidden w-full gallery accent-shadow  ${
+        className={`relative overflow-hidden w-full gallery accent-shadow ${
           isFullscreen ? 'rounded-none' : 'rounded-lg'
         }`}
-        style={wrapperStyles ? wrapperStyles : {}}
       >
         <div
           className="absolute inset-0 flex transition-transform duration-300 ease-in-out"

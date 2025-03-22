@@ -16,7 +16,6 @@
 }
 
 .article-content {
-  max-height: 20rem;
   overflow-y: auto;
   --text-primary: theme('colors.slate.900');
   --text-secondary: theme('colors.slate.800');
@@ -24,6 +23,8 @@
   --text-accent-hover: theme('colors.sky.900');
   --transition: 0.3s;
   --bg-hover: theme('colors.sky.50');
+  scrollbar-color: theme('colors.slate.500') transparent;
+  scrollbar-width: thin;
 }
 
 .article-content h3 {

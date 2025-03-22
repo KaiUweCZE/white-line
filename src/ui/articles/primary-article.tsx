@@ -14,39 +14,42 @@ const PrimaryArticle = () => {
 
   const { tags, time, headline, text, images, labels, galleryOptions, sameSize } = currentArticle;
 
-  // Určíme barvy a označení podle kategorie
   const getCategoryColors = () => {
     switch (tags?.name) {
       case 'štěňata':
         return {
-          specialClass: 'border-l-fuchsia-400/60 border-b-fuchsia-200/40 bg-fuchsia-50/80',
+          specialClass: 'border-l-fuchsia-400/60 border-b-fuchsia-200/40 bg-fuchsia-50/100',
+          bgColor: 'bg-fuchsia-50/30',
           textColor: 'text-fuchsia-800',
         };
       case 'závody':
         return {
-          specialClass: 'border-l-emerald-400/60 border-b-emerald-200/40 bg-emerald-50/80',
+          specialClass: 'border-l-emerald-400/60 border-b-emerald-200/40 bg-emerald-50/100',
+          bgColor: 'bg-emerald-50/30',
           textColor: 'text-emerald-800',
         };
       case 'výstava':
         return {
-          specialClass: 'border-l-amber-400/60 border-b-amber-200/40 bg-amber-50/80',
+          specialClass: 'border-l-amber-400/60 border-b-amber-200/40 bg-amber-50/100',
+          bgColor: 'bg-amber-50/30',
           textColor: 'text-amber-800',
         };
       default:
         return {
-          specialClass: 'border-l-sky-400/60 border-b-sky-200/40 bg-sky-50/80',
+          specialClass: 'border-l-sky-400/60 border-b-sky-200/40 bg-sky-50/100',
+          bgColor: 'bg-sky-50/30',
           textColor: 'text-sky-800',
         };
     }
   };
 
-  const { specialClass, textColor } = getCategoryColors();
+  const { specialClass, textColor, bgColor } = getCategoryColors();
 
   const cleanText = fixIndentation(currentArticle.content ?? text);
 
   return (
-    <div className="gap-4 primary-article ">
-      <article className="max-w-full rounded overflow-hidden">
+    <div className="gap-4 primary-article">
+      <article className="max-w-full rounded scroll-colo">
         <header className={`px-4 pt-6 pb-3 border-b   border-l-4 ${specialClass}`}>
           <h2 className="text-2xl font-bold">{headline}</h2>
           <div className="flex items-center gap-2 mt-2">
@@ -57,11 +60,11 @@ const PrimaryArticle = () => {
             <span className={`text-sm font-medium ${textColor}`}>{tags?.name}</span>
           </div>
         </header>
-        <div className="p-4 article-content">
+        <div
+          className={`p-4 article-content ${bgColor}`}
+          style={{ maxHeight: galleryOptions?.height && galleryOptions.height - 90 }}
+        >
           <ReactMarkdown>{currentArticle.content ? cleanText : text}</ReactMarkdown>
-
-          {/* <ReactMarkdown>{text}</ReactMarkdown> */}
-          {/* <div className="prose max-w-none mb-8">{formatArticleText(text)}</div> */}
         </div>
       </article>
       <Gallery
