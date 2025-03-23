@@ -257,11 +257,21 @@ main {
 }
 
 .gallery-wrapper {
-  /* opacity: 1;
+  opacity: 1;
   transition: opacity 0.4s;
   @starting-style {
     opacity: 0;
-  }*/
+  }
+}
+
+.gallery-appear {
+  opacity: 1;
+  transition: 0.4s;
+  filter: blur(0px);
+  @starting-style {
+    opacity: 0;
+    filter: blur(4px);
+  }
 }
 
 .gallery {

@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useCallback, useEffect, useState } from 'react';
 import GalleryContent from './gallery-content';
 import { useScrollLock } from './hooks/use-scrolllock';
 import { useKeyboardShortcuts } from './hooks/use-keybaord-shortcuts';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 interface GalleryProps {
   images: StaticImageData[];
@@ -11,6 +11,7 @@ interface GalleryProps {
   height?: number;
   fullscreen: boolean;
   sameSize?: boolean;
+  placeholder: StaticImageData;
 }
 const Gallery = ({
   images,
@@ -19,6 +20,7 @@ const Gallery = ({
   height = 400,
   fullscreen,
   sameSize,
+  placeholder,
 }: GalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -91,12 +93,25 @@ const Gallery = ({
       onFullscreenToggle={toggleFullscreen}
       sameSize={sameSize ?? true}
       withoutTransform={withoutTransform}
+      placeholder={placeholder}
     />
   );
 
   return (
     <>
-      {!isFullscreen && galleryContent}
+      {!isFullscreen ? (
+        galleryContent
+      ) : (
+        <div className="relative" style={{ width: width, height: height }}>
+          <Image
+            src={images[activeIndex]}
+            alt="placeholder obrázek, nízká kvalita"
+            className={!sameSize ? 'object-contain' : 'object-cover'}
+            fill
+            quality={20}
+          />
+        </div>
+      )}
       {isFullscreen && (
         <div className="gallery-wrapper fixed h-screen w-screen inset-0 z-50">{galleryContent}</div>
       )}

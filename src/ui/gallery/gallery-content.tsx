@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from 'next/image';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
 import NavigationButtons from './navigation-buttons';
 import GalleryInfoButton from './gallery-info-button';
 import GalleryFullscreenButton from './gallery-fullscreen-button';
 import GalleryInfoText from './gallery-info-text';
 import GalleryDots from './gallery-dots';
+import { ArticleContext } from '@/context/article-context';
 
 interface GalleryContentProps {
   images: StaticImageData[];
@@ -21,6 +22,7 @@ interface GalleryContentProps {
   fullscreen?: boolean;
   sameSize?: boolean;
   withoutTransform?: boolean;
+  placeholder: StaticImageData;
 }
 
 const GalleryContent = ({
@@ -38,11 +40,13 @@ const GalleryContent = ({
   onFullscreenToggle,
   sameSize = true,
   withoutTransform = false,
+  placeholder,
 }: GalleryContentProps) => {
   const [showInfo, setShowInfo] = useState(false);
   const currentLabel = labels[activeIndex];
   const hasMultipleImages = images.length > 1;
   const aspectRatio = (width / height).toFixed(2);
+  const [isPlaceholder, setIsPlaceholder] = useState(true);
 
   const containerStyles = !isFullscreen && {
     width: width ? `${width}px` : '100%',
@@ -50,15 +54,19 @@ const GalleryContent = ({
     aspectRatio: aspectRatio,
   };
 
+  useEffect(() => {
+    setIsPlaceholder(true);
+  }, [placeholder]);
+
   const imageDisplayClass = isFullscreen || !sameSize ? 'object-contain' : 'object-cover';
 
   return (
     <section
       role="region"
       aria-label="Galerie fotografií"
-      className={`grid relative mx-auto ${isFullscreen && 'bg-black/60'} backdrop-blur-md ${
-        isFullscreen ? 'w-screen h-screen' : 'max-w-full'
-      }`}
+      className={`grid gallery-wrapper-sm relative mx-auto ${
+        isFullscreen && 'bg-black/60'
+      } backdrop-blur-md ${isFullscreen ? 'w-screen h-screen' : 'max-w-full'}`}
       style={containerStyles ? containerStyles : {}}
     >
       {/* Carousel wrapper */}
@@ -75,10 +83,26 @@ const GalleryContent = ({
             transform: `translateX(-${activeIndex * 100}%)`,
           }}
         >
+          {isPlaceholder && (
+            <Image
+              src={placeholder}
+              alt={'placeholder obrázek, nízká kvalita'}
+              fill
+              className={`${imageDisplayClass} gallery-appear`}
+              priority
+              placeholder="blur"
+              quality={1}
+              onLoad={() => {
+                console.log('Placeholder loaded');
+              }}
+            />
+          )}
           {images.map((img, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full h-full relative max-h-[90dvh] place-self-center"
+              className={`flex-shrink-0 w-full h-full relative max-h-[90dvh] place-self-center ${
+                isPlaceholder ? 'opacity-0' : 'gallery-appear'
+              }`}
             >
               <Image
                 src={img}
@@ -87,6 +111,12 @@ const GalleryContent = ({
                 placeholder="blur"
                 className={`${imageDisplayClass}`}
                 priority={index === 0}
+                onLoad={() => {
+                  if (index === 0) {
+                    console.log('Image loaded');
+                    setIsPlaceholder(false);
+                  }
+                }}
               />
             </div>
           ))}
@@ -97,8 +127,6 @@ const GalleryContent = ({
         hasMultipleImages={hasMultipleImages}
         onPrev={onPrev}
         onNext={onNext}
-        activeIndex={activeIndex}
-        isLast={activeIndex === images.length - 1}
         isTransitioning={isTransitioning}
       />
       <GalleryInfoButton

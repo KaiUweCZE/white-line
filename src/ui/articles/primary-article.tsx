@@ -10,8 +10,7 @@ import { fixIndentation } from '@/utils/fix-indentation';
 const PrimaryArticle = () => {
   const context = useContext(ArticleContext);
   if (!context) return <span>Context is missing</span>;
-  const { currentArticle } = context;
-
+  const { currentArticle, placeholder } = context;
   const { tags, time, headline, text, images, labels, galleryOptions, sameSize } = currentArticle;
 
   const getCategoryColors = () => {
@@ -48,7 +47,7 @@ const PrimaryArticle = () => {
   const cleanText = fixIndentation(currentArticle.content ?? text);
 
   return (
-    <div className="gap-4 primary-article">
+    <div className="gap-4 primary-article transition-all duration-600 relative">
       <article className="max-w-full rounded scroll-colo">
         <header className={`p-4 pb-2 border-b border-l-4 ${specialClass}`}>
           <h2 className="text-2xl font-bold">{headline}</h2>
@@ -67,6 +66,7 @@ const PrimaryArticle = () => {
           <ReactMarkdown>{currentArticle.content ? cleanText : text}</ReactMarkdown>
         </div>
       </article>
+
       <Gallery
         images={images}
         labels={labels ?? ['']}
@@ -74,9 +74,28 @@ const PrimaryArticle = () => {
         width={galleryOptions?.width ?? 600}
         height={galleryOptions?.height ?? 400}
         sameSize={sameSize ?? true}
+        placeholder={placeholder}
       />
     </div>
   );
 };
 
 export default PrimaryArticle;
+
+/*
+
+    <div
+          className="gallery-placeholder relative transition-all duration-1000"
+          style={{ height: galleryOptions?.height, width: galleryOptions?.width }}
+        >
+          <Image
+            src={placeholderImage.src}
+            alt="placeholder"
+            className="absolute inset-0"
+            width={galleryOptions?.width ?? 600}
+            height={galleryOptions?.height ?? 400}
+            blurDataURL={placeholderImage.blurDataURL}
+            quality={1}
+          />
+        </div>
+*/

@@ -1,6 +1,7 @@
 'use client';
 import { newsData } from '@/ui/articles/data/data-articles';
 import { Article, RestrictOption } from '@/ui/articles/types';
+import { StaticImageData } from 'next/image';
 import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 'react';
 
 interface ArticleContextProps {
@@ -10,6 +11,8 @@ interface ArticleContextProps {
   setSearchOption: Dispatch<SetStateAction<RestrictOption | null>>;
   year: number | null;
   setYear: Dispatch<SetStateAction<number | null>>;
+  placeholder: StaticImageData;
+  setPlaceholder: Dispatch<SetStateAction<StaticImageData>>;
 }
 
 export const ArticleContext = createContext<ArticleContextProps | undefined>(undefined);
@@ -18,6 +21,7 @@ export const ArticleProvider = ({ children }: { children: ReactNode }) => {
   const [currentArticle, setCurrentArticle] = useState<Article>(newsData[0]);
   const [searchOption, setSearchOption] = useState<RestrictOption | null>(null);
   const [year, setYear] = useState<number | null>(null);
+  const [placeholder, setPlaceholder] = useState<StaticImageData>(newsData[0].images[0]);
 
   const contextValues = {
     currentArticle,
@@ -26,6 +30,8 @@ export const ArticleProvider = ({ children }: { children: ReactNode }) => {
     setSearchOption,
     year,
     setYear,
+    placeholder,
+    setPlaceholder,
   };
   return <ArticleContext.Provider value={contextValues}>{children}</ArticleContext.Provider>;
 };

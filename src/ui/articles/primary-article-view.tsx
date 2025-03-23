@@ -7,7 +7,7 @@ import { ArticleContext } from '@/context/article-context';
 const PrimaryArticleView = (article: Article) => {
   const context = useContext(ArticleContext);
   if (!context) return <span>Context is missing</span>;
-  const { setCurrentArticle, currentArticle } = context;
+  const { setCurrentArticle, currentArticle, setPlaceholder } = context;
 
   const isActive = currentArticle.time === article.time;
   const outlinedClass = () => {
@@ -22,6 +22,7 @@ const PrimaryArticleView = (article: Article) => {
   };
 
   const handleSetArticle = () => {
+    setPlaceholder(article.images[0]);
     window.location.hash = '';
     setCurrentArticle(article);
     window.location.hash = `current-article`;

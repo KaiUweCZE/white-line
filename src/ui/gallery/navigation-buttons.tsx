@@ -4,8 +4,6 @@ interface NavigationButtonsProps {
   hasMultipleImages: boolean;
   onPrev: () => void;
   onNext: () => void;
-  activeIndex: number;
-  isLast: boolean;
   isTransitioning: boolean;
 }
 
@@ -13,9 +11,7 @@ const NavigationButtons = ({
   hasMultipleImages,
   onPrev,
   onNext,
-  activeIndex,
   isTransitioning,
-  isLast,
 }: NavigationButtonsProps) => {
   if (!hasMultipleImages) return null;
 
