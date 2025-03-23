@@ -1,11 +1,10 @@
 import Image, { StaticImageData } from 'next/image';
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavigationButtons from './navigation-buttons';
 import GalleryInfoButton from './gallery-info-button';
 import GalleryFullscreenButton from './gallery-fullscreen-button';
 import GalleryInfoText from './gallery-info-text';
 import GalleryDots from './gallery-dots';
-import { ArticleContext } from '@/context/article-context';
 
 interface GalleryContentProps {
   images: StaticImageData[];
