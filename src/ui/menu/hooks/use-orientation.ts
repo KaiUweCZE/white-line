@@ -1,22 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-
-type Orientation = "landscape" | "portrait";
+type Orientation = 'landscape' | 'portrait';
 
 export const useOrientation = () => {
-    const [orientation, setOrientation] = useState<Orientation>("landscape");
+  const [orientation, setOrientation] = useState<Orientation>('landscape');
+  const [windowWidth, setWindowWidth] = useState(0);
 
-    useEffect(() => {
-        const updateOrientation = () => {
-            setOrientation(window.innerHeight > window.innerWidth ? "portrait" : "landscape");    
-        }
+  useEffect(() => {
+    const updateOrientation = () => {
+      setOrientation(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
+      setWindowWidth(window.innerWidth);
+    };
 
-        updateOrientation();
+    updateOrientation();
 
-        window.addEventListener("resize", updateOrientation)
+    window.addEventListener('resize', updateOrientation);
 
-        return () => window.removeEventListener("resize", updateOrientation)
-    }, [])
+    return () => window.removeEventListener('resize', updateOrientation);
+  }, []);
 
-    return orientation
-}
+  return { orientation: orientation, windowWidth };
+};

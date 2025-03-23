@@ -101,6 +101,7 @@ main {
   z-index: 11;
   max-width: var(--max-width);
   height: var(--header-height);
+  max-height: 800px;
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -131,7 +132,7 @@ main {
   width: 100%;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  z-index: 1;
+  z-index: 3;
   color: white;
   border-radius: 0 0 0.35rem 0.35rem;
   animation: bg-fill linear both;
@@ -181,35 +182,14 @@ main {
   min-height: 0;
 }
 
-.slideshow {
-  display: grid;
-  position: absolute;
-  width: 100%;
-  height: var(--header-height);
-  overflow: hidden;
-  border-radius: 0 0 0.5rem 0.5rem;
-  /* animation: bg-off linear both;
-  animation-timeline: scroll();
-  animation-range: 45dvh 50dvh;*/
-}
-
 @keyframes bg-off {
   to {
     opacity: 0;
   }
 }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 3s ease-in-out;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.slide.active {
-  opacity: 1;
+.display-none {
+  display: none;
 }
 
 .max-width {

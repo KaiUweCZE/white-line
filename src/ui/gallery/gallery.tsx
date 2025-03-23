@@ -103,13 +103,13 @@ const Gallery = ({
         galleryContent
       ) : (
         <div className="relative" style={{ width: width, height: height }}>
-          <Image
+          {/* <Image
             src={images[activeIndex]}
             alt="placeholder obrázek, nízká kvalita"
             className={!sameSize ? 'object-contain' : 'object-cover'}
             fill
             quality={20}
-          />
+          /> */}
         </div>
       )}
       {isFullscreen && (

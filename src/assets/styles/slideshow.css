@@ -1,0 +1,119 @@
+.slideshow {
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: var(--header-height);
+  overflow: hidden;
+  border-radius: 0 0 0.5rem 0.5rem;
+  --slide-duration: 8s;
+  --total-duration: 32s;
+}
+
+.desktop-slideshow,
+.mobile-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.desktop-slideshow {
+  display: none;
+}
+.mobile-slideshow {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .desktop-slideshow {
+    display: block;
+  }
+  .mobile-slideshow {
+    display: none;
+  }
+}
+
+/* Základní styl pro slidy */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  will-change: opacity;
+
+  /* Důležité pro první render - všechny slidy kromě prvního začínají neviditelné */
+  animation-fill-mode: both;
+}
+
+/* První slide je viditelný od začátku */
+.slide-0 {
+  opacity: 1;
+}
+
+/* Animace pro desktop slidy - vylepšená s lepším překrytím */
+.desktop-slideshow .slide-0 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: calc(var(--total-duration) - var(--slide-duration));
+}
+
+.desktop-slideshow .slide-1 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: 0s;
+}
+
+.desktop-slideshow .slide-2 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: var(--slide-duration);
+}
+
+.desktop-slideshow .slide-3 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: calc(var(--slide-duration) * 2);
+}
+
+/* Stejné pro mobilní */
+.mobile-slideshow .slide-0 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: calc(var(--total-duration) - var(--slide-duration));
+}
+
+.mobile-slideshow .slide-1 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: 0s;
+}
+
+.mobile-slideshow .slide-2 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: var(--slide-duration);
+}
+
+.mobile-slideshow .slide-3 {
+  animation: slideAnimation var(--total-duration) infinite;
+  animation-delay: calc(var(--slide-duration) * 2);
+}
+
+/* Vylepšená keyframe animace s delším překryvem */
+@keyframes slideAnimation {
+  0%,
+  20% {
+    opacity: 0; /* Začíná neviditelně */
+  }
+  25%,
+  45% {
+    opacity: 1; /* Plně viditelný */
+  }
+  50%,
+  100% {
+    opacity: 0; /* Znovu neviditelný */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    animation: none !important;
+    transition: none !important;
+    opacity: 0;
+  }
+  .slide-0 {
+    opacity: 1;
+  }
+}
