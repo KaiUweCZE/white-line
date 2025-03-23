@@ -60,8 +60,6 @@ const ArticleSearch = () => {
   ];
 
   const handleActive = (option: FilterOption) => {
-    console.log(active.restrict, ' a ', option.name);
-
     if (option.variant === 'restrict') {
       if (option.name !== active.restrict) {
         setSearchOption((prev) => (option.name !== 'Roky' ? option.name : prev));

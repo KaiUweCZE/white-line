@@ -20,6 +20,7 @@ interface GalleryContentProps {
   onFullscreenToggle: () => void;
   fullscreen?: boolean;
   sameSize?: boolean;
+  withoutTransform?: boolean;
 }
 
 const GalleryContent = ({
@@ -36,6 +37,7 @@ const GalleryContent = ({
   onDotClick,
   onFullscreenToggle,
   sameSize = true,
+  withoutTransform = false,
 }: GalleryContentProps) => {
   const [showInfo, setShowInfo] = useState(false);
   const currentLabel = labels[activeIndex];
@@ -66,7 +68,9 @@ const GalleryContent = ({
         }`}
       >
         <div
-          className="absolute inset-0 flex transition-transform duration-300 ease-in-out"
+          className={`absolute inset-0 flex ${
+            withoutTransform ? '' : 'transition-transform duration-300 ease-in-out'
+          }`}
           style={{
             transform: `translateX(-${activeIndex * 100}%)`,
           }}
@@ -93,6 +97,8 @@ const GalleryContent = ({
         hasMultipleImages={hasMultipleImages}
         onPrev={onPrev}
         onNext={onNext}
+        activeIndex={activeIndex}
+        isLast={activeIndex === images.length - 1}
         isTransitioning={isTransitioning}
       />
       <GalleryInfoButton

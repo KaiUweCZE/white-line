@@ -4,6 +4,8 @@ interface NavigationButtonsProps {
   hasMultipleImages: boolean;
   onPrev: () => void;
   onNext: () => void;
+  activeIndex: number;
+  isLast: boolean;
   isTransitioning: boolean;
 }
 
@@ -11,7 +13,9 @@ const NavigationButtons = ({
   hasMultipleImages,
   onPrev,
   onNext,
+  activeIndex,
   isTransitioning,
+  isLast,
 }: NavigationButtonsProps) => {
   if (!hasMultipleImages) return null;
 
@@ -30,7 +34,7 @@ const NavigationButtons = ({
         />
       </button>
       <button
-        className="absolute right-4 p-2 z-10 place-self-center"
+        className="absolute right-4 p-2 z-10 place-self-center "
         onClick={onNext}
         disabled={isTransitioning}
         aria-label="Další obrázek"

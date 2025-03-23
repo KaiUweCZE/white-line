@@ -23,7 +23,6 @@ const PrimaryArticleView = (article: Article) => {
 
   const handleSetArticle = () => {
     window.location.hash = '';
-    console.log('Set article', article);
     setCurrentArticle(article);
     window.location.hash = `current-article`;
   };

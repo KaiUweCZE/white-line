@@ -21,7 +21,6 @@ const Slideshow = ({ slides, mobileSlides }: SlideshowProps) => {
   const actualSlides = orientation === 'landscape' ? slides : mobileSlides;
 
   useEffect(() => {
-    // console.log('Current slide:', currentSlide, 'Orientation:', orientation);
     const timer = setTimeout(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % actualSlides.length);
     }, 10000);
@@ -37,7 +36,7 @@ const Slideshow = ({ slides, mobileSlides }: SlideshowProps) => {
             src={slide.src}
             alt={slide.alt}
             fill
-            sizes="100vw"
+            //sizes="100vw"
             priority={index === 0}
             loading={index === 0 ? 'eager' : 'lazy'}
             quality={90}
