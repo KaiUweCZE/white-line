@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import GalleryContent from './gallery-content';
 import { useScrollLock } from './hooks/use-scrolllock';
 import { useKeyboardShortcuts } from './hooks/use-keybaord-shortcuts';
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 
 interface GalleryProps {
   images: StaticImageData[];

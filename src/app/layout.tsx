@@ -1,4 +1,5 @@
 import { type Metadata } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { parkinsans } from './fonts/fonts';
 import './globals.css';
 import Navbar from '@/ui/menu/navbar';
@@ -78,6 +79,15 @@ export const metadata: Metadata = {
   themeColor: '#ffffff',
 };
 
+/**
+ * RootLayout is a component that sets up the HTML structure and metadata for the website.
+ * It includes various JSON-LD schemas for SEO purposes, such as organization, service,
+ * and local business information. The component wraps the children elements within the
+ * main content area and includes navigation and analytics components.
+ *
+ * @param {{ children: React.ReactNode }} props - The children elements to be rendered
+ * inside the main content area.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -204,6 +214,7 @@ export default function RootLayout({
         <Navbar />
         <main id="main-content" className="">
           {children}
+          <SpeedInsights />
           <Analytics />
         </main>
       </body>

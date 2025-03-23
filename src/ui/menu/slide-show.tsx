@@ -19,10 +19,7 @@ export default function Slideshow({ slides, mobileSlides }: SlideshowProps) {
       {/* Desktop slidy */}
       <div className="desktop-slideshow">
         {slides.map((slide, index) => (
-          <div
-            key={`desktop-${index}`}
-            className={`slide slide-${index % 4}`} // Použijeme modulo, pokud by bylo více než 4 slidy
-          >
+          <div key={`desktop-${index}`} className={`slide slide-${index % 4}`}>
             <Image
               src={slide.src}
               alt={slide.alt}
