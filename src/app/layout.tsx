@@ -202,7 +202,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="cs">
+    <html lang="cs" suppressHydrationWarning>
       <head>
         {/* <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js" /> */}
         <JsonLd data={jsonLd} />

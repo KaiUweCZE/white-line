@@ -12,12 +12,12 @@ const NotFound = () => {
         <Image
           className="error-image"
           src={corgiImg}
-          alt="catoon obrázek s corgi, která má u sebe otazník"
+          alt="cartoon obrázek s corgi, která má u sebe otazník"
           width={400}
-          placeholder="blur"
+          priority
         />
         <div className="flex flex-col w-full items-center">
-          <h2>Jéje, zatoulali jste se...</h2>
+          <h2>Tahle stránka tu není...</h2>
           <Link href={'/'}>
             <Button variant="outlined" leftIcon={<Home className="w-4 h-4" />}>
               Zpět

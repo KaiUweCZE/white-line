@@ -210,10 +210,11 @@ main {
 }
 
 .arrow-icon {
-  filter: drop-shadow(0 0 2px black);
+  filter: drop-shadow(0 0 2px #000000);
   transition: var(--standard-transition);
   &:hover {
-    filter: brightness(0.8);
+    filter: brightness(0.9);
+    filter: drop-shadow(0 0 4px #000000);
     scale: 1.1;
   }
 }
@@ -587,4 +588,17 @@ a {
   .swipe-info {
     display: none;
   }
+}
+
+.label-show {
+  translate: 0;
+  transition: 0.3s;
+
+  @starting-style {
+    translate: 0 4rem;
+  }
+}
+
+.info-button {
+  filter: drop-shadow(0 0 2px #0000007a);
 }

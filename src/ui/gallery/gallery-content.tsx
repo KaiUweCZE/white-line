@@ -99,24 +99,36 @@ const GalleryContent = ({
           {images.map((img, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 w-full h-full relative max-h-[90dvh] place-self-center ${
+              className={`flex-shrink-0 w-full grid place-items-center h-full relative max-h-[90dvh] place-self-center ${
                 isPlaceholder ? 'opacity-0' : 'gallery-appear'
               }`}
             >
-              <Image
-                src={img}
-                alt={labels[index] || `Obrázek ${index + 1}`}
-                fill
-                placeholder="blur"
-                className={`${imageDisplayClass}`}
-                priority={index === 0}
-                onLoad={() => {
-                  if (index === 0) {
-                    console.log('Image loaded');
-                    setIsPlaceholder(false);
-                  }
-                }}
-              />
+              <figure
+                className="grid relative w-full h-full overflow-hidden"
+                style={{ maxHeight: img.height, maxWidth: img.width }}
+              >
+                <Image
+                  src={img}
+                  alt={labels[index] || `Obrázek ${index + 1}`}
+                  fill
+                  placeholder="blur"
+                  className={`${imageDisplayClass} place-self-center`}
+                  priority={index === 0}
+                  style={{ maxHeight: img.height }}
+                  onLoad={() => {
+                    if (index === 0) {
+                      console.log('Image loaded');
+                      setIsPlaceholder(false);
+                    }
+                  }}
+                />
+                <GalleryInfoText
+                  showInfo={showInfo}
+                  currentLabel={currentLabel}
+                  width={width}
+                  expanded={isFullscreen}
+                />
+              </figure>
             </div>
           ))}
         </div>
@@ -132,19 +144,20 @@ const GalleryContent = ({
         currentLabel={currentLabel}
         showInfo={showInfo}
         setShowInfo={setShowInfo}
+        isFullscreen={isFullscreen}
       />
       <GalleryFullscreenButton
         fullscreen={fullscreen}
         isFullscreen={isFullscreen}
         onFullscreenToggle={onFullscreenToggle}
       />
-      <GalleryInfoText showInfo={showInfo} currentLabel={currentLabel} />
 
       <GalleryDots
         hasMultipleImages={hasMultipleImages}
         activeIndex={activeIndex}
         onDotClick={onDotClick}
         images={images}
+        showInfo={showInfo}
       />
     </section>
   );

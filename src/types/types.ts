@@ -28,3 +28,5 @@ export interface BreedDetailType {
   description?: string;
   gallery?: GalleryImage[];
 }
+
+export const articleYears = [2025, 2024, 2023] as const;

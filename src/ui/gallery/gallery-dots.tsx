@@ -5,10 +5,17 @@ interface GalleryDotsProps {
   activeIndex: number;
   onDotClick: (index: number) => void;
   images: StaticImageData[];
+  showInfo: boolean;
 }
 
-const GalleryDots = ({ hasMultipleImages, activeIndex, onDotClick, images }: GalleryDotsProps) => {
-  if (!hasMultipleImages) return null;
+const GalleryDots = ({
+  hasMultipleImages,
+  activeIndex,
+  onDotClick,
+  images,
+  showInfo,
+}: GalleryDotsProps) => {
+  if (!hasMultipleImages || showInfo) return null;
 
   return (
     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">

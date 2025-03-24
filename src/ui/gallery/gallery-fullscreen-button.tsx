@@ -16,13 +16,15 @@ const GalleryFullscreenButton = ({
   return (
     <button
       onClick={onFullscreenToggle}
-      className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+      className={`absolute top-0 right-0 z-10 ${
+        isFullscreen ? 'p-3' : 'p-2'
+      } bg-slate-800 transition-colors`}
       aria-label={isFullscreen ? 'Ukončit režim celé obrazovky' : 'Zobrazit na celou obrazovku'}
     >
       {isFullscreen ? (
-        <X className="h-6 w-6" color="white" />
+        <X className="h-7 w-7" strokeWidth={3} color="white" />
       ) : (
-        <Maximize2 className="h-5 w-5" color="white" />
+        <Maximize2 className="h-5 w-5 hover:scale-125 transition duration-300" color="white" />
       )}
     </button>
   );

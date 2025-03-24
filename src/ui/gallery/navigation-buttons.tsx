@@ -24,9 +24,8 @@ const NavigationButtons = ({
         aria-label="Předchozí obrázek"
       >
         <ArrowLeft
-          className="arrow-icon h-6 w-6 transition-transform hover:scale-110"
-          color="white"
-          strokeWidth={4}
+          className="arrow-icon h-8 w-8 transition-transform hover:scale-110 text-white hover:text-slate-200"
+          strokeWidth={3}
         />
       </button>
       <button
@@ -36,9 +35,8 @@ const NavigationButtons = ({
         aria-label="Další obrázek"
       >
         <ArrowRight
-          className="arrow-icon h-6 w-6 transition-transform hover:scale-110"
-          color="white"
-          strokeWidth={4}
+          className="arrow-icon h-8 w-8 transition-transform hover:scale-110 text-white hover:text-slate-200"
+          strokeWidth={3}
         />
       </button>
     </>

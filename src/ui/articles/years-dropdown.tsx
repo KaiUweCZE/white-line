@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useRef } from 'react';
 import { useClickOutside } from '@/hooks/useClickOutside';
+import { articleYears } from '@/types/types';
 
 const YearsDropdown = ({
   setYear,
@@ -9,7 +10,7 @@ const YearsDropdown = ({
   setPickYear: Dispatch<SetStateAction<boolean>>;
 }) => {
   const dropdownRef = useRef<HTMLUListElement | null>(null);
-  const years = ['vše', 2024, 2023, 2022, 2021, 2020];
+  const years = ['vše', ...articleYears];
 
   useClickOutside(dropdownRef, () => setTimeout(() => setPickYear(false), 100));
 

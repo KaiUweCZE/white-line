@@ -1,15 +1,22 @@
 interface GalleryInfoTextProps {
   showInfo: boolean;
   currentLabel: string;
+  expanded?: boolean;
+  width?: number;
 }
 
-const GalleryInfoText = ({ showInfo, currentLabel }: GalleryInfoTextProps) => {
+const GalleryInfoText = ({ showInfo, currentLabel, expanded, width }: GalleryInfoTextProps) => {
   if (!showInfo || !currentLabel) return null;
 
+  const isExpanded = expanded ? 'w-fit text-2xl' : 'w-full';
+
   return (
-    <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-      <p className="text-white text-sm">{currentLabel}</p>
-    </div>
+    <figcaption
+      style={{ maxWidth: width }}
+      className={`absolute place-self-center text-white  ${isExpanded} bg-black/60 backdrop-blur-md label-show bottom-0 py-1 z-50 px-8 rounded-t-sm`}
+    >
+      {currentLabel}
+    </figcaption>
   );
 };
 
