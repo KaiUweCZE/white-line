@@ -57,7 +57,7 @@ const DogDetail = () => {
   return (
     <>
       <DogJsonLd dog={JsonLdDogData} />
-      <div className="mx-auto px-4 py-8 max-w-7xl grid gap-12">
+      <main className="mx-auto px-4 py-8 max-w-7xl grid gap-12">
         {/* Hero sekce */}
         <DogHero dog={heroData} />
 
@@ -78,7 +78,7 @@ const DogDetail = () => {
             <DogContests title="Závody" icon={Medal} items={data.races} resultKey="result" />
           )}
         </div>
-      </div>
+      </main>
     </>
   );
 };

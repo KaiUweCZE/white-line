@@ -1,8 +1,5 @@
-'use client';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
-import Button from '../primitives/button';
-import { useRouter } from 'next/navigation';
 import LinkPrimary from '../primitives/link-primary';
 
 type GalleryDogType = {
@@ -16,11 +13,6 @@ interface DogsGalleryProps {
 }
 
 const DogsGallery = ({ dogs }: DogsGalleryProps) => {
-  const navigate = useRouter();
-  const handleNavigate = (href: string) => {
-    navigate.push(href.toLowerCase());
-  };
-
   return (
     <div className="grid grid-cols-3 gap-4 dogs-gallery">
       {dogs.map((dog) => (
