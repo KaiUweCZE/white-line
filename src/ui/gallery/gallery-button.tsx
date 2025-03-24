@@ -1,11 +1,9 @@
 import { cn } from '@/lib/utils/cn';
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-interface GalleryButtonProps {
-  onClick: () => void;
+interface GalleryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   specialClass?: string;
-  disabled?: boolean;
   isFullscreen?: boolean;
   showInfo?: boolean;
 }
@@ -17,17 +15,19 @@ const GalleryButton = ({
   disabled = false,
   isFullscreen = false,
   showInfo = false,
+  'aria-label': ariaLabel,
 }: GalleryButtonProps) => {
   return (
     <button
       className={cn(
         'absolute z-10 transition-all duration-300',
         isFullscreen ? 'p-3' : 'p-2',
-        showInfo ? 'bg-slate-900' : 'bg-slate-900/50',
+        showInfo ? 'bg-slate-600' : 'bg-slate-600/50',
         specialClass
       )}
       onClick={onClick}
       disabled={disabled}
+      aria-label={ariaLabel}
     >
       {children}
     </button>

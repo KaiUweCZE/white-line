@@ -6,11 +6,11 @@ import PrimaryArticle from '@/ui/articles/primary-article';
 export default function Home() {
   return (
     <ArticleProvider>
-      <div className="wrapper primary-bg pt-8 px-8" id="current-article">
+      <main className="wrapper primary-bg pt-8 px-8" id="current-article">
         <PrimaryArticle />
         <ArticleSection />
         <ContactFooter />
-      </div>
+      </main>
     </ArticleProvider>
   );
 }

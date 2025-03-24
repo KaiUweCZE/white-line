@@ -26,7 +26,7 @@ const BoxBreed = ({ breed }: { breed: BreedType }) => {
       {/* Content section */}
       <div className="box-breed-content">
         <header className="mb-4 relative">
-          <h3 className="text-lg font-semibold text-slate-800">{breed.name}</h3>
+          <h2 className="text-lg font-semibold text-slate-800">{breed.name}</h2>
 
           <p className="mt-1 text-sm text-gray-600">
             {breed.father} & {breed.mother}
@@ -36,7 +36,7 @@ const BoxBreed = ({ breed }: { breed: BreedType }) => {
 
         <div className="grid grid-cols-2 gap-6">
           <section className="space-y-2">
-            <h4 className="text-sm font-medium uppercase tracking-wider text-slate-700">Psi</h4>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-slate-700">Psi</h3>
             <ul className="space-y-1.5">
               {breed.males ? (
                 breed.males.map((male) => (
@@ -52,7 +52,7 @@ const BoxBreed = ({ breed }: { breed: BreedType }) => {
           </section>
 
           <section className="space-y-2">
-            <h4 className="text-sm font-medium uppercase tracking-wider text-slate-700">Feny</h4>
+            <h3 className="text-sm font-medium uppercase tracking-wider text-slate-700">Feny</h3>
             <ul className="space-y-1.5">
               {breed.females ? (
                 breed.females.map((female) => (

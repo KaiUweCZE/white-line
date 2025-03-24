@@ -25,6 +25,7 @@ const GalleryInfoButton = ({
       specialClass={`group bottom-0 right-0 info-button  ${
         isFullscreen ? 'pl-5 pt-5' : 'pl-4 pt-4'
       }`}
+      aria-label="Zobrazit/skrýt popis fotky"
     >
       <Info
         className={`group-hover:scale-110 transition duration-300 ${

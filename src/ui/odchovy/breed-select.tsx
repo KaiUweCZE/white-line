@@ -30,8 +30,13 @@ const BreedSelect = ({
           focus:outline-none focus:ring-2 focus:ring-gray-200
           transition-all duration-200
         "
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-labelledby="breed-select-label"
       >
-        <span className="text-gray-800 text-sm font-medium">{actualBreed}</span>
+        <span id="breed-select-label" className="text-gray-800 text-sm font-medium">
+          {actualBreed}
+        </span>
         <svg
           className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
             isOpen ? 'rotate-180' : ''
@@ -45,7 +50,9 @@ const BreedSelect = ({
       </button>
 
       {isOpen && (
-        <div
+        <ul
+          role="listbox"
+          aria-labelledby="breed-select-label"
           className="
           absolute
           w-full
@@ -60,10 +67,10 @@ const BreedSelect = ({
         "
         >
           {breeds.map((breed) => (
-            <button
-              key={breed}
-              onClick={() => handleSelect(breed)}
-              className="
+            <li key={breed} role="option" aria-selected={actualBreed === breed}>
+              <button
+                onClick={() => handleSelect(breed)}
+                className="
                 w-full
                 px-4
                 py-2
@@ -76,32 +83,33 @@ const BreedSelect = ({
                 duration-150
                 text-left
               "
-            >
-              <span
-                className={`font-medium ${
-                  actualBreed === breed ? 'text-gray-900' : 'text-gray-600'
-                }`}
               >
-                {breed}
-              </span>
-              {actualBreed === breed && (
-                <svg
-                  className="w-4 h-4 text-gray-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <span
+                  className={`font-medium ${
+                    actualBreed === breed ? 'text-gray-900' : 'text-gray-600'
+                  }`}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              )}
-            </button>
+                  {breed}
+                </span>
+                {actualBreed === breed && (
+                  <svg
+                    className="w-4 h-4 text-gray-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                )}
+              </button>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );

@@ -85,13 +85,17 @@ body:has(.container-error) {
   width: 100%;
   margin-inline: auto;
 }
-
+/*
 main {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  /* background-color: #f0f8ff;
-  background-color: #f8f8ff;*/
+}*/
+
+.page-wrapper {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
 }
 
 .navbar {
@@ -474,6 +478,12 @@ a {
     .our-dogs-frame {
       max-width: fit-content;
       margin: 0 auto;
+      /*
+      řešení pro android... 
+      například tilda není přes celou šířku...
+      div {
+        width: 92svw;
+      }*/
     }
   }
 }

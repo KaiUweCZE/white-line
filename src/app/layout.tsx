@@ -212,11 +212,11 @@ export default function RootLayout({
       </head>
       <body className={`${parkinsans.variable} font-parkinsans antialiased`}>
         <Navbar />
-        <main id="main-content" className="">
+        <div id="main-content" className="page-wrapper">
           {children}
           <SpeedInsights />
           <Analytics />
-        </main>
+        </div>
       </body>
     </html>
   );

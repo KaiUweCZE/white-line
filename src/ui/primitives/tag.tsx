@@ -1,43 +1,41 @@
-import { cn } from "@/lib/utils/cn";
-import { cva, type VariantProps } from "class-variance-authority";
-import { HTMLAttributes, ReactNode } from "react";
+import { cn } from '@/lib/utils/cn';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { HTMLAttributes, ReactNode } from 'react';
 
-const tagVariants = cva("article-tag", {
+const tagVariants = cva('article-tag', {
   variants: {
     variant: {
-      puppies: "bg-fuchsia-100 text-fuchsia-800 border border-fuchsia-200",
-      races: "bg-teal-100 text-teal-800 border border-teal-200",
-      exhibition: "bg-amber-100 text-amber-800 border border-amber-200",
+      puppies: 'bg-fuchsia-100 text-fuchsia-800 border border-fuchsia-200',
+      races: 'bg-teal-100 text-teal-800 border border-teal-200',
+      exhibition: 'bg-amber-100 text-amber-800 border border-amber-200',
     },
     size: {
-      sm: "text-xs px-2 py-0.5",
-      md: "text-sm px-3 py-1",
-      lg: "text-base px-4 py-1.5",
+      sm: 'text-xs px-2 py-0.5',
+      md: 'text-sm px-3 py-1',
+      lg: 'text-base px-4 py-1.5',
     },
     // Přidáme možnost pro různé tvary
     shape: {
-      pill: "rounded-full",
-      rounded: "rounded-md",
-      none: "",
+      pill: 'rounded-full',
+      rounded: 'rounded-md',
+      none: '',
     },
     // Přidáme možnost pro různé styly ohraničení
     bordered: {
-      true: "border",
-      false: "border-0",
+      true: 'border',
+      false: 'border-0',
     },
   },
   defaultVariants: {
-    variant: "puppies",
-    size: "md",
-    shape: "none",
+    variant: 'puppies',
+    size: 'md',
+    shape: 'none',
     bordered: true,
   },
 });
 
 // Opravíme typy
-interface TagProps
-  extends HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof tagVariants> {
+interface TagProps extends HTMLAttributes<HTMLSpanElement>, VariantProps<typeof tagVariants> {
   // Zjednodušíme props na to, co skutečně potřebujeme
   icon?: ReactNode; // Jeden slot pro ikonu
   onRemove?: () => void; // Možnost odstranění tagu
@@ -57,18 +55,16 @@ const Tag = ({
   ...props
 }: TagProps) => {
   return (
-    <span
+    <mark
       className={cn(
         tagVariants({ variant, size, shape, bordered }),
-        disabled && "opacity-50 cursor-not-allowed",
+        disabled && 'opacity-50 cursor-not-allowed',
         className
       )}
       {...props}
     >
       {/* Ikona na začátku */}
-      {icon && (
-        <span className="mr-1.5 -ml-1 inline-flex items-center">{icon}</span>
-      )}
+      {icon && <span className="mr-1.5 -ml-1 inline-flex items-center">{icon}</span>}
 
       {/* Hlavní obsah tagu */}
       {children}
@@ -98,10 +94,10 @@ const Tag = ({
           </svg>
         </button>
       )}
-    </span>
+    </mark>
   );
 };
 
-Tag.displayName = "Tag";
+Tag.displayName = 'Tag';
 
 export default Tag;

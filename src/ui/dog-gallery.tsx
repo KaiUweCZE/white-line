@@ -35,6 +35,7 @@ const DogGallery = ({ images, labels, title = 'Fotogalerie' }: DogGalleryProps) 
               src={image}
               alt={labels?.[index] || `Fotka ${index + 1}`}
               className="rounded-[0.2rem] accent-shadow"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
               placeholder="blur"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-300">

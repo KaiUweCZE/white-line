@@ -21,9 +21,11 @@ const ArticleSection = () => {
   );
 
   return (
-    <div className="grid gap-2 border-t mt-6 pt-6">
-      <h2 className="text-2xl font-bold">Novinky</h2>
-      <ArticleSearch />
+    <section className="grid gap-2 border-t mt-6 pt-6" aria-labelledby="novinky-heading">
+      <header className="grid gap-2">
+        <h2 className="text-2xl font-bold">Novinky</h2>
+        <ArticleSearch />
+      </header>
       <div className="p-1 max-h-[30rem] primary-scroll overflow-y-auto">
         <section className="articles-section grid grid-cols-3 gap-2">
           <h2 className="sr-only">Články</h2>
@@ -32,7 +34,7 @@ const ArticleSection = () => {
           ))}
         </section>
       </div>
-    </div>
+    </section>
   );
 };
 

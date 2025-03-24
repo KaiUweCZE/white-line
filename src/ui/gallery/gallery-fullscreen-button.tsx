@@ -21,6 +21,7 @@ const GalleryFullscreenButton = ({
       specialClass={`group top-0 right-0 rounded-bl-full  ${
         isFullscreen ? 'pl-5 pb-5' : 'pl-4 pb-4'
       }`}
+      aria-label="Změnit zobrazení na fullscreen"
     >
       {isFullscreen ? (
         <X className="h-7 w-7" strokeWidth={3} color="white" />
