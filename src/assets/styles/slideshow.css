@@ -91,3 +91,11 @@
     opacity: 1;
   }
 }
+
+.info-button {
+  border-radius: 90% 0 0 0;
+
+  /* &:hover {
+    border-radius: 0.15rem 0 0 0;
+  }*/
+}

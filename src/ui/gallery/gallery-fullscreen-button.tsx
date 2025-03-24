@@ -1,4 +1,5 @@
 import { Maximize2, X } from 'lucide-react';
+import GalleryButton from './gallery-button';
 
 interface GalleryFullscreenButtonProps {
   fullscreen: boolean;
@@ -14,19 +15,22 @@ const GalleryFullscreenButton = ({
   if (!fullscreen) return null;
 
   return (
-    <button
+    <GalleryButton
       onClick={onFullscreenToggle}
-      className={`absolute top-0 right-0 z-10 ${
-        isFullscreen ? 'p-3' : 'p-2'
-      } bg-slate-800 transition-colors`}
-      aria-label={isFullscreen ? 'Ukončit režim celé obrazovky' : 'Zobrazit na celou obrazovku'}
+      isFullscreen={isFullscreen}
+      specialClass={`group top-0 right-0 rounded-bl-full  ${
+        isFullscreen ? 'pl-5 pb-5' : 'pl-4 pb-4'
+      }`}
     >
       {isFullscreen ? (
         <X className="h-7 w-7" strokeWidth={3} color="white" />
       ) : (
-        <Maximize2 className="h-5 w-5 hover:scale-125 transition duration-300" color="white" />
+        <Maximize2
+          className="h-5 w-5 group-hover:scale-125 transition duration-300"
+          color="white"
+        />
       )}
-    </button>
+    </GalleryButton>
   );
 };
 

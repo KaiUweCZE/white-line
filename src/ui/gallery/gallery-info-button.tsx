@@ -1,5 +1,6 @@
 import { Info } from 'lucide-react';
 import { Dispatch, SetStateAction } from 'react';
+import GalleryButton from './gallery-button';
 
 interface GalleryInfoButtonProps {
   currentLabel: string;
@@ -17,20 +18,21 @@ const GalleryInfoButton = ({
   if (!currentLabel) return null;
 
   return (
-    <button
+    <GalleryButton
       onClick={() => setShowInfo((prev) => !prev)}
-      className={`absolute bottom-0 right-0 z-10 ${isFullscreen ? 'p-3' : 'p-2'} rounded-sm ${
-        showInfo ? 'bg-transparent' : 'bg-slate-900/80'
-      } transition-colors`}
-      aria-label={showInfo ? 'Skrýt informace o obrázku' : 'Zobrazit informace o obrázku'}
+      isFullscreen={isFullscreen}
+      showInfo={showInfo}
+      specialClass={`group bottom-0 right-0 info-button  ${
+        isFullscreen ? 'pl-5 pt-5' : 'pl-4 pt-4'
+      }`}
     >
       <Info
-        className={`${isFullscreen ? 'h-7 w-7' : 'h-6 w-6'} info-button ${
-          showInfo ? 'text-gray-200' : 'text-white'
-        }`}
+        className={`group-hover:scale-110 transition duration-300 ${
+          isFullscreen ? 'h-7 w-7' : 'h-6 w-6'
+        }  ${showInfo ? 'text-gray-200' : 'text-white'}`}
         strokeWidth={3}
       />
-    </button>
+    </GalleryButton>
   );
 };
 

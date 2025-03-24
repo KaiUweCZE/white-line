@@ -112,9 +112,7 @@ const Gallery = ({
           /> */}
         </div>
       )}
-      {isFullscreen && (
-        <div className="gallery-wrapper fixed h-screen w-screen inset-0 z-50">{galleryContent}</div>
-      )}
+      {isFullscreen && <div className="fixed h-screen w-screen inset-0 z-50">{galleryContent}</div>}
     </>
   );
 };
