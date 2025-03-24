@@ -30,7 +30,7 @@ const DogGallery = ({ images, labels, title = 'Fotogalerie' }: DogGalleryProps) 
 
       <div className="masonry-gallery">
         {images.map((image, index) => (
-          <div key={index} className="masonry-item " onClick={() => openViewer(index)}>
+          <figure key={index} className="masonry-item " onClick={() => openViewer(index)}>
             <Image
               src={image}
               alt={labels?.[index] || `Fotka ${index + 1}`}
@@ -41,8 +41,10 @@ const DogGallery = ({ images, labels, title = 'Fotogalerie' }: DogGalleryProps) 
             <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
               <Maximize2 className="text-white/90 w-6 h-6" />
             </div>
-            <span className="tt fluid-caption">{labels?.[index] || `Fotka ${index + 1}`}</span>
-          </div>
+            <figcaption className="tt fluid-caption">
+              {labels?.[index] || `Fotka ${index + 1}`}
+            </figcaption>
+          </figure>
         ))}
       </div>
 
