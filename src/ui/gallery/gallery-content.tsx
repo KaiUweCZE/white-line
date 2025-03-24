@@ -64,7 +64,7 @@ const GalleryContent = ({
       role="region"
       aria-label="Galerie fotografií"
       className={`grid relative mx-auto ${isFullscreen && 'bg-black/60'} backdrop-blur-md ${
-        isFullscreen ? 'w-screen h-[100svh]' : 'max-w-full'
+        isFullscreen ? 'w-screen h-[100dvh]' : 'max-w-full'
       }`}
       style={containerStyles ? containerStyles : {}}
     >
