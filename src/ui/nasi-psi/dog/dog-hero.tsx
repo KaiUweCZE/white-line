@@ -154,7 +154,7 @@ const DogHero = ({ dog }: DogHeroProps) => {
             <h2 id="titles-heading" className="sr-only">
               Tituly
             </h2>
-            <ul className="flex gap-4 flex-wrap" role="list">
+            <ul className="flex gap-4 flex-wrap">
               {dog.titles.map((title, index) => (
                 <li
                   key={index}

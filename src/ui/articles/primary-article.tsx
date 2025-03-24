@@ -13,6 +13,9 @@ const PrimaryArticle = () => {
   const { currentArticle, placeholder } = context;
   const { tags, time, headline, text, images, labels, galleryOptions, sameSize } = currentArticle;
 
+  const splitTime = time.split('.');
+  console.log(splitTime);
+  const isoTime = `${splitTime[2]}-${splitTime[1]}-${splitTime[0]}`;
   const getCategoryColors = () => {
     switch (tags?.name) {
       case 'štěňata':
@@ -52,7 +55,7 @@ const PrimaryArticle = () => {
         <header className={`p-4 pb-2 border-b border-l-4 ${specialClass}`}>
           <h2 className="text-2xl font-bold">{headline}</h2>
           <div className="flex items-center gap-2 mt-1">
-            <time dateTime={time} className="text-sm text-slate-600">
+            <time dateTime={isoTime} className="text-sm text-slate-600">
               {formatDate(time)}
             </time>
             <span className="text-sm text-slate-400">•</span>

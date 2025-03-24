@@ -27,7 +27,7 @@ const OdchovyPage = () => {
           <h1 className="page-headline">Odchovy {title()}</h1>
           <BreedSelect setActualBreed={setActualBreed} actualBreed={actualBreed} />
         </header>
-        <section>{data && <ContainerBreeds data={data} />}</section>
+        <div>{data && <ContainerBreeds data={data} />}</div>
       </div>
     </main>
   );

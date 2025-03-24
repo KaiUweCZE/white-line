@@ -17,11 +17,11 @@ const BoxBreed = ({ breed }: { breed: BreedType }) => {
           height={400}
           className="object-cover "
         />{' '}
-        <div className="absolute top-3 right-3 bg-white/70  text-slate-800 text-xs font-medium px-2 py-1 rounded-sm flex items-center gap-2">
+        <figcaption className="absolute top-3 right-3 bg-white/70  text-slate-800 text-xs font-medium px-2 py-1 rounded-sm flex items-center gap-2">
           <CalendarDays className="h-3.5 w-3.5" />
           {/* <span>datum narození:</span>*/}
           <span>{breed.birth}</span>
-        </div>
+        </figcaption>
       </figure>
       {/* Content section */}
       <div className="box-breed-content">

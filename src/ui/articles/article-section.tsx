@@ -21,7 +21,7 @@ const ArticleSection = () => {
   );
 
   return (
-    <section className="grid gap-2 border-t mt-6 pt-6" aria-labelledby="novinky-heading">
+    <section className="grid gap-2 border-t mt-6 pt-6">
       <header className="grid gap-2">
         <h2 className="text-2xl font-bold">Novinky</h2>
         <ArticleSearch />

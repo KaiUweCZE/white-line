@@ -61,7 +61,6 @@ const GalleryContent = ({
 
   return (
     <section
-      role="region"
       aria-label="Galerie fotografií"
       className={`grid relative mx-auto ${isFullscreen && 'bg-black/60'} backdrop-blur-md ${
         isFullscreen ? 'w-screen h-[100dvh]' : 'max-w-full'

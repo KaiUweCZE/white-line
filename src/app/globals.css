@@ -420,10 +420,10 @@ a {
   break-inside: avoid;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  &:hover figcaption {
+  &:hover .tt {
     opacity: 1;
   }
-  figcaption {
+  .tt {
     position: absolute;
     bottom: 0;
     left: 0;
