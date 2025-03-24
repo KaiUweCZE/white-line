@@ -5,9 +5,9 @@ import { HTMLAttributes, ReactNode } from 'react';
 const tagVariants = cva('article-tag', {
   variants: {
     variant: {
-      puppies: 'bg-fuchsia-100 text-fuchsia-800 border border-fuchsia-200',
-      races: 'bg-teal-100 text-teal-800 border border-teal-200',
-      exhibition: 'bg-amber-100 text-amber-800 border border-amber-200',
+      puppies: 'bg-fuchsia-200/60 text-fuchsia-800 border border-fuchsia-200',
+      races: 'bg-teal-200/60 text-teal-800 border border-teal-200',
+      exhibition: 'bg-amber-200/60 text-amber-800 border border-amber-200',
     },
     size: {
       sm: 'text-xs px-2 py-0.5',

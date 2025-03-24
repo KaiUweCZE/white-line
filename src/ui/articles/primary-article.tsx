@@ -16,32 +16,36 @@ const PrimaryArticle = () => {
   const splitTime = time.split('.');
   const editedMonth = splitTime[1].length === 1 ? '0' + splitTime[1] : splitTime[1];
   const editedDay = splitTime[0].length === 1 ? '0' + splitTime[0] : splitTime[0];
-  console.log(splitTime);
   const isoTime = `${splitTime[2]}-${editedMonth}-${editedDay}`;
+
   const getCategoryColors = () => {
     switch (tags?.name) {
       case 'štěňata':
         return {
           specialClass: 'border-l-fuchsia-400/60 border-b-fuchsia-200/40 bg-fuchsia-50/100',
           bgColor: 'bg-fuchsia-50/30',
+          scrollClass: 'fuchsia-scroll',
           textColor: 'text-fuchsia-800',
         };
       case 'závody':
         return {
           specialClass: 'border-l-emerald-400/60 border-b-emerald-200/40 bg-emerald-50/100',
           bgColor: 'bg-emerald-50/30',
+          scrollClass: 'emerald-scroll',
           textColor: 'text-emerald-800',
         };
       case 'výstava':
         return {
           specialClass: 'border-l-amber-400/60 border-b-amber-200/40 bg-amber-50/100',
           bgColor: 'bg-amber-50/30',
+          scrollClass: 'amber-scroll',
           textColor: 'text-amber-800',
         };
       default:
         return {
           specialClass: 'border-l-sky-400/60 border-b-sky-200/40 bg-sky-50/100',
           bgColor: 'bg-sky-50/30',
+          scrollClass: 'sky-scroll',
           textColor: 'text-sky-800',
         };
     }
@@ -53,7 +57,7 @@ const PrimaryArticle = () => {
 
   return (
     <div className="gap-4 primary-article transition-all duration-600 relative">
-      <article className="max-w-full rounded scroll-colo">
+      <article className="max-w-full rounded">
         <header className={`p-4 pb-2 border-b border-l-4 ${specialClass}`}>
           <h2 className="text-2xl font-bold">{headline}</h2>
           <div className="flex items-center gap-2 mt-1">
@@ -65,7 +69,7 @@ const PrimaryArticle = () => {
           </div>
         </header>
         <div
-          className={`p-4 article-content ${bgColor}`}
+          className={`p-4 article-content  ${bgColor}`}
           style={{ maxHeight: galleryOptions?.height && galleryOptions.height - 90 }}
         >
           <ReactMarkdown>{currentArticle.content ? cleanText : text}</ReactMarkdown>
@@ -89,18 +93,5 @@ export default PrimaryArticle;
 
 /*
 
-    <div
-          className="gallery-placeholder relative transition-all duration-1000"
-          style={{ height: galleryOptions?.height, width: galleryOptions?.width }}
-        >
-          <Image
-            src={placeholderImage.src}
-            alt="placeholder"
-            className="absolute inset-0"
-            width={galleryOptions?.width ?? 600}
-            height={galleryOptions?.height ?? 400}
-            blurDataURL={placeholderImage.blurDataURL}
-            quality={1}
-          />
-        </div>
+         border-b border-fuchsia-300
 */

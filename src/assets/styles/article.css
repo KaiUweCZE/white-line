@@ -65,7 +65,7 @@
   --text-accent-hover: theme('colors.sky.900');
   --transition: 0.3s;
   --bg-hover: theme('colors.sky.50');
-  scrollbar-color: theme('colors.slate.500') transparent;
+  scrollbar-color: theme('colors.gray.400') transparent;
   scrollbar-width: thin;
 }
 
@@ -123,4 +123,19 @@
   margin-bottom: 1rem;
   font-style: italic;
   color: theme('colors.slate.600');
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
 }

@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import ImageViewer from './image-viewer';
 import { Images, Maximize2 } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+const ImageViewer = dynamic(() => import('./image-viewer'), {
+  loading: () => (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+      <div className="animate-pulse text-white">Načítám prohlížeč...</div>
+    </div>
+  ),
+  ssr: false,
+});
 
 interface DogGalleryProps {
   images: StaticImageData[];
@@ -35,8 +44,14 @@ const DogGallery = ({ images, labels, title = 'Fotogalerie' }: DogGalleryProps) 
               src={image}
               alt={labels?.[index] || `Fotka ${index + 1}`}
               className="rounded-[0.2rem] accent-shadow"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+              sizes="(max-width: 750px) calc(100vw - 2rem), 
+       (max-width: 900px) calc(50vw - 1rem), 
+       (max-width: 1200px) calc(33.33vw - 1rem), 
+       (max-width: 1500px) calc(25vw - 1rem), 
+       calc(16rem)"
               placeholder="blur"
+              quality={70}
+              loading="lazy"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-300">
               <Maximize2 className="text-white/90 w-6 h-6" />
@@ -50,13 +65,15 @@ const DogGallery = ({ images, labels, title = 'Fotogalerie' }: DogGalleryProps) 
 
       <div className="mt-4 text-sm text-gray-500 text-right">Celkem {images.length} fotografií</div>
 
-      <ImageViewer
-        active={isViewerOpen}
-        setActive={setIsViewerOpen}
-        images={images}
-        initialIndex={activeImageIndex}
-        captions={labels || images.map((_, i) => `Fotka ${i + 1}`)}
-      />
+      {isViewerOpen && (
+        <ImageViewer
+          active={isViewerOpen}
+          setActive={setIsViewerOpen}
+          images={images}
+          initialIndex={activeImageIndex}
+          captions={labels || images.map((_, i) => `Fotka ${i + 1}`)}
+        />
+      )}
     </section>
   );
 };

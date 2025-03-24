@@ -27,8 +27,11 @@ const DogBreeds = ({ breeds }: DogBreedsProps) => {
                 src={breed.image}
                 placeholder="blur"
                 alt={`${breed.name} - fotogalerie štěňat`}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                 height={300}
                 width={400}
+                quality={70}
+                loading="lazy"
                 className="breed-img w-full rounded-md "
               />
 

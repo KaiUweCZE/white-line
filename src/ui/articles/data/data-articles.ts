@@ -107,8 +107,11 @@ Děkujeme budoucím majitelům za projevenou důvěru a přejeme mnoho společn�
     tags: { name: 'štěňata', type: 'puppies' },
   },
   {
-    headline: 'Výstava',
+    headline: 'Výstava s Fenixem',
     text: `Poprvé jsme se s Fenixem zúčastnili výstavy ve třídě veteránů a odešli jsme s pěkným posudkem a hodnocením V1, CACIB-V, BOV 🏆🥇`,
+    content: `27.1.2024 jsme se s naším [Fenixem](https://whitelineczech.com/nasi-psi/fenix) poprvé zúčastnili výstavy v kategorii veteránů. 
+      Fenix získal vynikající hodnocení **V1, CACIB-V, BOV** (Best of Veteran - Nejlepší veterán).
+`,
     time: '27.1.2024',
     year: 2024,
     images: [...fenixVeteranVystavaImages.gallery],
@@ -117,9 +120,16 @@ Děkujeme budoucím majitelům za projevenou důvěru a přejeme mnoho společn�
     tags: { name: 'výstava', type: 'exhibition' },
   },
   {
-    headline: 'Výstava',
+    headline: 'Kohinoor na Výstavě',
     text: `Kohinoor WLCZ (Frida&Fenix) v pátek 19.1. oslavil 3. narozeniny a s majitelem se o víkendu ukázali na výstavě v Bratislavě.
 Kohinoor je na Slovensku chovným psem a na letošní rok má plánované krytí v ČR.`,
+    content: `Kohinoor WLCZ, potomek našich [Frídy](https://whitelineczech.com/nasi-psi/frida) a [Fenixe](https://whitelineczech.com/nasi-psi/fenix), oslavil v pátek 19.1.2025 své 3. narozeniny. 
+
+  Spolu se svým majitelem se o víkendu zúčastnili **WINTER DANUBE Bratislava 2024** v INCHEBA EXPO BRATISLAVA, kde předvedli skvělý výkon.
+  
+  Kohinoor je na Slovensku uznán jako **chovný pes** a na letošní rok má již naplánované krytí v České republice.
+  
+  [Detail vrhu K](https://whitelineczech.com/odchovy/swk)`,
     time: '22.1.2024',
     year: 2024,
     images: [...kohinoorVystavaImages.gallery],

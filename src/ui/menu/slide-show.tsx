@@ -24,10 +24,10 @@ export default function Slideshow({ slides, mobileSlides }: SlideshowProps) {
               src={slide.src}
               alt={slide.alt}
               fill
-              sizes="(max-width: 80rem) 100vw, 80rem"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 80rem"
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}
-              quality={80}
+              quality={70}
               placeholder="blur"
               className="object-cover"
             />
@@ -49,7 +49,7 @@ export default function Slideshow({ slides, mobileSlides }: SlideshowProps) {
               sizes="100vw"
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}
-              quality={75}
+              quality={65}
               placeholder="blur"
               className="object-cover"
             />
