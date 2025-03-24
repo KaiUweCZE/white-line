@@ -113,7 +113,7 @@ main {
   animation: navbar-scroll linear both;
   animation-timeline: scroll();
   animation-range: 55svh 55svh;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 @keyframes navbar-scroll {
@@ -474,10 +474,10 @@ a {
       margin: 0 auto;
       /*
       řešení pro android... 
-      například tilda není přes celou šířku...
+      například tilda není přes celou šířku...*/
       div {
         width: 92svw;
-      }*/
+      }
     }
   }
 }

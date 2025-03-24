@@ -3,6 +3,7 @@
   position: absolute;
   width: 100%;
   height: var(--header-height);
+  max-height: 600px;
   overflow: hidden;
   border-radius: 0 0 0.5rem 0.5rem;
   --slide-duration: 12s;
