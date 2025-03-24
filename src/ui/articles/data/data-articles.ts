@@ -77,7 +77,7 @@ Fridě a Largovi se narodili 3 chlapečci a 1 holčička
 Všichni jsou v pořádku a štěňátka jsou už zamluvena`,
     content: `
 
- V červenu 2024 přivítala naše chovatelská stanice vrh 🅿️ bílého švýcarského ovčáka. Matce **Frídě** a otci **Largovi** se narodili tři psi a jedna fena (3💙 + 1❤️). Všechna štěňata jsou v perfektním zdravotním stavu a již mají své budoucí majitele.
+ V červenu 2024 přivítala naše chovatelská stanice vrh 🅿️ bílého švýcarského ovčáka. Matce [Frídě](https://whitelineczech.com/nasi-psi/flying-free) a otci **Largovi** se narodili tři psi a jedna fena (3💙 + 1❤️). Všechna štěňata jsou v perfektním zdravotním stavu a již mají své budoucí majitele.
 
 V polovině července jsme začali s postupnou socializací. První vycházky do venkovního prostředí proběhly bez problémů. Pro identifikaci používáme barevné rozlišení - **modrý**, **zelený**, **červený** a naše jediná **fenka**.
 

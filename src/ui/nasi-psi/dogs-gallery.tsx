@@ -3,6 +3,7 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 import Button from '../primitives/button';
 import { useRouter } from 'next/navigation';
+import LinkPrimary from '../primitives/link-primary';
 
 type GalleryDogType = {
   id: string;
@@ -31,18 +32,17 @@ const DogsGallery = ({ dogs }: DogsGalleryProps) => {
               placeholder="blur"
               className=" w-full"
             />
-            <div className="absolute bottom-4 z-10 left-4">
-              <h3 className="z-10 text-white font-semibold text-xl">{dog.name}</h3>
+            <figcaption className="absolute bottom-4 z-10 left-4">
+              <h2 className="z-10 text-white font-semibold text-xl">{dog.name}</h2>
 
-              <Button
-                variant="accent"
-                size="sm"
+              <LinkPrimary
+                href={`/nasi-psi/${dog.id}`}
                 leftIcon={<SquareArrowOutUpRight className="h-4 w-4 text-white" />}
-                onClick={() => handleNavigate(`/nasi-psi/${dog.id}`)}
+                // onClick={() => handleNavigate(`/nasi-psi/${dog.id}`)}
               >
                 <span className="text-white">Detail psa</span>
-              </Button>
-            </div>
+              </LinkPrimary>
+            </figcaption>
             <div className="absolute bg-gradient-to-t h-32 w-full bottom-0 from-black/80 via-black/40 to-transparent rounded-b-md"></div>
           </figure>
         </div>

@@ -20,18 +20,15 @@ const PsiPage = () => {
         </div>
       </section>
 
-      {/* Elegantní oddělovač sekcí */}
-      <div className="relative my-12">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-gray-200"></div>
-        </div>
-        <div className="relative flex justify-center">
-          <h2 className="px-6 primary-bg text-gray-500 text-lg font-medium">Ve vzpomínkách</h2>
-        </div>
-      </div>
-
-      {/* Sekce psů ve vzpomínkách */}
       <section className="px-4">
+        <header className="relative my-12 grid">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-200"></div>
+          </div>
+          <h2 className="relative px-6 primary-bg text-gray-500 text-lg font-medium inline-block mx-auto">
+            Ve vzpomínkách
+          </h2>
+        </header>
         <div>
           <DogsGallery dogs={inMemory} />
         </div>
