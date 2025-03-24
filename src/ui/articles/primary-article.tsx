@@ -14,8 +14,10 @@ const PrimaryArticle = () => {
   const { tags, time, headline, text, images, labels, galleryOptions, sameSize } = currentArticle;
 
   const splitTime = time.split('.');
+  const editedMonth = splitTime[1].length === 1 ? '0' + splitTime[1] : splitTime[1];
+  const editedDay = splitTime[0].length === 1 ? '0' + splitTime[0] : splitTime[0];
   console.log(splitTime);
-  const isoTime = `${splitTime[2]}-${splitTime[1]}-${splitTime[0]}`;
+  const isoTime = `${splitTime[2]}-${editedMonth}-${editedDay}`;
   const getCategoryColors = () => {
     switch (tags?.name) {
       case 'štěňata':
