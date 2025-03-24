@@ -1,14 +1,15 @@
 'use client';
-import React from 'react';
+import { lazy, Suspense } from 'react';
 import { Award, Medal } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { dataDogs } from '../../../ui/nasi-psi/data/data-dogs';
 import DogHero from '@/ui/nasi-psi/dog/dog-hero';
 import DogBreeds from '@/ui/nasi-psi/dog/dog-breeds';
-import DogContests from '@/ui/nasi-psi/dog/dog-contests';
 import DogMatings from '@/ui/nasi-psi/dog/dog-matings';
-import DogGallery from '@/ui/dog-gallery';
 import DogJsonLd from '@/components/DogJsonLd';
+
+const DogGallery = lazy(() => import('@/ui/dog-gallery'));
+const DogContests = lazy(() => import('@/ui/nasi-psi/dog/dog-contests'));
 
 const DogDetail = () => {
   const params = useParams();
@@ -67,9 +68,35 @@ const DogDetail = () => {
         {/* Sekce s krytím */}
         {areMating && <DogMatings matings={data.matings} />}
         {/*Galerie */}
-        {areGallery && <DogGallery images={images} labels={labels} />}
+
+        <Suspense fallback={<div className="h-32 w-full animate-pulse bg-gray-100 rounded"></div>}>
+          {areGallery && <DogGallery images={images} labels={labels} />}
+        </Suspense>
         {/* Výstavy a závody */}
-        <div className="grid lg:grid-cols-2 gap-12">
+
+        <Suspense fallback={<div className="h-24 w-full animate-pulse bg-gray-100 rounded"></div>}>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {areContests && (
+              <DogContests title="Výstavy" icon={Award} items={data.contests} resultKey="grade" />
+            )}
+            {areRaces && (
+              <DogContests title="Závody" icon={Medal} items={data.races} resultKey="result" />
+            )}
+          </div>
+        </Suspense>
+      </main>
+    </>
+  );
+};
+
+export default DogDetail;
+
+{
+  /*{areGallery && <DogGallery images={images} labels={labels} />*/
+}
+
+{
+  /* <div className="grid lg:grid-cols-2 gap-12">
           {areContests && (
             <DogContests title="Výstavy" icon={Award} items={data.contests} resultKey="grade" />
           )}
@@ -77,10 +104,5 @@ const DogDetail = () => {
           {areRaces && (
             <DogContests title="Závody" icon={Medal} items={data.races} resultKey="result" />
           )}
-        </div>
-      </main>
-    </>
-  );
-};
-
-export default DogDetail;
+        </div>*/
+}
