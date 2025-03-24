@@ -69,7 +69,7 @@ const PrimaryArticle = () => {
           </div>
         </header>
         <div
-          className={`p-4 article-content  ${bgColor}`}
+          className={`p-4 article-content ${bgColor}`}
           style={{ maxHeight: galleryOptions?.height && galleryOptions.height - 90 }}
         >
           <ReactMarkdown>{currentArticle.content ? cleanText : text}</ReactMarkdown>
@@ -90,8 +90,3 @@ const PrimaryArticle = () => {
 };
 
 export default PrimaryArticle;
-
-/*
-
-         border-b border-fuchsia-300
-*/

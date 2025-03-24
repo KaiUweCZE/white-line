@@ -81,7 +81,7 @@ const GalleryContent = ({
             transform: `translateX(-${activeIndex * 100}%)`,
           }}
         >
-          {isPlaceholder && (
+          {
             <Image
               src={placeholder}
               alt={'placeholder obrázek, nízká kvalita'}
@@ -94,7 +94,7 @@ const GalleryContent = ({
                 console.log('Placeholder loaded');
               }}
             />
-          )}
+          }
           {images.map((img, index) => (
             <div
               key={index}
