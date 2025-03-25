@@ -10,7 +10,7 @@ const SlideShowPlaceholder = () => {
         fill
         sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 80rem"
         className="object-cover -z-1"
-        quality={40}
+        quality={20}
         placeholder="blur"
         priority={true}
       />
