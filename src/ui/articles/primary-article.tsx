@@ -1,11 +1,25 @@
 'use client';
 import { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
+//import ReactMarkdown from 'react-markdown';
 import Gallery from '../gallery/gallery';
 import { ArticleContext } from '@/context/article-context';
 import { formatDate } from '@/utils/form-date';
 import '@/assets/styles/article.css';
 import { fixIndentation } from '@/utils/fix-indentation';
+import dynamic from 'next/dynamic';
+
+const ReactMarkdown = dynamic(() => import('react-markdown'), {
+  ssr: true,
+  loading: () => (
+    <div className="animate-pulse article-content h-32 bg-gray-100">
+      <p>
+        V prosinci 2024 Narodil se nám první vrh Welsh corgi cardigan. Matka Lovitpon Tilda Tango a
+        otec CIB Simba Tender Lion z Jurajskiego Zamku přivedli na svět 3 fenky a 1 psa. Porod
+        proběhl bez komplikací.
+      </p>
+    </div>
+  ),
+});
 
 const PrimaryArticle = () => {
   const context = useContext(ArticleContext);
