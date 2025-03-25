@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useCallback, useEffect, useState } from 'react';
 import GalleryContent from './gallery-content';
 import { useScrollLock } from './hooks/use-scrolllock';
 import { useKeyboardShortcuts } from './hooks/use-keybaord-shortcuts';
@@ -12,6 +12,8 @@ interface GalleryProps {
   fullscreen: boolean;
   sameSize?: boolean;
   placeholder: StaticImageData;
+  isSwitching: { gallery: boolean; article: boolean };
+  setIsSwitching: Dispatch<SetStateAction<{ gallery: boolean; article: boolean }>>;
 }
 const Gallery = ({
   images,
@@ -21,6 +23,8 @@ const Gallery = ({
   fullscreen,
   sameSize,
   placeholder,
+  isSwitching,
+  setIsSwitching,
 }: GalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -94,6 +98,8 @@ const Gallery = ({
       sameSize={sameSize ?? true}
       withoutTransform={withoutTransform}
       placeholder={placeholder}
+      isSwitching={isSwitching}
+      setIsSwitching={setIsSwitching}
     />
   );
 

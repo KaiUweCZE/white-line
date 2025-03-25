@@ -1,12 +1,17 @@
 'use client';
 import BreedJsonLd from '@/components/BreedJsonLd';
-import DogGallery from '@/ui/dog-gallery';
 import { breedDetails } from '@/ui/odchovy/data/breed-details';
 import PuppiesReview from '@/ui/odchovy/odchov/puppies-review';
 import ParentBox from '@/ui/odchovy/parent-box';
+import Skeleton from '@/ui/skeleton';
 import { ChevronLeft, Calendar } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { notFound, useParams } from 'next/navigation';
+
+const DogGallery = dynamic(() => import('@/ui/dog-gallery'), {
+  loading: () => <Skeleton />,
+});
 
 const BreedDetail = () => {
   const params = useParams();

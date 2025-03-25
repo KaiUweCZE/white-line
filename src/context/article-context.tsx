@@ -13,6 +13,8 @@ interface ArticleContextProps {
   setYear: Dispatch<SetStateAction<number | null>>;
   placeholder: StaticImageData;
   setPlaceholder: Dispatch<SetStateAction<StaticImageData>>;
+  isSwitching: { article: boolean; gallery: boolean };
+  setIsSwitching: Dispatch<SetStateAction<{ article: boolean; gallery: boolean }>>;
 }
 
 export const ArticleContext = createContext<ArticleContextProps | undefined>(undefined);
@@ -22,6 +24,10 @@ export const ArticleProvider = ({ children }: { children: ReactNode }) => {
   const [searchOption, setSearchOption] = useState<RestrictOption | null>(null);
   const [year, setYear] = useState<number | null>(null);
   const [placeholder, setPlaceholder] = useState<StaticImageData>(newsData[0].images[0]);
+  const [isSwitching, setIsSwitching] = useState({
+    article: false,
+    gallery: false,
+  });
 
   const contextValues = {
     currentArticle,
@@ -32,6 +38,8 @@ export const ArticleProvider = ({ children }: { children: ReactNode }) => {
     setYear,
     placeholder,
     setPlaceholder,
+    isSwitching,
+    setIsSwitching,
   };
   return <ArticleContext.Provider value={contextValues}>{children}</ArticleContext.Provider>;
 };

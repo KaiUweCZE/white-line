@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { cn } from '@/lib/utils/cn';
 /*import NavigationButtons from './navigation-buttons';
 import GalleryInfoButton from './gallery-info-button';
 import GalleryFullscreenButton from './gallery-fullscreen-button';
@@ -43,6 +44,8 @@ interface GalleryContentProps {
   sameSize?: boolean;
   withoutTransform?: boolean;
   placeholder: StaticImageData;
+  isSwitching?: { gallery: boolean; article: boolean };
+  setIsSwitching?: Dispatch<SetStateAction<{ gallery: boolean; article: boolean }>>;
 }
 
 const GalleryContent = ({
@@ -61,6 +64,8 @@ const GalleryContent = ({
   sameSize = true,
   withoutTransform = false,
   placeholder,
+  isSwitching,
+  setIsSwitching,
 }: GalleryContentProps) => {
   const [showInfo, setShowInfo] = useState(false);
   const currentLabel = labels[activeIndex];
@@ -83,10 +88,14 @@ const GalleryContent = ({
   return (
     <section
       aria-label="Galerie fotografií"
-      className={`grid relative mx-auto ${isFullscreen && 'bg-black/60'} backdrop-blur-md ${
-        isFullscreen ? 'w-screen h-[100dvh]' : 'max-w-full'
-      }`}
+      onAnimationEnd={() => setIsSwitching?.((prev) => ({ ...prev, gallery: false }))}
+      className={cn(
+        `grid relative mx-auto ${isFullscreen && 'bg-black/60'} backdrop-blur-md`,
+        isFullscreen ? 'w-screen h-[100dvh]' : 'max-w-full',
+        isSwitching?.gallery && 'gallery-appear'
+      )}
       style={containerStyles ? containerStyles : {}}
+      onClick={() => console.log('Gallery clicked... wtf: ', isSwitching, activeIndex)}
     >
       {/* Carousel wrapper */}
       <div
@@ -102,12 +111,12 @@ const GalleryContent = ({
             transform: `translateX(-${activeIndex * 100}%)`,
           }}
         >
-          {
+          {isPlaceholder && (
             <Image
               src={placeholder}
               alt={'placeholder obrázek, nízká kvalita'}
               fill
-              className={`${imageDisplayClass} gallery-appear`}
+              className={`${imageDisplayClass}`}
               priority
               placeholder="blur"
               quality={1}
@@ -115,13 +124,13 @@ const GalleryContent = ({
                 console.log('Placeholder loaded');
               }}
             />
-          }
+          )}
           {images.map((img, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 w-full grid place-items-center h-full relative max-h-[90dvh] place-self-center ${
-                isPlaceholder ? 'opacity-0' : 'gallery-appear'
-              }`}
+              className={cn(
+                'flex-shrink-0 w-full grid place-items-center h-full relative max-h-[90dvh] place-self-center'
+              )}
             >
               <figure
                 className="grid relative w-full h-full overflow-hidden"
@@ -137,7 +146,7 @@ const GalleryContent = ({
                   style={{ maxHeight: img.height }}
                   onLoad={() => {
                     if (index === 0) {
-                      console.log('Image loaded');
+                      console.log('First gallery image is loaded');
                       setIsPlaceholder(false);
                     }
                   }}

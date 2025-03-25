@@ -22,7 +22,7 @@ const GalleryInfoButton = ({
       onClick={() => setShowInfo((prev) => !prev)}
       isFullscreen={isFullscreen}
       showInfo={showInfo}
-      specialClass={`group bottom-0 right-0 info-button  ${
+      specialClass={`group bottom-0 right-0 info-button rounded-tl-full  ${
         isFullscreen ? 'pl-5 pt-5' : 'pl-4 pt-4'
       }`}
       aria-label="Zobrazit/skrýt popis fotky"

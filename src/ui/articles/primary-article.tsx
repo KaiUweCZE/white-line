@@ -24,7 +24,7 @@ const ReactMarkdown = dynamic(() => import('react-markdown'), {
 const PrimaryArticle = () => {
   const context = useContext(ArticleContext);
   if (!context) return <span>Context is missing</span>;
-  const { currentArticle, placeholder } = context;
+  const { currentArticle, placeholder, isSwitching, setIsSwitching } = context;
   const { tags, time, headline, text, images, labels, galleryOptions, sameSize } = currentArticle;
 
   const splitTime = time.split('.');
@@ -36,29 +36,29 @@ const PrimaryArticle = () => {
     switch (tags?.name) {
       case 'štěňata':
         return {
-          specialClass: 'border-l-fuchsia-400/60 border-b-fuchsia-200/40 bg-fuchsia-50/100',
-          bgColor: 'bg-fuchsia-50/30',
+          specialClass: 'border-l-fuchsia-400/60 border-b-fuchsia-200/80 bg-fuchsia-50/100',
+          bgColor: 'bg-fuchsia-50/50 border-b border-fuchsia-200/80',
           scrollClass: 'fuchsia-scroll',
           textColor: 'text-fuchsia-800',
         };
       case 'závody':
         return {
-          specialClass: 'border-l-emerald-400/60 border-b-emerald-200/40 bg-emerald-50/100',
-          bgColor: 'bg-emerald-50/30',
+          specialClass: 'border-l-emerald-400/60 border-b-emerald-200/80 bg-emerald-50/100',
+          bgColor: 'bg-emerald-50/50 border-b border-emerald-200/80',
           scrollClass: 'emerald-scroll',
           textColor: 'text-emerald-800',
         };
       case 'výstava':
         return {
-          specialClass: 'border-l-amber-400/60 border-b-amber-200/40 bg-amber-50/100',
-          bgColor: 'bg-amber-50/30',
+          specialClass: 'border-l-amber-400/60 border-b-amber-200/80 bg-amber-50/100',
+          bgColor: 'bg-amber-50/50 border-b border-amber-200/80',
           scrollClass: 'amber-scroll',
           textColor: 'text-amber-800',
         };
       default:
         return {
-          specialClass: 'border-l-sky-400/60 border-b-sky-200/40 bg-sky-50/100',
-          bgColor: 'bg-sky-50/30',
+          specialClass: 'border-l-sky-400/60 border-b-sky-200/80 bg-sky-50/100',
+          bgColor: 'bg-sky-50/50 border-b border-sky-200/80',
           scrollClass: 'sky-scroll',
           textColor: 'text-sky-800',
         };
@@ -83,7 +83,8 @@ const PrimaryArticle = () => {
           </div>
         </header>
         <div
-          className={`p-4 article-content ${bgColor}`}
+          onAnimationEnd={() => setIsSwitching((prev) => ({ ...prev, article: false }))}
+          className={`p-4 article-content ${isSwitching.article && 'switching'} ${bgColor}`}
           style={{ maxHeight: galleryOptions?.height && galleryOptions.height - 90 }}
         >
           <ReactMarkdown>{currentArticle.content ? cleanText : text}</ReactMarkdown>
@@ -98,6 +99,8 @@ const PrimaryArticle = () => {
         height={galleryOptions?.height ?? 400}
         sameSize={sameSize ?? true}
         placeholder={placeholder}
+        isSwitching={isSwitching}
+        setIsSwitching={setIsSwitching}
       />
     </div>
   );

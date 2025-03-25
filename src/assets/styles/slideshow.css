@@ -13,6 +13,7 @@
 .desktop-placeholder,
 .mobile-placeholder {
   display: none;
+  z-index: -1;
 }
 
 @media (max-width: 40rem) {
@@ -71,7 +72,6 @@
 
 .slide-0 {
   opacity: 1;
-
   animation: slideAnimation var(--total-duration) infinite;
   animation-delay: calc(var(--total-duration) - var(--slide-duration));
 }
@@ -124,4 +124,19 @@
   /* &:hover {
     border-radius: 0.15rem 0 0 0;
   }*/
+}
+
+.fade-in-fwd {
+  animation: fade-in-fwd 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fade-in-fwd {
+  0% {
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }

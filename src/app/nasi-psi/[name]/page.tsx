@@ -1,5 +1,4 @@
 'use client';
-import { lazy, Suspense } from 'react';
 import { Award, Medal } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import { dataDogs } from '../../../ui/nasi-psi/data/data-dogs';
@@ -7,9 +6,16 @@ import DogHero from '@/ui/nasi-psi/dog/dog-hero';
 import DogBreeds from '@/ui/nasi-psi/dog/dog-breeds';
 import DogMatings from '@/ui/nasi-psi/dog/dog-matings';
 import DogJsonLd from '@/components/DogJsonLd';
+import dynamic from 'next/dynamic';
+import Skeleton from '@/ui/skeleton';
 
-const DogGallery = lazy(() => import('@/ui/dog-gallery'));
-const DogContests = lazy(() => import('@/ui/nasi-psi/dog/dog-contests'));
+const DogGallery = dynamic(() => import('@/ui/dog-gallery'), {
+  loading: () => <Skeleton />,
+});
+
+const DogContests = dynamic(() => import('@/ui/nasi-psi/dog/dog-contests'), {
+  loading: () => <Skeleton />,
+});
 
 const DogDetail = () => {
   const params = useParams();
@@ -61,42 +67,14 @@ const DogDetail = () => {
       <main className="mx-auto px-4 py-8 max-w-7xl grid gap-12">
         {/* Hero sekce */}
         <DogHero dog={heroData} />
-
         {/* Sekce s vrhy */}
         {areBreeds && <DogBreeds breeds={data.breeds} />}
-
         {/* Sekce s krytím */}
         {areMating && <DogMatings matings={data.matings} />}
         {/*Galerie */}
-
-        <Suspense fallback={<div className="h-32 w-full animate-pulse bg-gray-100 rounded"></div>}>
-          {areGallery && <DogGallery images={images} labels={labels} />}
-        </Suspense>
+        {areGallery && <DogGallery images={images} labels={labels} />}
         {/* Výstavy a závody */}
-
-        <Suspense fallback={<div className="h-24 w-full animate-pulse bg-gray-100 rounded"></div>}>
-          <div className="grid lg:grid-cols-2 gap-12">
-            {areContests && (
-              <DogContests title="Výstavy" icon={Award} items={data.contests} resultKey="grade" />
-            )}
-            {areRaces && (
-              <DogContests title="Závody" icon={Medal} items={data.races} resultKey="result" />
-            )}
-          </div>
-        </Suspense>
-      </main>
-    </>
-  );
-};
-
-export default DogDetail;
-
-{
-  /*{areGallery && <DogGallery images={images} labels={labels} />*/
-}
-
-{
-  /* <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12">
           {areContests && (
             <DogContests title="Výstavy" icon={Award} items={data.contests} resultKey="grade" />
           )}
@@ -104,5 +82,11 @@ export default DogDetail;
           {areRaces && (
             <DogContests title="Závody" icon={Medal} items={data.races} resultKey="result" />
           )}
-        </div>*/
-}
+        </div>
+        */
+      </main>
+    </>
+  );
+};
+
+export default DogDetail;

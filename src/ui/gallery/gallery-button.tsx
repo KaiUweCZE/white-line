@@ -22,7 +22,7 @@ const GalleryButton = ({
       className={cn(
         'absolute z-10 transition-all duration-300',
         isFullscreen ? 'p-3' : 'p-2',
-        showInfo ? 'bg-slate-600' : 'bg-slate-600/50',
+        showInfo ? 'bg-slate-600' : 'bg-slate-800/50',
         specialClass
       )}
       onClick={onClick}

@@ -10,16 +10,19 @@ const SlideShowPlaceholder = () => {
         alt={'Frederika pase, nízká kvalita, lepší obrázky se načítají'}
         fill
         sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 80rem"
-        className="object-cover -z-1 desktop-placeholder"
+        className="object-cover desktop-placeholder"
         quality={20}
         placeholder="blur"
         priority
+        onLoad={() => {
+          console.log('Desktop placeholder loaded');
+        }}
       />
       <Image
         src={placeholderImgMobile}
         alt={'Frederika pase, nízká kvalita, lepší obrázky se načítají'}
         fill
-        className="object-cover -z-1 mobile-placeholder"
+        className="object-cover mobile-placeholder"
         sizes="(max-width: 640px) 100vw, 0vw"
         quality={20}
         placeholder="blur"

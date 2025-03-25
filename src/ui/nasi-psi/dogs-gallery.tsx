@@ -15,7 +15,7 @@ interface DogsGalleryProps {
 const DogsGallery = ({ dogs }: DogsGalleryProps) => {
   return (
     <div className="grid grid-cols-3 gap-4 dogs-gallery">
-      {dogs.map((dog, index) => (
+      {dogs.map((dog) => (
         <div key={dog.id}>
           <div className="relative rounded-sm overflow-hidden secondary-shadow cursor-pointer">
             <Image
@@ -26,7 +26,7 @@ const DogsGallery = ({ dogs }: DogsGalleryProps) => {
               className="w-full"
               height={300}
               width={400}
-              loading={index < 3 ? 'eager' : 'lazy'}
+              loading="lazy"
               quality={50}
             />
             <div className="absolute bottom-4 z-10 left-4">
@@ -35,7 +35,6 @@ const DogsGallery = ({ dogs }: DogsGalleryProps) => {
               <LinkPrimary
                 href={`/nasi-psi/${dog.id}`}
                 leftIcon={<SquareArrowOutUpRight className="h-4 w-4 text-white" />}
-                // onClick={() => handleNavigate(`/nasi-psi/${dog.id}`)}
               >
                 <span className="text-white">Detail psa</span>
               </LinkPrimary>

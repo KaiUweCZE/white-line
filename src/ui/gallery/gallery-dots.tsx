@@ -17,6 +17,10 @@ const GalleryDots = ({
 }: GalleryDotsProps) => {
   if (!hasMultipleImages || showInfo) return null;
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    console.log('active index', activeIndex);
+  };
   return (
     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
       {images.map((_, index) => (
@@ -26,6 +30,7 @@ const GalleryDots = ({
             index === activeIndex ? 'bg-white' : 'bg-white/50'
           }`}
           onClick={() => onDotClick(index)}
+          onMouseDown={handleMouseDown}
           aria-label={`Přejít na obrázek ${index + 1}`}
           aria-current={index === activeIndex ? 'true' : 'false'}
         />

@@ -50,7 +50,7 @@ const DogGallery = ({ images, labels, title = 'Fotogalerie' }: DogGalleryProps) 
        (max-width: 1500px) calc(25vw - 1rem), 
        calc(16rem)"
               placeholder="blur"
-              quality={70}
+              quality={60}
               loading="lazy"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-300">

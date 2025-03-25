@@ -235,20 +235,13 @@ main {
   }
 }
 
-.gallery-appar {
-  opacity: 1;
-  transition: 0.4s;
-  filter: blur(0px);
-  @starting-style {
-    opacity: 0.6;
-    filter: blur(4px);
-  }
-}
-
 .gallery {
   border-radius: var(--md-radius);
 }
 
+.gallery-appear {
+  animation: gallery-fade-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 .gallery-image {
   height: auto;
 }
@@ -589,7 +582,6 @@ a {
 .label-show {
   translate: 0;
   transition: 0.3s;
-
   @starting-style {
     translate: 0 4rem;
   }
@@ -597,4 +589,17 @@ a {
 
 .info-button {
   filter: drop-shadow(0 0 2px #0000007a);
+}
+
+@keyframes gallery-fade-in {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.96);
+    filter: brightness(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
 }
