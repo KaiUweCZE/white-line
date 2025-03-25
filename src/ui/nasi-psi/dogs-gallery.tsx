@@ -15,14 +15,19 @@ interface DogsGalleryProps {
 const DogsGallery = ({ dogs }: DogsGalleryProps) => {
   return (
     <div className="grid grid-cols-3 gap-4 dogs-gallery">
-      {dogs.map((dog) => (
+      {dogs.map((dog, index) => (
         <div key={dog.id}>
           <div className="relative rounded-sm overflow-hidden secondary-shadow cursor-pointer">
             <Image
               src={dog.img}
               alt={`photo of ${dog.name}`}
               placeholder="blur"
-              className=" w-full"
+              sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, (max-width: 1280px) 33.33vw, 422px"
+              className="w-full"
+              height={300}
+              width={400}
+              loading={index < 3 ? 'eager' : 'lazy'}
+              quality={50}
             />
             <div className="absolute bottom-4 z-10 left-4">
               <h2 className="z-10 text-white font-semibold text-xl">{dog.name}</h2>

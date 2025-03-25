@@ -1,10 +1,17 @@
 import { type Metadata } from 'next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { parkinsans } from './fonts/fonts';
 import './globals.css';
 import Navbar from '@/ui/menu/navbar';
 import JsonLd from '@/components/JsonLd';
-import { Analytics } from '@vercel/analytics/react';
+import dynamic from 'next/dynamic';
+const SpeedInsights = dynamic(
+  () => import('@vercel/speed-insights/next').then((mod) => mod.SpeedInsights),
+  { ssr: true, loading: () => null }
+);
+const Analytics = dynamic(() => import('@vercel/analytics/react').then((mod) => mod.Analytics), {
+  ssr: true,
+  loading: () => null,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whitelineczech.com'),
