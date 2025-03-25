@@ -1,11 +1,18 @@
+'use client';
 import { slides, mobileSlides } from './data/menu-data';
+import dynamic from 'next/dynamic';
 import NavbarMenu from './navbar-menu';
-import Slideshow from './slide-show';
+import SlideShowPlaceholder from './slide-show-placeholder';
+
+const SlideShow = dynamic(() => import('./slide-show'), {
+  ssr: false,
+});
 
 const Navbar = () => {
   return (
     <header className="navbar">
-      <Slideshow slides={slides} mobileSlides={mobileSlides} />
+      <SlideShowPlaceholder />
+      <SlideShow slides={slides} mobileSlides={mobileSlides} />
       <div className="header-bar bg-stone-950/70">
         <h1 className="flex pl-4 items-center" aria-label="logo">
           <span className="text-2xl font-bold">Whiteline</span>
