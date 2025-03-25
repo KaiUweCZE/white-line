@@ -1,10 +1,31 @@
 import Image, { StaticImageData } from 'next/image';
 import { useEffect, useState } from 'react';
-import NavigationButtons from './navigation-buttons';
+import dynamic from 'next/dynamic';
+/*import NavigationButtons from './navigation-buttons';
 import GalleryInfoButton from './gallery-info-button';
 import GalleryFullscreenButton from './gallery-fullscreen-button';
 import GalleryInfoText from './gallery-info-text';
-import GalleryDots from './gallery-dots';
+import GalleryDots from './gallery-dots';*/
+
+const NavigationButtons = dynamic(() => import('./navigation-buttons'), {
+  ssr: false,
+});
+
+const GalleryInfoButton = dynamic(() => import('./gallery-info-button'), {
+  ssr: false,
+});
+
+const GalleryFullscreenButton = dynamic(() => import('./gallery-fullscreen-button'), {
+  ssr: false,
+});
+
+const GalleryInfoText = dynamic(() => import('./gallery-info-text'), {
+  ssr: false,
+});
+
+const GalleryDots = dynamic(() => import('./gallery-dots'), {
+  ssr: false,
+});
 
 interface GalleryContentProps {
   images: StaticImageData[];

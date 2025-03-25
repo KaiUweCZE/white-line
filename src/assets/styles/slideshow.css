@@ -10,6 +10,31 @@
   --total-duration: 48s;
 }
 
+.desktop-placeholder,
+.mobile-placeholder {
+  display: none;
+}
+
+@media (max-width: 40rem) {
+  .desktop-placeholder {
+    display: none;
+  }
+
+  .mobile-placeholder {
+    display: block;
+  }
+}
+
+@media (min-width: 40rem) {
+  .desktop-placeholder {
+    display: block;
+  }
+
+  .mobile-placeholder {
+    display: none;
+  }
+}
+
 .desktop-slideshow,
 .mobile-slideshow {
   position: relative;
