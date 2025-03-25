@@ -25,7 +25,7 @@ const PrimaryArticleView = (article: Article) => {
     setPlaceholder(article.images[0]);
     window.location.hash = '';
     setCurrentArticle(article);
-    setIsSwitching((prev) => ({ gallery: true, article: true }));
+    setIsSwitching(() => ({ gallery: true, article: true }));
     window.location.hash = `current-article`;
   };
 
