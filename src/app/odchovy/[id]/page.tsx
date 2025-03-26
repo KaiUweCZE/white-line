@@ -37,7 +37,7 @@ const BreedDetail = () => {
   return (
     <>
       <BreedJsonLd breed={breedData} />
-      <main className="container mx-auto px-4 py-8 primary-bg">
+      <main className="mx-auto px-4 py-8 primary-bg">
         <Link
           href="/odchovy"
           className="inline-flex items-center text-gray-600 hover:text-gray-800 mb-6"
@@ -57,7 +57,7 @@ const BreedDetail = () => {
               </div>
             </header>
 
-            <section className="grid md:grid-cols-2 gap-8">
+            <section className="parent-section grid grid-cols-2 gap-8">
               <ParentBox
                 name={father.name}
                 image={father.image}

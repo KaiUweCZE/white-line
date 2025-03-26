@@ -25,7 +25,8 @@ const ParentBox = ({ name, image, physical, health, titles, gender }: ParentBoxP
             fill
             placeholder="blur"
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={50}
+            sizes="(max-width: 640px) 80svw, (max-width: 1280px) 40svw, 600px"
           />
         )}
       </div>

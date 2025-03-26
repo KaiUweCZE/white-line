@@ -288,6 +288,12 @@ main {
   display: none;
 }
 
+.parent-section {
+  @media (width < 40rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .underline-button {
   &:hover {
     &::before {

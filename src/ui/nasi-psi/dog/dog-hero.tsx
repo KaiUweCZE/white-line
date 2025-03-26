@@ -35,6 +35,8 @@ const DogHero = ({ dog }: DogHeroProps) => {
               alt={`${dog.name} - portrét`}
               height={400}
               width={300}
+              sizes="300px"
+              quality={60}
               placeholder="blur"
               className="secondary-shadow"
             />

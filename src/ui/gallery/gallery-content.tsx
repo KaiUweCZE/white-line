@@ -83,7 +83,15 @@ const GalleryContent = ({
     setIsPlaceholder(true);
   }, [placeholder]);
 
+  // If fullscreen or not same size, use object-contain, otherwise use object-cover
   const imageDisplayClass = isFullscreen || !sameSize ? 'object-contain' : 'object-cover';
+
+  console.log({
+    'width is': width,
+    'height is': height,
+  });
+
+  const relativeSizes = isFullscreen ? '100svw' : `${width}px`;
 
   return (
     <section
@@ -111,7 +119,8 @@ const GalleryContent = ({
             transform: `translateX(-${activeIndex * 100}%)`,
           }}
         >
-          {isPlaceholder && (
+          {/* Placeholder Image */}
+          {!isFullscreen && (
             <Image
               src={placeholder}
               alt={'placeholder obrázek, nízká kvalita'}
@@ -119,12 +128,15 @@ const GalleryContent = ({
               className={`${imageDisplayClass}`}
               priority
               placeholder="blur"
+              sizes="300px"
               quality={1}
               onLoad={() => {
                 console.log('Placeholder loaded');
               }}
             />
           )}
+
+          {/* Images in carousel */}
           {images.map((img, index) => (
             <div
               key={index}
@@ -140,10 +152,12 @@ const GalleryContent = ({
                   src={img}
                   alt={labels[index] || `Obrázek ${index + 1}`}
                   fill
+                  sizes={relativeSizes}
                   placeholder="blur"
                   className={`${imageDisplayClass} place-self-center`}
                   priority={index === 0}
                   style={{ maxHeight: img.height }}
+                  quality={50}
                   onLoad={() => {
                     if (index === 0) {
                       console.log('First gallery image is loaded');
@@ -163,6 +177,7 @@ const GalleryContent = ({
         </div>
       </div>
 
+      {/* Navigation elements */}
       <NavigationButtons
         hasMultipleImages={hasMultipleImages}
         onPrev={onPrev}

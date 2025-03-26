@@ -22,10 +22,10 @@ const DogsGallery = ({ dogs }: DogsGalleryProps) => {
               src={dog.img}
               alt={`photo of ${dog.name}`}
               placeholder="blur"
-              sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, (max-width: 1280px) 33.33vw, 422px"
-              className="w-full"
-              height={300}
               width={400}
+              height={300}
+              sizes="(max-width: 480px) 90svw, (max-width: 800px) 50svw, (max-width: 1280px) 30svw, 380px"
+              className="w-full"
               loading="lazy"
               quality={50}
             />

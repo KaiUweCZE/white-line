@@ -16,7 +16,9 @@ const BoxBreed = ({ breed }: { breed: BreedType }) => {
           width={600}
           height={400}
           className="object-cover "
-        />{' '}
+          quality={50}
+          sizes="(max-width: 800px) 80svw, (max-width: 1280px) 40svw, 600px"
+        />
         <figcaption className="absolute top-3 right-3 bg-white/70  text-slate-800 text-xs font-medium px-2 py-1 rounded-sm flex items-center gap-2">
           <CalendarDays className="h-3.5 w-3.5" />
           {/* <span>datum narození:</span>*/}
