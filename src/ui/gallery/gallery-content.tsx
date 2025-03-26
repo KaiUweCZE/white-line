@@ -71,6 +71,7 @@ const GalleryContent = ({
   const currentLabel = labels[activeIndex];
   const hasMultipleImages = images.length > 1;
   const aspectRatio = (width / height).toFixed(2);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPlaceholder, setIsPlaceholder] = useState(true);
 
   const containerStyles = !isFullscreen && {
