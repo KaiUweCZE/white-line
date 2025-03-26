@@ -4,9 +4,7 @@ import dynamic from 'next/dynamic';
 import NavbarMenu from './navbar-menu';
 import SlideShowPlaceholder from './slide-show-placeholder';
 
-const SlideShow = dynamic(() => import('./slide-show'), {
-  ssr: false,
-});
+const SlideShow = dynamic(() => import('./slide-show'));
 
 const Navbar = () => {
   return (

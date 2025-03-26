@@ -87,12 +87,7 @@ const GalleryContent = ({
   // If fullscreen or not same size, use object-contain, otherwise use object-cover
   const imageDisplayClass = isFullscreen || !sameSize ? 'object-contain' : 'object-cover';
 
-  console.log({
-    'width is': width,
-    'height is': height,
-  });
-
-  const relativeSizes = isFullscreen ? '100svw' : `${width}px`;
+  const relativeSizes = isFullscreen ? '100svw' : `(max-width: 500px) 90svw, ${width}px`;
 
   return (
     <section

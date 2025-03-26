@@ -30,8 +30,8 @@ export default function SlideShow({ slides, mobileSlides }: SlideshowProps) {
               src={slide.src}
               alt={slide.alt}
               fill
-              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 80rem"
-              quality={70}
+              sizes="(max-width: 640px) 0vw, (max-width: 1280px) 100vw, 80rem"
+              quality={60}
               placeholder="blur"
               className={`object-cover`}
               loading="lazy"
@@ -46,16 +46,13 @@ export default function SlideShow({ slides, mobileSlides }: SlideshowProps) {
       {/* Mobilní slidy */}
       <div className="mobile-slideshow">
         {mobileSlides.map((slide, index) => (
-          <div
-            key={`mobile-${index}`}
-            className={`slide slide-${index % 4}`} // Použijeme modulo, pokud by bylo více než 4 slidy
-          >
+          <div key={`mobile-${index}`} className={`slide slide-${index % 4}`}>
             <Image
               src={slide.src}
               alt={slide.alt}
               fill
-              sizes="100vw"
-              quality={65}
+              sizes="(max-width: 640px) 100vw, 0svw"
+              quality={50}
               placeholder="blur"
               className="object-cover"
               loading="lazy"

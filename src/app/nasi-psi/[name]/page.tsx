@@ -83,7 +83,6 @@ const DogDetail = () => {
             <DogContests title="Závody" icon={Medal} items={data.races} resultKey="result" />
           )}
         </div>
-        */
       </main>
     </>
   );

@@ -7,9 +7,9 @@ const SlideShowPlaceholder = () => {
     <section className="slideshow" aria-label="hero slideshow">
       <Image
         src={placeholderImg}
-        alt={'Frederika pase, nízká kvalita, lepší obrázky se načítají'}
+        alt={'Frederika pase, placeholder, nízká kvalita'}
         fill
-        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 80rem"
+        sizes="(max-width: 640px) 0svw, (max-width: 1280px) 80svw, 80rem"
         className="object-cover desktop-placeholder"
         quality={20}
         placeholder="blur"
@@ -20,10 +20,10 @@ const SlideShowPlaceholder = () => {
       />
       <Image
         src={placeholderImgMobile}
-        alt={'Frederika pase, nízká kvalita, lepší obrázky se načítají'}
+        alt={'Frederika pase, placeholder, nízká kvalita'}
         fill
         className="object-cover mobile-placeholder"
-        sizes="(max-width: 640px) 100vw, 0vw"
+        sizes="(max-width: 640px) 80svw, 0vw"
         quality={20}
         placeholder="blur"
         priority
