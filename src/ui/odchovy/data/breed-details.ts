@@ -1,10 +1,14 @@
 // vrh ch
 import blaezImg1 from '../images/vrhch/blaez.webp';
-import rikaImg1 from '../images/vrhch/rika1.webp';
+import rikaImg1 from '@/assets/images/our-dogs/frederika/rika-rodic.webp';
+import chessieImg from '@/assets/images/our-dogs/chessie/chessie-rodic.webp';
 import fenixImg1 from '../images/vrhk/fenix-otec.webp';
 import freeImg1 from '../images/vrhk/free-matka.webp';
 import simpleIgorImg1 from '../images/vrhm/simply-igor-otec.webp';
 import simbaImg1 from '../images/c-vrha/simba.webp';
+import chesterImg1 from '@/assets/images/parents/chester.webp';
+import nerosImg1 from '@/assets/images/parents/neros.webp';
+import bastienImg1 from '@/assets/images/parents/bastien.webp';
 
 import { breedChImages } from '../images/vrhch';
 import { BreedDetailType } from '@/types/types';
@@ -12,6 +16,10 @@ import { breedKImages } from '../images/vrhk';
 import { breedMImages } from '../images/vrhm';
 import { breedCAImages } from '../images/c-vrha';
 import { tildaImg } from '@/assets/images/our-dogs/tilda';
+import { breedIImages } from '../images/vrhi';
+import { breedJImages } from '../images/vrhj';
+import { breedNImages } from '../images/vrhn';
+import { breedLImages } from '../images/vrhl';
 
 export const breedDetails: BreedDetailType[] = [
   {
@@ -37,6 +45,50 @@ export const breedDetails: BreedDetailType[] = [
     gallery: breedChImages,
   },
   {
+    id: 'swi',
+    name: 'Vrh I',
+    birth: '8.5.2020',
+    father: {
+      name: 'Chester la Blankpapilio',
+      image: chesterImg1,
+      physical: ['dlouhosrstý', '65 cm', 'plnochrupý', 'skus nůžkový', 'DNA'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['BH-VT', 'HWT', 'NHAT'],
+    },
+    mother: {
+      name: 'Frederika Bílá Merci',
+      image: rikaImg1,
+      physical: ['dlouhosrstá', '60 cm', 'plnochrupá', 'těsné nůžky'],
+      health: ['HD A', 'ED 0', 'DM N/N', 'MDR1 +/-'],
+    },
+    females: ['Imaculada', 'Iwanga'],
+    males: ['Iarlaith', 'Ignac', 'Iniobong', 'Izydor'],
+    gallery: breedIImages,
+  },
+  {
+    id: 'swj',
+    name: 'Vrh J',
+    birth: '5.8.2020',
+    father: {
+      name: 'Neros du Glacier des Loups',
+      image: nerosImg1,
+      physical: ['dlouhosrstý', '65 cm', 'plnochrupý', 'skus nůžkový', 'DNA'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['BH-VT', 'HWT', 'NHAT'],
+    },
+    mother: {
+      name: 'Chessie Whiteline Czech',
+      image: chessieImg,
+      physical: ['dlouhosrstá', '60 cm', 'plnochrupá', 'těsné nůžky'],
+      health: ['HD A', 'ED 0', 'DM N/N', 'MDR1 +/-'],
+    },
+
+    females: ["J'Adore", 'Jeana Aira', 'Jetaimie', 'Jewel'],
+    males: ['Jad Aaron'],
+
+    gallery: breedJImages,
+  },
+  {
     id: 'swk',
     name: 'Vrh K',
     birth: '19.1.2021',
@@ -56,6 +108,28 @@ export const breedDetails: BreedDetailType[] = [
     females: ['Kalinka', 'Kalypso', 'Keira', 'Kubra'],
     males: ['Kallikrates', 'Kamikaze', 'Kilimanjaro', 'Kohinoor'],
     gallery: breedKImages,
+  },
+  {
+    id: 'swl',
+    name: 'Vrh L',
+    birth: '22.4.2021',
+    father: {
+      name: 'Chester la Blankpapilio',
+      image: chesterImg1,
+      physical: ['dlouhosrstý', '65 cm', 'plnochrupý', 'skus nůžkový', 'DNA'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['BH-VT', 'HWT', 'NHAT'],
+    },
+    mother: {
+      name: 'Chessie Whiteline Czech',
+      image: chessieImg,
+      physical: ['dlouhosrstá', '60 cm', 'plnochrupá', 'těsné nůžky'],
+      health: ['HD A', 'ED 0', 'DM N/N', 'MDR1 +/-'],
+    },
+    females: [],
+    males: ['Lego', 'Lucius Wolf', 'Lupin'],
+
+    gallery: breedLImages,
   },
   {
     id: 'swm',
@@ -78,6 +152,28 @@ export const breedDetails: BreedDetailType[] = [
     females: ['Mademoiselle', 'Maya', 'Melanie', 'Mercedes', 'Minerva'],
     males: ['Maximilian'],
     gallery: breedMImages,
+  },
+  {
+    id: 'swn',
+    name: 'Vrh N',
+    birth: '19.5.2022',
+    father: {
+      name: 'Bastien Altája',
+      image: bastienImg1,
+      physical: ['dlouhosrstý', '63 cm', 'plnochrupý', 'DKK: A', 'DLK: 0'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['šampion Polska'],
+    },
+    mother: {
+      name: 'Chessie Whiteline Czech',
+      image: chessieImg,
+      physical: ['61 cm', 'plnochrupá'],
+      health: ['HD A', 'ED 0', 'MDR1 +/+', 'DM N/N'],
+      titles: ['NHAT', 'HWT', 'IHT1', 'IHT2', 'IHT3 CACT CAC'],
+    },
+    females: ['Nessie', 'Nicole-Allia'],
+    males: ['Nero', 'Newton', 'Nobel'],
+    gallery: breedNImages,
   },
   {
     id: 'cra',
